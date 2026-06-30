@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คลังสรุปสอบ — เตรียมสอบข้าราชการ</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F6F9; --card: #fff; --text: #1a1a2e; --sub: #5a6070;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bot: env(safe-area-inset-bottom, 20px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { font-size: 15px; }
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: calc(var(--safe-top) + 28px) 18px calc(var(--safe-bot) + 28px);
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+
+  .hero {
+    background: linear-gradient(135deg,#1E3A8A,#2563EB,#60A5FA);
+    border-radius: 18px;
+    padding: 28px 22px;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; right: -30px; top: -30px;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: rgba(255,255,255,.10);
+  }
+  .hero .badge {
+    display: inline-block; background: rgba(255,255,255,.22); color: #fff;
+    font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px;
+    margin-bottom: 10px; letter-spacing: .3px;
+  }
+  .hero h1 { font-size: 22px; font-weight: 800; color: #fff; line-height: 1.4; }
+  .hero p { font-size: 13px; color: rgba(255,255,255,.88); margin-top: 6px; font-weight: 500; line-height: 1.6; }
+
+  .section-label {
+    font-size: 13px; font-weight: 700; color: var(--sub);
+    margin: 22px 4px 10px; letter-spacing: .2px;
+  }
+
+  .card {
+    display: block;
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.07);
+    margin-bottom: 12px;
+    padding: 18px 18px;
+    text-decoration: none;
+    color: var(--text);
+    border-left: 5px solid transparent;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .card:active { transform: scale(0.98); }
+
+  .card .icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .card .icon {
+    font-size: 22px; width: 38px; height: 38px; flex-shrink: 0;
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  }
+  .card .title { font-size: 15.5px; font-weight: 700; line-height: 1.4; }
+  .card .desc { font-size: 12.5px; color: var(--sub); line-height: 1.6; margin-top: 4px; }
+  .card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .card .tag {
+    font-size: 10.5px; font-weight: 600; padding: 3px 9px; border-radius: 8px;
+    background: #F0F2F7; color: var(--sub);
+  }
+
+  .card.c1 { border-left-color: #B45309; }
+  .card.c1 .icon { background: #FFF7ED; }
+  .card.c2 { border-left-color: #1E40AF; }
+  .card.c2 .icon { background: #EFF6FF; }
+  .card.c3 { border-left-color: #166534; }
+  .card.c3 .icon { background: #F0FDF4; }
+
+  .footer {
+    text-align: center; font-size: 11.5px; color: var(--sub);
+    margin-top: 30px; line-height: 1.8; opacity: .75;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">คลังเอกสารสรุปสอบ</div>
+    <h1>📚 เตรียมสอบข้าราชการ<br>ปลัดอำเภอ / นักพัฒนาชุมชน / DDPM</h1>
+    <p>รวมแอปสรุปกฎหมายแบบ interactive แตะเปิด-ปิดอ่านง่าย พร้อมจุดกับดักข้อสอบที่ออกบ่อย</p>
+  </div>
+
+  <div class="section-label">📂 เอกสารทั้งหมด (3 ฉบับ)</div>
+
+  <a class="card c1" href="community-development-law.html">
+    <div class="icon-row">
+      <div class="icon">🏢</div>
+      <div class="title">โครงสร้างองค์กร พช. + แผนพัฒนาพื้นที่</div>
+    </div>
+    <div class="desc">กฎกระทรวงแบ่งส่วนราชการกรมการพัฒนาชุมชน, แผนพัฒนาพื้นที่อำเภอ/ตำบล, กข.คจ., กองทุนพัฒนาบทบาทสตรี, กองทุนพัฒนาเด็กชนบท, กลุ่มออมทรัพย์เพื่อการผลิต, พ.ร.บ.ทุนหมุนเวียน, คณะกรรมการพัฒนาสตรี, ศอช., อาสาพัฒนาชุมชน, OTOP</div>
+    <div class="tags">
+      <span class="tag">11 หัวข้อ</span>
+      <span class="tag">โครงสร้างกรม</span>
+      <span class="tag">กองทุนชุมชน</span>
+    </div>
+  </a>
+
+  <a class="card c2" href="general-law-9-acts.html">
+    <div class="icon-row">
+      <div class="icon">⚖️</div>
+      <div class="title">กฎหมายปกครองทั่วไป + จริยธรรม</div>
+    </div>
+    <div class="desc">รวม 9 ฉบับ ครอบคลุมกฎหมายปกครองที่ใช้สอบทุกตำแหน่ง เช่น วิธีปฏิบัติราชการทางปกครอง ข้อมูลข่าวสารราชการ งานสารบรรณ และจริยธรรมข้าราชการ</div>
+    <div class="tags">
+      <span class="tag">9 ฉบับ</span>
+      <span class="tag">กฎหมายปกครอง</span>
+      <span class="tag">จริยธรรม</span>
+    </div>
+  </a>
+
+  <a class="card c3" href="master-plan-constitution-2560.html">
+    <div class="icon-row">
+      <div class="icon">🇹🇭</div>
+      <div class="title">รัฐธรรมนูญ 60 / ยุทธศาสตร์ชาติ / แผนแม่บท / แผนฯ13</div>
+    </div>
+    <div class="desc">สรุปเข้มข้นรัฐธรรมนูญแห่งราชอาณาจักรไทย 2560 ยุทธศาสตร์ชาติ 2561-2580 แผนแม่บทภายใต้ยุทธศาสตร์ชาติ และแผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ ฉบับที่ 13</div>
+    <div class="tags">
+      <span class="tag">รธน. 2560</span>
+      <span class="tag">ยุทธศาสตร์ชาติ</span>
+      <span class="tag">แผนฯ13</span>
+    </div>
+  </a>
+
+  <div class="footer">
+    จัดทำเพื่อใช้ทบทวนส่วนตัว · แตะที่หัวข้อการ์ดเพื่อเปิด/ปิดรายละเอียด<br>
+    🟧 แก่นหลัก · 🟥 สำคัญ/ห้ามพลาด · 🟩 เชื่อมโยง · 🟪 กับดักสับสน · 🟦 ตัวบุคคล/ตัวเลข
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>สรุปสอบเข้มข้น — รธน.60 / ยุทธศาสตร์ชาติ / แผนแม่บท / แผนฯ13</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c1: #1E3A8A; --c1l: #EFF6FF; --c1d: #1E3A8A;
+  --c2: #B45309; --c2l: #FFFBEB; --c2d: #92400E;
+  --c3: #166534; --c3l: #F0FDF4; --c3d: #14532D;
+  --c4: #6D28D9; --c4l: #F5F3FF; --c4d: #5B21B6;
+  --bg: #F4F6F9; --card: #fff; --text: #1a1a2e; --sub: #5a6070;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bot: env(safe-area-inset-bottom, 20px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html { font-size: 15px; }
+body { font-family: 'Sarabun', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: calc(70px + var(--safe-bot)); line-height: 1.65; }
+
+.tabbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 1px solid #e0e4ee; padding-top: var(--safe-top); box-shadow: 0 2px 12px rgba(0,0,0,.10); }
+.tabs { display: flex; overflow-x: auto; gap: 4px; padding: 8px 8px 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 0 0 auto; padding: 9px 14px; border-radius: 10px; border: none; background: #f1f3f8; color: #6b7280; font-family: 'Sarabun', sans-serif; font-size: .86rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all .15s; }
+.tab-btn.active[data-tab="1"] { background: var(--c1); color: #fff; }
+.tab-btn.active[data-tab="2"] { background: var(--c2); color: #fff; }
+.tab-btn.active[data-tab="3"] { background: var(--c3); color: #fff; }
+.tab-btn.active[data-tab="4"] { background: var(--c4); color: #fff; }
+.tab-btn.active[data-tab="5"] { background: #be123c; color: #fff; }
+.tab-btn.active[data-tab="6"] { background: #9A3412; color: #fff; }
+
+.page { display: none; padding: 86px 12px 24px; max-width: 760px; margin: 0 auto; }
+.page.active { display: block; animation: fadein .25s; }
+@keyframes fadein { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform: translateY(0); } }
+
+.hero { border-radius: 16px; padding: 18px 18px 16px; margin-bottom: 14px; color: #fff; position: relative; overflow: hidden; }
+.hero[data-c="1"] { background: linear-gradient(135deg, #1E3A8A, #2563EB); }
+.hero[data-c="2"] { background: linear-gradient(135deg, #92400E, #D97706); }
+.hero[data-c="3"] { background: linear-gradient(135deg, #14532D, #16A34A); }
+.hero[data-c="4"] { background: linear-gradient(135deg, #5B21B6, #8B5CF6); }
+.hero[data-c="5"] { background: linear-gradient(135deg, #881337, #E11D48); }
+.hero[data-c="6"] { background: linear-gradient(135deg, #7C2D12, #C2410C); }
+.hero h1 { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+.hero p { font-size: .82rem; opacity: .92; }
+.hero .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.hero .badge { background: rgba(255,255,255,.22); padding: 4px 10px; border-radius: 20px; font-size: .72rem; font-weight: 600; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; background: #fff; padding: 10px; border-radius: 12px; border: 1px solid #e8eaf0; }
+.legend .lg { font-size: .68rem; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
+
+.sec-title { font-weight: 800; font-size: 1.0rem; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 3px solid; }
+
+.card { background: var(--card); border-radius: 14px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.06); overflow: hidden; border: 1px solid #edeff5; }
+.card .head { display: flex; align-items: center; gap: 10px; padding: 13px 14px; cursor: pointer; }
+.card .tag { font-size: .66rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; }
+.card .title { flex: 1; font-weight: 700; font-size: .91rem; }
+.card .chevron { transition: transform .25s; color: #9ca3af; flex-shrink: 0; font-size: .8rem; }
+.card.open .chevron { transform: rotate(180deg); }
+.card .body { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.card.open .body { max-height: 4000px; }
+.card .body-inner { padding: 0 14px 16px; font-size: .87rem; }
+.card .body-inner p { margin-bottom: 8px; }
+.card .body-inner ul, .card .body-inner ol { margin: 6px 0 8px 18px; }
+.card .body-inner li { margin-bottom: 5px; }
+
+.num { color: #C2410C; font-weight: 700; background: #FFEDD5; padding: 1px 5px; border-radius: 4px; }
+.who { color: #C2410C; font-weight: 700; background: #FFEDD5; padding: 1px 5px; border-radius: 4px; }
+.key { color: #C2410C; font-weight: 700; background: #FFEDD5; padding: 1px 5px; border-radius: 4px; }
+.link { color: #15803D; font-weight: 700; background: #DCFCE7; padding: 1px 5px; border-radius: 4px; }
+.trapw { color: #7E22CE; font-weight: 700; background: #F3E8FF; padding: 1px 5px; border-radius: 4px; }
+
+.trap { background: #FFF1F2; border-left: 4px solid #BE123C; border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: .84rem; }
+.trap b { color: #BE123C; }
+.trap2 { background: #FEF9C3; border-left: 4px solid #CA8A04; border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: .84rem; }
+.trap2 b { color: #854D0E; }
+.note { background: #EFF6FF; border-left: 4px solid #2563EB; border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: .84rem; }
+.note b { color: #1D4ED8; }
+
+.quiz { background: #F8FAFC; border: 1.5px dashed #94A3B8; border-radius: 10px; padding: 12px; margin: 12px 0; font-size: .85rem; }
+.quiz .qhead { font-weight: 700; color: #475569; margin-bottom: 6px; font-size: .8rem; }
+.quiz .qopt { display: block; padding: 6px 10px; margin: 4px 0; border-radius: 6px; background: #fff; border: 1px solid #e2e8f0; cursor: pointer; transition: .15s; }
+.quiz .qopt:hover { background: #F1F5F9; }
+.quiz .qopt.correct { background: #DCFCE7; border-color: #16A34A; font-weight: 600; }
+.quiz .qopt.wrong { background: #FFE4E6; border-color: #E11D48; }
+.quiz .qexp { display: none; margin-top: 8px; padding: 8px 10px; background: #fff; border-radius: 6px; font-size: .8rem; border: 1px solid #e2e8f0; }
+.quiz .qexp.show { display: block; }
+
+table.cmp { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: .8rem; }
+table.cmp th { background: #1E293B; color: #fff; padding: 7px 8px; text-align: left; font-weight: 600; }
+table.cmp td { padding: 7px 8px; border-bottom: 1px solid #e8eaf0; vertical-align: top; }
+table.cmp tr:nth-child(even) td { background: #F8FAFC; }
+table.cmp.small { font-size: .74rem; }
+
+.scrollwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0; border-radius: 8px; }
+
+.minicard { background: #F8FAFC; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px; margin: 6px 0; font-size: .82rem; }
+
+.progress-wrap { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.progress-bar { flex: 1; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; transition: width .3s; }
+.progress-text { font-size: .7rem; color: var(--sub); font-weight: 600; white-space: nowrap; }
+
+.section-divider { text-align: center; color: #b0b5c4; font-size: .75rem; margin: 26px 0 12px; font-weight: 700; letter-spacing: .05em; }
+
+@media (max-width: 400px) {
+  html { font-size: 14px; }
+  .hero h1 { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="tabbar">
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="1" onclick="showTab(1)">📘 รธน.60</button>
+    <button class="tab-btn" data-tab="2" onclick="showTab(2)">🎯 ยุทธศาสตร์ชาติ</button>
+    <button class="tab-btn" data-tab="3" onclick="showTab(3)">🗂️ แผนแม่บท</button>
+    <button class="tab-btn" data-tab="4" onclick="showTab(4)">📈 แผนฯ13</button>
+    <button class="tab-btn" data-tab="5" onclick="showTab(5)">⚔️ กับดักรวม/เทียบ</button>
+    <button class="tab-btn" data-tab="6" onclick="showTab(6)">🏛️ คำแถลงนโยบายรัฐบาล</button>
+  </div>
+</div>
+
+<!-- ============ TAB 1: รัฐธรรมนูญ 2560 ============ -->
+<div class="page active" id="page1">
+  <div class="hero" data-c="1">
+    <h1>📘 รัฐธรรมนูญแห่งราชอาณาจักรไทย พ.ศ. 2560</h1>
+    <p>ครบ 16 หมวด + บทเฉพาะกาล (279 มาตรา) เน้นหมวด 5/6/14 และมาตราที่เป็นจุดกำเนิดของยุทธศาสตร์ชาติ</p>
+    <div class="badges">
+      <span class="badge">16 หมวด</span>
+      <span class="badge">279 มาตรา</span>
+      <span class="badge">ประกาศ 6 เม.ย. 2560</span>
+      <span class="badge">ใช้เวลาอ่าน ~2-3 ชม.</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="lg num">เลขมาตรา/จำนวน</span>
+    <span class="lg who">ใคร/องค์กร</span>
+    <span class="lg key">หลักการ/คำสำคัญ</span>
+    <span class="lg link">เชื่อมโยงเอกสารอื่น</span>
+    <span class="lg trapw">กับดักข้อสอบ</span>
+  </div>
+
+  <div class="note"><b>ทำไมต้องเริ่มที่นี่:</b> รัฐธรรมนูญ 2560 คือ "แม่" ของทั้ง 4 เอกสารในแอปนี้ — มาตรา 65 บัญญัติให้ต้องมี<span class="key">ยุทธศาสตร์ชาติ</span> ซึ่งจะถ่ายทอดไปสู่<span class="key">แผนแม่บท</span> และคู่ขนานกับ<span class="key">แผนพัฒนาเศรษฐกิจฯ ฉบับ 13</span> ข้อสอบชอบถามว่า "อะไรมาก่อนอะไร" และ "ใครบังคับใคร" — ดูแท็บ 5 สำหรับตารางลำดับชั้นเต็ม</div>
+
+  <div class="sec-title" style="border-color:#1E3A8A;color:#1E3A8A;">ภาพรวม โครงสร้าง 16 หมวด + บทเฉพาะกาล</div>
+
+  <div class="card" id="r1_0">
+    <div class="head" onclick="toggle('r1_0')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ภาพรวม</span>
+      <span class="title">ตารางหมวดทั้งหมด — จำคู่ "เลขหมวด ↔ ชื่อ ↔ ช่วงมาตรา"</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="scrollwrap">
+      <table class="cmp small">
+        <tr><th>หมวด</th><th>ชื่อหมวด</th><th>มาตรา</th><th>จุดเน้นข้อสอบ</th></tr>
+        <tr><td>1</td><td>บททั่วไป</td><td>1-5</td><td>รูปแบบรัฐ/การปกครอง/อำนาจอธิปไตย</td></tr>
+        <tr><td>2</td><td>พระมหากษัตริย์</td><td>6-24</td><td>การถวายสัตย์ปฏิญาณ (ม.24)</td></tr>
+        <tr><td>3</td><td>สิทธิและเสรีภาพของปวงชนชาวไทย</td><td>25-49</td><td>หลักการใช้สิทธิ (ม.25-26)</td></tr>
+        <tr><td>4</td><td>หน้าที่ของปวงชนชาวไทย</td><td>50</td><td><span class="trapw">มีมาตราเดียว!</span> หน้าที่ 10 ข้อ</td></tr>
+        <tr><td>5</td><td>หน้าที่ของรัฐ</td><td>51-63</td><td>17 ข้อหน้าที่ — ประชาชน "ไม่ต้องร้องขอ"</td></tr>
+        <tr><td>6</td><td>แนวนโยบายแห่งรัฐ</td><td>64-78</td><td><span class="link">ม.65 = จุดกำเนิดยุทธศาสตร์ชาติ</span></td></tr>
+        <tr><td>7</td><td>รัฐสภา</td><td>79-157</td><td>หมวดยาวสุด (79 มาตรา)</td></tr>
+        <tr><td>8</td><td>คณะรัฐมนตรี</td><td>158-183</td><td>ไม่เกิน 35 รัฐมนตรี</td></tr>
+        <tr><td>9</td><td>การขัดกันแห่งผลประโยชน์</td><td>184-187</td><td>Conflict of Interest</td></tr>
+        <tr><td>10</td><td>ศาล</td><td>188-199</td><td>ยุติธรรม/ปกครอง/ทหาร</td></tr>
+        <tr><td>11</td><td>ศาลรัฐธรรมนูญ</td><td>200-214</td><td>ตุลาการ 9 คน วาระ 7 ปี</td></tr>
+        <tr><td>12</td><td>องค์กรอิสระ</td><td>215-247</td><td>5 องค์กร (กกต./ผู้ตรวจการแผ่นดิน/ปปช./คตง./กสม.)</td></tr>
+        <tr><td>13</td><td>องค์กรอัยการ</td><td>248</td><td><span class="trapw">มาตราเดียวเหมือนหมวด 4</span></td></tr>
+        <tr><td>14</td><td>การปกครองส่วนท้องถิ่น</td><td>249-254</td><td><span class="key">สำคัญสุดสำหรับปลัดอำเภอ</span></td></tr>
+        <tr><td>15</td><td>การแก้ไขเพิ่มเติมรัฐธรรมนูญ</td><td>255-256</td><td>ประชาชน 50,000 คนเข้าชื่อได้</td></tr>
+        <tr><td>16</td><td>การปฏิรูปประเทศ</td><td>257-261</td><td>7 ด้านการปฏิรูป</td></tr>
+        <tr><td>-</td><td>บทเฉพาะกาล</td><td>262-279</td><td>ส.ว.ชุดแรก 250 คน (5 ปี)</td></tr>
+      </table>
+      </div>
+      <div class="trap"><b>กับดักเล่นคำ:</b> หมวด 4 (หน้าที่ปวงชนชาวไทย) มี<span class="trapw">มาตราเดียว (ม.50)</span> แต่หมวด 5 (หน้าที่ของรัฐ) มี<span class="trapw">13 มาตรา (51-63)</span> ข้อสอบชอบสลับถามว่า "หน้าที่ของรัฐอยู่มาตราอะไร" แล้วให้ตัวเลือกเป็นมาตรา 50 หลอกไว้ — ต้องจำว่า <b>หมวด 4 = ของประชาชน (สั้น) / หมวด 5 = ของรัฐ (ยาว)</b></div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักเล่นคำ:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"หน้าที่ของปวงชนชาวไทยตามรัฐธรรมนูญ บัญญัติไว้ในมาตราใด และมีกี่ข้อ?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.parentElement.querySelectorAll('.qopt').forEach(o=>o.classList.remove('wrong')); this.classList.add('wrong')">มาตรา 51-63 จำนวน 17 ข้อ</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">มาตรา 50 จำนวน 10 ข้อ</div>
+        <div class="qexp">✅ ถูกต้อง! หน้าที่ปวงชนอยู่ในมาตรา 50 (หมวด 4) มี 10 ข้อ ส่วนมาตรา 51-63 (17 ข้อ) คือ "หน้าที่ของรัฐ" (หมวด 5) — ข้อสอบเอาตัวเลขสองชุดนี้มาสลับกันบ่อยมาก</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#1E3A8A;color:#1E3A8A;">หมวด 1-4: บททั่วไป ถึง หน้าที่ปวงชน</div>
+
+  <div class="card" id="r1_1">
+    <div class="head" onclick="toggle('r1_1')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.1-5</span>
+      <span class="title">หมวด 1 บททั่วไป — รัฐ/การปกครอง/อำนาจอธิปไตย</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><span class="num">มาตรา 1</span>: ประเทศไทยเป็น<span class="key">ราชอาณาจักรอันหนึ่งอันเดียว จะแบ่งแยกมิได้</span></li>
+        <li><span class="num">มาตรา 2</span>: ปกครองระบอบ<span class="key">ประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข</span></li>
+        <li><span class="num">มาตรา 3 วรรคหนึ่ง</span>: อำนาจอธิปไตยเป็นของปวงชนชาวไทย พระมหากษัตริย์ทรงใช้อำนาจผ่าน <span class="who">รัฐสภา คณะรัฐมนตรี และศาล</span></li>
+        <li><span class="num">มาตรา 3 วรรคสอง</span>: องค์กรผู้ใช้อำนาจอธิปไตย ได้แก่ <span class="who">รัฐสภา ครม. ศาล องค์กรอิสระ และหน่วยงานของรัฐ</span> — ต้องปฏิบัติตามรัฐธรรมนูญ กฎหมาย และหลักนิติธรรม</li>
+        <li><span class="num">มาตรา 4</span>: ศักดิ์ศรีความเป็นมนุษย์ สิทธิ เสรีภาพ ความเสมอภาค ได้รับความคุ้มครอง</li>
+        <li><span class="num">มาตรา 5</span>: รัฐธรรมนูญเป็นกฎหมายสูงสุด — กฎหมายใดขัดหรือแย้งใช้บังคับมิได้ หากไม่มีบทบัญญัติบังคับ ให้วินิจฉัยตามประเพณีการปกครองในระบอบประชาธิปไตยฯ</li>
+      </ul>
+      <div class="trap"><b>กับดักจำสลับ:</b> "องค์กรผู้ใช้อำนาจอธิปไตย" (ม.3 วรรคสอง) มี 5 ประเภท คือ รัฐสภา-ครม.-ศาล-<span class="trapw">องค์กรอิสระ-หน่วยงานของรัฐ</span> แต่ "ผู้ทรงใช้อำนาจอธิปไตยแทนพระมหากษัตริย์" (ม.3 วรรคหนึ่ง) มีเพียง <span class="trapw">3 ทาง</span> คือ รัฐสภา-ครม.-ศาล (ไม่รวมองค์กรอิสระ) ข้อสอบมักถามว่า "พระมหากษัตริย์ทรงใช้อำนาจอธิปไตยทางใดบ้าง" แล้วเอา "องค์กรอิสระ" มาเป็นตัวลวง</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r1_2">
+    <div class="head" onclick="toggle('r1_2')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.6-24</span>
+      <span class="title">หมวด 2 พระมหากษัตริย์</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>คงหลักการสำคัญเดิมตามรัฐธรรมนูญ 2550 เป็นส่วนใหญ่ จุดที่ปรับใหม่คือ:</p>
+      <ul>
+        <li><span class="num">มาตรา 24</span>: ปรับปรุงหลักการ<span class="key">ถวายสัตย์ปฏิญาณ</span> — พระมหากษัตริย์จะโปรดเกล้าฯ ให้กระทำถวายสัตย์ต่อ<span class="who">พระรัชทายาทที่บรรลุนิติภาวะแล้ว หรือผู้แทนพระองค์</span>ก็ได้ เพื่อบรรเทาพระราชภาระ ระหว่างยังไม่ถวายสัตย์ ผู้ที่ต้องถวายสัตย์ปฏิบัติหน้าที่ที่จำเป็นไปพลางก่อนได้</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="card" id="r1_3">
+    <div class="head" onclick="toggle('r1_3')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.25-49</span>
+      <span class="title">หมวด 3 สิทธิและเสรีภาพของปวงชนชาวไทย</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>หลักการใช้สิทธิ/เสรีภาพ (ม.25):</b></p>
+      <ul>
+        <li>สิ่งที่<span class="key">ไม่ถูกห้ามหรือกำหนดเงื่อนไข</span> → มีสิทธิทำได้เสรีและถือว่าชอบด้วยรัฐธรรมนูญ</li>
+        <li>สิทธิที่ "ให้เป็นไปตามที่กฎหมายบัญญัติ" — แม้ยังไม่มีกฎหมายออกมา ก็<span class="trapw">ใช้สิทธิได้ทันที</span>ตามเจตนารมณ์รัฐธรรมนูญ (ข้อสอบหลอกว่าต้องรอกฎหมายออกก่อน — ผิด!)</li>
+        <li>การใช้สิทธิต้องไม่กระทบ: (1) ความมั่นคงปลอดภัยของประเทศ (2) ความสงบเรียบร้อยของสังคม (3) ไม่ละเมิดสิทธิผู้อื่น</li>
+      </ul>
+      <p><b>หลักการตรากฎหมายของฝ่ายนิติบัญญัติ (ม.26)</b> ต้อง 5 ข้อ:</p>
+      <ol>
+        <li>ไม่ขัดหลักนิติธรรม</li>
+        <li>ไม่เพิ่มภาระ/จำกัดสิทธิเกินสมควรแก่เหตุ</li>
+        <li>ไม่กระทบศักดิ์ศรีความเป็นมนุษย์</li>
+        <li>ระบุเหตุผลความจำเป็นในการจำกัดสิทธิ</li>
+        <li>มีผลใช้บังคับเป็นการทั่วไป</li>
+      </ol>
+      <div class="note"><b>ใครตรวจสอบ:</b> <span class="who">ศาลรัฐธรรมนูญ</span> มีหน้าที่ตรวจสอบว่ากฎหมายเป็นไปตามหลัก 5 ประการนี้หรือไม่ ("การตรวจสอบความชอบด้วยรัฐธรรมนูญของกฎหมาย") ทั้งร่างกฎหมายที่ยังไม่บังคับใช้ และที่ใช้บังคับแล้ว</div>
+      <p><b>สิทธิเด่นที่ออกสอบบ่อย:</b></p>
+      <ul>
+        <li>ผู้ยากไร้ได้รับบริการสาธารณสุขโดยไม่เสียค่าใช้จ่าย, มารดาได้รับความช่วยเหลือก่อน-หลังคลอด, ผู้สูงอายุเกิน <span class="num">60 ปี</span>ไม่มีรายได้เพียงพอ ได้รับความช่วยเหลือ (ม.47-48)</li>
+        <li>สื่อมวลชนมีเสรีภาพเสนอข่าวตามจริยธรรมวิชาชีพ (ม.35)</li>
+        <li>บุคคล/ชุมชนมีสิทธิอนุรักษ์วัฒนธรรม ใช้ประโยชน์ทรัพยากรธรรมชาติ ฟ้องหน่วยงานรัฐได้ (ม.41, 43)</li>
+      </ul>
+      <div class="trap"><b>กับดักช่องทางร้องเรียน:</b> เมื่อสิทธิถูกละเมิดเกินขอบเขต มี<span class="trapw">3 ช่องทาง</span>: (1) ฟ้อง<span class="who">ศาลยุติธรรม/ศาลปกครอง</span>เพื่อคุ้มครองสิทธิ+เรียกค่าเสียหาย (2) ฟ้อง<span class="who">ศาลรัฐธรรมนูญ</span>โดยตรงเพื่อวินิจฉัยว่าขัดรัฐธรรมนูญหรือไม่ ข้อสอบมักหลอกว่า "ฟ้องศาลรัฐธรรมนูญได้โดยตรงทุกกรณี" ซึ่งผิด — ต้องดูบทบัญญัติเฉพาะตาม ม.213</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r1_4">
+    <div class="head" onclick="toggle('r1_4')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">ม.50 เท่านั้น</span>
+      <span class="title">หมวด 4 หน้าที่ของปวงชนชาวไทย (10 ข้อ)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>ปวงชนชาวไทยมีหน้าที่รับผิดชอบต่อประเทศชาติและสังคม 10 ข้อ ตามมาตรา 50:</p>
+      <ol>
+        <li>พิทักษ์รักษาชาติ ศาสนา พระมหากษัตริย์ และการปกครองระบอบประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข</li>
+        <li>ป้องกันประเทศ พิทักษ์เกียรติภูมิ/ผลประโยชน์ของชาติ ช่วยบรรเทาสาธารณภัย</li>
+        <li>ปฏิบัติตามกฎหมายอย่างเคร่งครัด</li>
+        <li>เข้ารับการศึกษาอบรมในการศึกษาภาคบังคับ</li>
+        <li>รับราชการทหารตามที่กฎหมายบัญญัติ</li>
+        <li>เคารพและไม่ละเมิดสิทธิเสรีภาพผู้อื่น ไม่สร้างความแตกแยก/เกลียดชัง</li>
+        <li>ไปใช้สิทธิเลือกตั้งหรือลงประชามติโดยคำนึงถึงประโยชน์ส่วนรวม</li>
+        <li>ร่วมมือสนับสนุนการอนุรักษ์สิ่งแวดล้อม ทรัพยากรธรรมชาติ ความหลากหลายทางชีวภาพ มรดกวัฒนธรรม</li>
+        <li>เสียภาษีอากรตามที่กฎหมายบัญญัติ</li>
+        <li>ไม่ร่วมมือ/สนับสนุนการทุจริตประพฤติมิชอบทุกรูปแบบ</li>
+      </ol>
+      <div class="trap2"><b>กับดักนับจำนวน:</b> หน้าที่ของ<span class="trapw">ปวงชน</span> (ม.50) มี <span class="trapw">10 ข้อ</span> ส่วนหน้าที่ของ<span class="trapw">รัฐ</span> (ม.51-63) มี <span class="trapw">17 ข้อ</span> — ถ้าข้อสอบถามว่า "ข้อใดไม่ใช่หน้าที่ของปวงชนชาวไทย" แล้วเอาข้อความจากหน้าที่ของรัฐมาหลอก (เช่น "จัดการศึกษาภาคบังคับให้ฟรี" — นี่คือหน้าที่<i>รัฐ</i>ต้องจัดให้ ไม่ใช่หน้าที่ปวงชน) ต้องแยกให้ออกว่าใครเป็นผู้กระทำ</div>
+    </div></div>
+  </div>
+
+  <div class="section-divider">━━━ หมวด 5: หน้าที่ของรัฐ ━━━</div>
+
+  <div class="card" id="r1_5">
+    <div class="head" onclick="toggle('r1_5')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">ม.51-63</span>
+      <span class="title">หมวด 5 หน้าที่ของรัฐ — 17 ข้อ (ไม่ต้องร้องขอ)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="note"><b>หลักการสำคัญ (ม.51):</b> รัฐมีหน้าที่ต่อประชาชน "ทุกคน"/"ทุกชุมชน" เป็นการทั่วไป โดยประชาชน<span class="key">ไม่ต้องใช้สิทธิร้องขอ</span> — ถ้ารัฐไม่ทำตามหน้าที่ ถือว่า<span class="trapw">จงใจไม่ปฏิบัติตามรัฐธรรมนูญ</span> ประชาชนมีสิทธิติดตาม เร่งรัด และฟ้องร้องหน่วยงานรัฐได้</div>
+      <p><b>หน้าที่ของรัฐ 17 ข้อ (ม.52-63):</b></p>
+      <ol>
+        <li>พิทักษ์รักษาสถาบันพระมหากษัตริย์ เอกราช อธิปไตย บูรณภาพแห่งอาณาเขต ความมั่นคงแห่งชาติ ความสงบเรียบร้อย (ม.52)</li>
+        <li>ดูแลให้มีการปฏิบัติตามและบังคับใช้กฎหมายอย่างเคร่งครัด (ม.53)</li>
+        <li>จัดให้เด็กเล็ก (<span class="num">2 ขวบ–ก่อนอนุบาล</span>) ได้รับการดูแลพัฒนาก่อนวัยเรียน โดยไม่เสียค่าใช้จ่าย (ม.54 วรรค 2)</li>
+        <li>จัดการศึกษา<span class="key">อนุบาลจนจบภาคบังคับ (อนุบาล 1 ถึง ม.3 = 12 ปี)</span> โดยไม่เก็บค่าใช้จ่าย (ม.54 วรรค 1)</li>
+        <li>นอกเหนือจากนั้น รัฐจะไม่เก็บค่าใช้จ่ายเพิ่มเติมเพียงใดก็ได้ ไม่มีข้อห้าม (ม.54 วรรค 1)</li>
+        <li>หลังภาคบังคับ ดำเนินการให้ตามความต้องการ/ความถนัด มีกองทุนช่วยผู้ขาดแคลน (ม.54 วรรค 5-6)</li>
+        <li>การศึกษาทุกระดับสอนให้เป็นคนดี มีวินัย ภูมิใจในชาติ (ม.54 วรรค 4)</li>
+        <li>บริการสาธารณสุขมีประสิทธิภาพทั่วถึง ส่งเสริมแพทย์แผนไทย (ม.55)</li>
+        <li>สาธารณูปโภคขั้นพื้นฐาน ดูแลไม่ให้เก็บค่าบริการเกินสมควร (ม.56)</li>
+        <li>คุ้มครองทรัพยากรธรรมชาติ สิ่งแวดล้อม ความหลากหลายทางชีวภาพ ร่วมกับประชาชน/ชุมชน/อปท. (ม.57(2))</li>
+        <li>อนุรักษ์ภูมิปัญญาท้องถิ่น ศิลปะ วัฒนธรรม (ม.57(1))</li>
+        <li>ถ้ากระทบสิ่งแวดล้อม/สุขภาพรุนแรง ต้องทำ <span class="key">EHIA</span> + รับฟังความเห็นผู้มีส่วนได้เสียก่อน + เยียวยาหากกระทบ (ม.58)</li>
+        <li>เปิดเผยข้อมูลข่าวสารสาธารณะ (ยกเว้นความมั่นคง/ความลับราชการ) (ม.59)</li>
+        <li>รักษาคลื่นความถี่และสิทธิวงโคจรดาวเทียมเพื่อประโยชน์ประเทศ/ประชาชน (ม.60)</li>
+        <li>คุ้มครองผู้บริโภค ส่งเสริมการรวมตัวคุ้มครองผู้บริโภค (ม.61)</li>
+        <li>รักษาวินัยการเงินการคลังตามกฎหมายวินัยการเงินการคลังของรัฐอย่างเคร่งครัด (ม.62)</li>
+        <li>ขจัดการทุจริตประพฤติมิชอบในวงราชการทุกรูปแบบ (ม.63)</li>
+      </ol>
+      <div class="trap"><b>กับดักนับเลข:</b> ลองนับดูดี ๆ — ข้อ 3-7 ทั้งหมดอยู่ภายใต้<span class="trapw">มาตรา 54 เดียว</span> (เรื่องการศึกษา) แต่แยกเป็นหลักการย่อยหลายข้อ ถ้าข้อสอบถามว่า "หน้าที่ของรัฐด้านการศึกษาอยู่ในมาตราใด" คำตอบคือ <b>มาตรา 54 มาตราเดียว</b> ไม่ใช่หลายมาตรา</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบความเข้าใจ:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"การศึกษาภาคบังคับตามรัฐธรรมนูญ 2560 ครอบคลุมตั้งแต่ระดับใดถึงระดับใด และรวมกี่ปี?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">ป.1 ถึง ม.6 รวม 12 ปี</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">อนุบาล 1 ถึง ม.3 รวม 12 ปี</div>
+        <div class="qexp">✅ ถูกต้อง! รัฐธรรมนูญ 2560 กำหนดให้จัดการศึกษาโดยไม่เก็บค่าใช้จ่ายตั้งแต่<b>อนุบาล 1 ถึง ม.3</b> (ไม่ใช่ ป.1-ม.6 แบบที่หลายคนเข้าใจผิดจากกฎหมายเดิม) นี่คือจุดเปลี่ยนสำคัญจากรัฐธรรมนูญฉบับก่อน ข้อสอบฮิตมาก!</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="section-divider">━━━ หมวด 6: จุดเชื่อมยุทธศาสตร์ชาติ ━━━</div>
+
+  <div class="card" id="r1_6">
+    <div class="head" onclick="toggle('r1_6')">
+      <span class="tag" style="background:#F3E8FF;color:#7E22CE">ม.64-78</span>
+      <span class="title">หมวด 6 แนวนโยบายแห่งรัฐ — รวม ม.65 จุดกำเนิดยุทธศาสตร์ชาติ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="note"><b>หลักการ (ม.64):</b> หมวดนี้มีไว้เป็นแนวทางให้รัฐตรากฎหมายและกำหนดนโยบายบริหารราชการแผ่นดิน — <span class="trapw">ไม่ใช่สิทธิที่ฟ้องร้องบังคับได้โดยตรง</span> ต่างจากหมวด 3 (สิทธิเสรีภาพ) ที่ฟ้องได้ทันที</div>
+      <div class="trap" style="border-left-color:#7E22CE;background:#F3E8FF;"><b style="color:#7E22CE">⭐ มาตรา 65 (หัวใจของทั้งแอปนี้):</b><br>
+        รัฐ<span class="key">พึงจัดให้มียุทธศาสตร์ชาติ</span> เป็นเป้าหมายการพัฒนาประเทศอย่างยั่งยืนตามหลักธรรมาภิบาล โดยยุทธศาสตร์ชาติกำหนด<span class="who">วิสัยทัศน์ (Vision)</span> และ<span class="who">แผนยุทธศาสตร์ (Strategic Plan)</span> ที่ทุกภาคส่วนเห็นพ้องร่วมกัน มีตัวชี้วัดความคืบหน้าที่ชัดเจนและเป็นสากล การจัดทำต้องเป็นไปตามที่<span class="link">กฎหมาย (พ.ร.บ.การจัดทำยุทธศาสตร์ชาติ พ.ศ.2560)</span> บัญญัติ และประชาชนทุกภาคส่วนต้องมีส่วนร่วมแสดงความเห็นด้วย
+      </div>
+      <p><b>หน้าที่/แนวนโยบายอื่นที่ออกสอบบ่อย:</b></p>
+      <ul>
+        <li><span class="num">ม.66</span>: ส่งเสริมสัมพันธไมตรีนานาประเทศ ความเสมอภาค ไม่แทรกแซงกิจการภายใน</li>
+        <li><span class="num">ม.67</span>: อุปถัมภ์/คุ้มครองพระพุทธศาสนา(เถรวาท)และศาสนาอื่น ป้องกันการบ่อนทำลายศาสนา</li>
+        <li><span class="num">ม.68</span>: จัดกระบวนการยุติธรรมมีประสิทธิภาพ เป็นธรรม ไม่เสียค่าใช้จ่ายสูงเกินสมควร + ช่วยเหลือผู้ยากไร้</li>
+        <li><span class="num">ม.71 วรรค 4</span>: <span class="trapw">จัดสรรงบประมาณอย่างเป็นธรรมโดยคำนึงถึงความจำเป็นต่างกันของเพศ วัย และสภาพบุคคล</span> (Gender-responsive budgeting)</li>
+        <li><span class="num">ม.72</span>: วางแผนใช้ที่ดินทั่วประเทศ + กระจายการถือครองที่ดิน + จัดหาน้ำเพียงพอ</li>
+        <li><span class="num">ม.75</span>: จัดระบบเศรษฐกิจแบบ <span class="key">Inclusive and Sustainable Growth</span> ตามหลักปรัชญาเศรษฐกิจพอเพียง — รัฐ<span class="trapw">ไม่ประกอบกิจการแข่งขันกับเอกชน</span> เว้นแต่จำเป็นเพื่อความมั่นคง/สาธารณูปโภค</li>
+        <li><span class="num">ม.76</span>: บริหารราชการแผ่นดินตามหลักการบริหารกิจการบ้านเมืองที่ดี + บริหารงานบุคคลตามระบบคุณธรรม</li>
+        <li><span class="num">ม.77</span>: <span class="key">กฎหมายเพียงเท่าที่จำเป็น</span> — รับฟังความเห็น วิเคราะห์ผลกระทบ ประเมินผลสัมฤทธิ์เป็นระยะ</li>
+      </ul>
+      <div class="trap"><b>กับดักตัวเลขมาตรา (สำคัญที่สุดในแท็บนี้):</b> ข้อสอบชอบสับสนระหว่าง <span class="trapw">ม.65 (ยุทธศาสตร์ชาติ)</span> กับ <span class="trapw">ม.275 (กฎหมายเพื่อขับเคลื่อนปฏิรูป)</span> — มาตรา 275 อยู่ใน<i>บทเฉพาะกาล</i> สั่งให้คณะรัฐมนตรีจัดให้มีกฎหมายตามมาตรา 65 ภายในกำหนดเวลา ไม่ใช่ตัวบทที่สร้างยุทธศาสตร์ชาติเอง — <b>ม.65 คือต้นกำเนิด, ม.275 คือกลไกเร่งให้เกิดกฎหมายลูก</b></div>
+      <div class="quiz">
+        <div class="qhead">🧪 กับดักเล่นคำ — ลองดู:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"รัฐธรรมนูญ 2560 บัญญัติให้รัฐ 'พึง' จัดให้มียุทธศาสตร์ชาติ คำว่า 'พึง' ในทางกฎหมายมีผลอย่างไร เทียบกับคำว่า 'ต้อง'?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">มีผลผูกพันเท่ากับคำว่า "ต้อง" ทุกประการ</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">เป็นแนวนโยบาย ไม่ใช่สิทธิที่ฟ้องร้องบังคับได้โดยตรงเหมือนหมวดสิทธิเสรีภาพ</div>
+        <div class="qexp">✅ ถูกต้อง! หมวด 6 ทั้งหมดใช้คำว่า "พึง" เป็นแนวนโยบายแห่งรัฐ มีไว้ชี้ทางให้ฝ่ายบริหาร/นิติบัญญัติดำเนินการ ต่างจากหมวด 3 (สิทธิเสรีภาพ) ที่ใช้ถ้อยคำเชิงสิทธิซึ่งประชาชนอ้างฟ้องร้องได้ทันที</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="section-divider">━━━ หมวด 7-13: โครงสร้างอำนาจรัฐ ━━━</div>
+
+  <div class="card" id="r1_7">
+    <div class="head" onclick="toggle('r1_7')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.79-157</span>
+      <span class="title">หมวด 7 รัฐสภา (หมวดยาวสุด) — ส.ส./ส.ว.</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>สภาผู้แทนราษฎร (ส.ส.):</b></p>
+      <ul>
+        <li>รวม <span class="num">500 คน</span>: เขต <span class="num">400 คน</span> + บัญชีรายชื่อ <span class="num">100 คน</span> (แก้ไขเพิ่มเติม ฉบับที่ 1 พ.ศ.2564 — เดิม 350/150)</li>
+        <li>วาระ <span class="num">4 ปี</span>, มาจากเลือกตั้งโดยตรงและลับ, อายุเลือกตั้งไม่ต่ำกว่า 18 ปีในวันเลือกตั้ง</li>
+        <li>บัตรเลือกตั้ง <span class="trapw">2 ใบ</span> (แบ่งเขต + บัญชีรายชื่อ)</li>
+        <li>สมัยประชุมสามัญปีละ <span class="num">2 สมัย</span> สมัยละไม่น้อยกว่า <span class="num">120 วัน</span></li>
+        <li>เปิดอภิปรายไม่ไว้วางใจ: ส.ส. <span class="num">1/5</span> เสนอได้ (ปีละครั้ง) / เปิดอภิปรายทั่วไปไม่ลงมติ: ส.ส. <span class="num">1/10</span></li>
+      </ul>
+      <p><b>วุฒิสภา (ส.ว.) — "สภาเติมเต็ม" ไม่ใช่ "สภาพี่เลี้ยง":</b></p>
+      <ul>
+        <li>รวม <span class="num">200 คน</span> มาจาก<span class="key">การเลือกกันเองของผู้สมัครจากกลุ่มอาชีพ/สถานะต่าง ๆ</span> (All walks of life) เลือกไขว้กลุ่มกัน</li>
+        <li><span class="trapw">ไม่มีอำนาจถอดถอนผู้ดำรงตำแหน่งทางการเมือง</span> — ต่างจากรัฐธรรมนูญฉบับก่อนหน้า</li>
+        <li>มีอำนาจเห็นชอบการแต่งตั้งผู้ดำรงตำแหน่งในองค์กรอิสระ</li>
+      </ul>
+      <div class="trap"><b>กับดักจำตัวเลข ส.ส./ส.ว.:</b> ส.ส. = <span class="trapw">500</span> (400 เขต + 100 บัญชี) | ส.ว. = <span class="trapw">200</span> (เลือกกันเอง) | ส.ว.ชุดแรกตามบทเฉพาะกาล = <span class="trapw">250</span> (มาจาก คสช. คัดเลือก 194 + เลือกตามรธน. 50 + โดยตำแหน่ง 6) — ตัวเลข 200 กับ 250 มักถูกเอามาสลับกันในข้อสอบ ต้องแยกว่า <b>200 คือบทถาวร, 250 คือบทเฉพาะกาล (5 ปีแรกเท่านั้น)</b></div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r1_8">
+    <div class="head" onclick="toggle('r1_8')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.158-183</span>
+      <span class="title">หมวด 8 คณะรัฐมนตรี</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li>นายกรัฐมนตรี 1 + รัฐมนตรีอื่นไม่เกิน <span class="num">35 คน</span></li>
+        <li>พรรคการเมืองเสนอชื่อนายกฯ ได้ไม่เกิน <span class="num">3 รายชื่อ</span>ต่อพรรค ต้องประกาศให้ประชาชนทราบล่วงหน้า</li>
+        <li>ส.ส.เลือกนายกฯจากบัญชีพรรคที่มี ส.ส.ไม่น้อยกว่าร้อยละ <span class="num">5</span> ของจำนวน ส.ส.ทั้งหมด (อย่างน้อย <span class="num">25 คน</span>)</li>
+        <li>ครม.แถลงนโยบายต่อรัฐสภาภายใน <span class="num">15 วัน</span> นับแต่เข้ารับหน้าที่ — <span class="trapw">ไม่มีการลงมติไว้วางใจ</span></li>
+        <li>นโยบาย ครม. ต้องสอดคล้องกับ<span class="link">หน้าที่ของรัฐ + แนวนโยบายแห่งรัฐ + ยุทธศาสตร์ชาติ</span> + สถานะการเงินการคลัง (ม.162)</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="card" id="r1_9">
+    <div class="head" onclick="toggle('r1_9')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.184-199</span>
+      <span class="title">หมวด 9 การขัดกันแห่งผลประโยชน์ + หมวด 10 ศาล</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>หมวด 9 (ม.184-187):</b> ส.ส./ส.ว./รัฐมนตรี ห้ามดำรงตำแหน่งในหน่วยราชการ/รัฐวิสาหกิจ/สภาท้องถิ่น ห้ามรับสัมปทานหรือเป็นคู่สัญญากับรัฐทั้งทางตรงทางอ้อม — ข้อห้ามนี้ใช้บังคับกับ<span class="who">คู่สมรสและบุตร</span>ด้วย</p>
+      <p><b>หมวด 10 (ม.188-199):</b> ศาลมี 3 ประเภท: <span class="who">ศาลยุติธรรม / ศาลปกครอง / ศาลทหาร</span> — ผู้พิพากษา/ตุลาการมีอิสระในการพิจารณาพิพากษา</p>
+    </div></div>
+  </div>
+
+  <div class="card" id="r1_10">
+    <div class="head" onclick="toggle('r1_10')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.200-248</span>
+      <span class="title">หมวด 11 ศาลรัฐธรรมนูญ + หมวด 12 องค์กรอิสระ + หมวด 13 องค์กรอัยการ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>หมวด 11 ศาลรัฐธรรมนูญ:</b> ตุลาการ <span class="num">9 คน</span> วาระ <span class="num">7 ปี</span> ดำรงตำแหน่งได้วาระเดียว มาจาก: ผู้พิพากษาหัวหน้าคณะศาลฎีกา 3 / ตุลาการศาลปกครองสูงสุด 2 / ศาสตราจารย์นิติศาสตร์ 1 / ศาสตราจารย์รัฐศาสตร์หรือรัฐประศาสนศาสตร์ 1 / ผู้บริหารราชการระดับอธิบดีขึ้นไป 2</p>
+      <p><b>หมวด 12 องค์กรอิสระ — มี 5 องค์กร:</b></p>
+      <ol>
+        <li>คณะกรรมการการเลือกตั้ง (กกต.)</li>
+        <li>ผู้ตรวจการแผ่นดิน</li>
+        <li>คณะกรรมการป้องกันและปราบปรามการทุจริตแห่งชาติ (ป.ป.ช.)</li>
+        <li>คณะกรรมการตรวจเงินแผ่นดิน (คตง.)</li>
+        <li>คณะกรรมการสิทธิมนุษยชนแห่งชาติ (กสม.)</li>
+      </ol>
+      <p><b>หมวด 13 องค์กรอัยการ (ม.248 มาตราเดียว):</b> รับรองความเป็นอิสระขององค์กรอัยการ ปราศจากการแทรกแซงทางการเมือง</p>
+      <div class="trap"><b>กับดักนับจำนวนองค์กร:</b> "องค์กรอิสระ" มี <span class="trapw">5 องค์กร</span> เท่านั้น — <span class="trapw">องค์กรอัยการไม่ถูกจัดเป็นองค์กรอิสระ</span> แต่แยกเป็นหมวด 13 ต่างหาก และ<span class="trapw">ศาลรัฐธรรมนูญก็ไม่ใช่องค์กรอิสระ</span> (แยกเป็นหมวด 11) ข้อสอบชอบถามว่า "ข้อใดไม่ใช่องค์กรอิสระ" แล้วใส่ "องค์กรอัยการ" หรือ "ศาลรัฐธรรมนูญ" เป็นตัวลวงปนเข้าไปในกลุ่ม 5 องค์กร</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักจัดกลุ่ม:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"ข้อใดไม่ใช่หนึ่งใน 5 องค์กรอิสระตามรัฐธรรมนูญ 2560?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">คณะกรรมการตรวจเงินแผ่นดิน (คตง.)</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">องค์กรอัยการ</div>
+        <div class="qexp">✅ ถูกต้อง! องค์กรอัยการมีหมวดของตัวเอง (หมวด 13) ไม่ถูกนับเป็นองค์กรอิสระ 1 ใน 5 องค์กร (กกต./ผู้ตรวจการแผ่นดิน/ป.ป.ช./คตง./กสม.)</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="section-divider">━━━ หมวด 14: หัวใจสำหรับสายปลัดอำเภอ ━━━</div>
+
+  <div class="card" id="r1_14">
+    <div class="head" onclick="toggle('r1_14')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">ม.249-254 ⭐</span>
+      <span class="title">หมวด 14 การปกครองส่วนท้องถิ่น (สำคัญที่สุดในแท็บนี้)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ol>
+        <li><span class="num">ม.249 วรรค 1</span>: จัดการปกครองท้องถิ่นตามหลัก<span class="key">การปกครองตนเองตามเจตนารมณ์ของประชาชนในท้องถิ่น</span> ตามวิธีการและรูปแบบที่กฎหมายบัญญัติ</li>
+        <li><span class="num">ม.249 วรรค 2</span>: การจัดตั้ง อปท. รูปแบบใด ต้องคำนึงถึง<span class="who">เจตนารมณ์ประชาชน + ความสามารถปกครองตนเองด้านรายได้ + จำนวน/ความหนาแน่นประชากร + พื้นที่รับผิดชอบ</span></li>
+        <li><span class="num">ม.250 วรรค 1</span>: อปท.มีหน้าที่จัดบริการสาธารณะ/กิจกรรมสาธารณะเพื่อประโยชน์ประชาชนในท้องถิ่น ตามหลักการพัฒนาอย่างยั่งยืน — <span class="trapw">ไม่ใช่คิดถึงการหารายได้อย่างเดียว</span></li>
+        <li><span class="num">ม.250 วรรค 2</span>: บริการสาธารณะที่สมควรให้เป็นหน้าที่เฉพาะของ อปท.แต่ละรูปแบบ ให้เป็นไปตามกฎหมาย สอดคล้องรายได้ท้องถิ่น + ต้องกำหนดขั้นตอนกระจายอำนาจ งบประมาณ บุคลากร</li>
+        <li><span class="num">ม.250 วรรค 4</span>: รัฐต้องทำให้ อปท.มี<span class="key">รายได้ของตนเองเพียงพอ</span></li>
+        <li><span class="num">ม.250 วรรค 5</span>: อปท.ต้องมี<span class="key">อิสระ</span>ในการบริหาร/บริการสาธารณะ/การเงินการคลัง — การกำกับดูแล อปท.ทำเพียงเท่าที่จำเป็นเพื่อคุ้มครองประโยชน์ท้องถิ่น/ประเทศ/ป้องกันทุจริต/ใช้จ่ายมีประสิทธิภาพ</li>
+        <li><span class="num">ม.251</span>: การบริหารงานบุคคลของ อปท. ให้เป็นไปตามกฎหมาย</li>
+        <li><span class="num">ม.252 วรรค 1</span>: <span class="key">สมาชิกสภาท้องถิ่นต้องมาจากการเลือกตั้ง</span></li>
+        <li><span class="num">ม.252 วรรค 2</span>: ผู้บริหารท้องถิ่นมาจาก<span class="key">การเลือกตั้ง หรือความเห็นชอบของสภาท้องถิ่น หรือวิธีอื่น</span>ตามกฎหมาย (สำหรับ อปท.รูปแบบพิเศษ) — วิธีอื่นต้องคำนึงถึงการมีส่วนร่วมของประชาชนด้วย</li>
+        <li><span class="num">ม.253</span>: สภาท้องถิ่น+ผู้บริหารท้องถิ่นต้องเปิดเผยข้อมูล และให้ประชาชนมีส่วนร่วมตามที่กฎหมายบัญญัติ</li>
+        <li><span class="num">ม.254</span>: ประชาชนผู้มีสิทธิเลือกตั้งท้องถิ่นมีสิทธิ<span class="key">เข้าชื่อกันเสนอข้อบัญญัติ หรือถอดถอนสมาชิกสภาท้องถิ่น/ผู้บริหารท้องถิ่น</span>ได้ตามกฎหมาย</li>
+      </ol>
+      <div class="trap"><b>กับดักจำคู่ "สมาชิกสภา vs ผู้บริหาร":</b> <span class="trapw">สมาชิกสภาท้องถิ่น</span> (ม.252 วรรค 1) <b>ต้อง</b>มาจากการเลือกตั้งเท่านั้น — ไม่มีข้อยกเว้น แต่ <span class="trapw">ผู้บริหารท้องถิ่น</span> (ม.252 วรรค 2) มี<b>ทางเลือก 3 ทาง</b>: เลือกตั้ง / ความเห็นชอบของสภาท้องถิ่น / วิธีอื่น (เฉพาะรูปแบบพิเศษ เช่น กรุงเทพมหานคร, เมืองพัทยา) ข้อสอบชอบถามสลับว่า "สมาชิกสภาท้องถิ่นมาจากวิธีอื่นได้หรือไม่" — <b>คำตอบคือไม่ได้ ต้องเลือกตั้งเท่านั้น</b> ต่างจากผู้บริหารท้องถิ่นที่มีทางเลือก</div>
+      <div class="trap2"><b>กับดักคำว่า "อิสระ" vs "กำกับดูแล":</b> ม.250 วรรค 5 ให้ อปท. "มีอิสระ" ในการบริหาร แต่ในวรรคเดียวกันก็ให้รัฐ "กำกับดูแล" ได้ — ข้อสอบมักทำให้ดูเหมือนขัดแย้งกัน ความจริงคือ <b>อิสระ + กำกับดูแลเท่าที่จำเป็น</b> ไปด้วยกันได้ ไม่ใช่อิสระแบบไม่มีการกำกับเลย เกณฑ์การกำกับ 3 อย่าง: (1) คุ้มครองประโยชน์ท้องถิ่น/ประเทศ (2) ป้องกันทุจริต (3) ใช้จ่ายเงินมีประสิทธิภาพ</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักเล่นคำ:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"ผู้บริหารองค์กรปกครองส่วนท้องถิ่นรูปแบบพิเศษ (เช่น กรุงเทพมหานคร) อาจมาจากวิธีใดได้บ้างตามมาตรา 252?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">ต้องมาจากการเลือกตั้งโดยตรงเท่านั้น เช่นเดียวกับสมาชิกสภาท้องถิ่น</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">เลือกตั้ง หรือความเห็นชอบของสภาท้องถิ่น หรือวิธีอื่นตามกฎหมาย โดยต้องคำนึงถึงการมีส่วนร่วมของประชาชน</div>
+        <div class="qexp">✅ ถูกต้อง! ม.252 วรรค 2 เปิดช่องให้ "วิธีอื่น" สำหรับ อปท.รูปแบบพิเศษ ต่างจากสมาชิกสภาท้องถิ่น (วรรค 1) ที่ต้องมาจากการเลือกตั้งเท่านั้นไม่มีข้อยกเว้น</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="section-divider">━━━ หมวด 15-16 + บทเฉพาะกาล ━━━</div>
+
+  <div class="card" id="r1_15">
+    <div class="head" onclick="toggle('r1_15')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ม.255-279</span>
+      <span class="title">หมวด 15 แก้ไขรัฐธรรมนูญ + หมวด 16 ปฏิรูปประเทศ + บทเฉพาะกาล</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>หมวด 15 (ม.255-256):</b> ห้ามแก้ไขเพื่อเปลี่ยนระบอบประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข หรือเปลี่ยนรูปแบบรัฐ — เสนอแก้ไขโดยสมาชิกรัฐสภา/ครม./ประชาชนไม่น้อยกว่า <span class="num">50,000 คน</span> — กรณีแก้หมวด 1, 2, 15 หรือเรื่องคุณสมบัติผู้ดำรงตำแหน่ง/อำนาจศาล-องค์กรอิสระ ต้อง<span class="key">ทำประชามติ</span></p>
+      <p><b>หมวด 16 (ม.257-261):</b> ต้องปฏิรูปประเทศด้าน<span class="who">การเมือง/บริหารราชการแผ่นดิน/กฎหมาย/กระบวนการยุติธรรม(รวมตำรวจ)/การศึกษา/เศรษฐกิจ/อื่นที่จำเป็น</span> — ต้องมีกฎหมายว่าด้วยแผนและขั้นตอนปฏิรูปภายใน <span class="num">120 วัน</span> นับแต่ประกาศใช้รัฐธรรมนูญ เริ่มปฏิรูปแต่ละด้านภายใน <span class="num">1 ปี</span> ผลสัมฤทธิ์คาดหวังใน <span class="num">5 ปี</span></p>
+      <p><b>บทเฉพาะกาล (ม.262-279):</b> ส.ว.ชุดแรกมาจากการคัดเลือกของ คสช. รวม <span class="num">250 คน</span> อยู่ในตำแหน่ง <span class="num">5 ปี</span> มีหน้าที่พิเศษติดตาม/เร่งรัดการปฏิรูปประเทศ — <span class="link">มาตรา 275</span> ให้ ครม.จัดให้มีกฎหมายตามมาตรา 65 (ยุทธศาสตร์ชาติ) ภายในกำหนดเวลา</p>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#1E3A8A;color:#1E3A8A;">✅ สรุปกับดักรวมแท็บ 1</div>
+  <div class="card" id="r1_summary">
+    <div class="head" onclick="toggle('r1_summary')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">รวมกับดัก</span>
+      <span class="title">10 กับดักเล่นคำที่ออกสอบบ่อยที่สุดในรัฐธรรมนูญ 2560</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ol>
+        <li>หมวด 4 (หน้าที่ปวงชน = <b>10 ข้อ</b>, ม.50 เดียว) ≠ หมวด 5 (หน้าที่รัฐ = <b>17 ข้อ</b>, ม.51-63)</li>
+        <li>การศึกษาภาคบังคับฟรี = <b>อนุบาล 1 ถึง ม.3</b> (ไม่ใช่ ป.1-ม.6)</li>
+        <li>ส.ส. = <b>500</b> (400 เขต+100 บัญชี) | ส.ว.ถาวร = <b>200</b> | ส.ว.ชุดแรกเฉพาะกาล = <b>250</b></li>
+        <li>องค์กรอิสระมี <b>5 องค์กร</b> เท่านั้น — อัยการและศาลรัฐธรรมนูญไม่นับรวม</li>
+        <li>สมาชิกสภาท้องถิ่น <b>ต้อง</b>มาจากเลือกตั้งเท่านั้น | ผู้บริหารท้องถิ่นมี <b>3 ทางเลือก</b></li>
+        <li>ม.65 (ยุทธศาสตร์ชาติ) ≠ ม.275 (สั่งให้ออกกฎหมายลูกตาม ม.65 ในบทเฉพาะกาล)</li>
+        <li>หมวด 6 ใช้คำว่า "พึง" = แนวนโยบาย ไม่ใช่สิทธิฟ้องร้องได้ทันทีแบบหมวด 3</li>
+        <li>ตุลาการศาลรัฐธรรมนูญ <b>9 คน</b> วาระ <b>7 ปี</b> วาระเดียว (ไม่ใช่ต่อวาระได้)</li>
+        <li>แก้ไข ม.หมวด 1/2/15 หรือคุณสมบัติผู้ดำรงตำแหน่ง ต้องทำ<b>ประชามติ</b> — ไม่ใช่รัฐสภาลงมติเฉย ๆ</li>
+        <li>การปฏิรูปประเทศ: กฎหมายภายใน <b>120 วัน</b> | เริ่มปฏิรูปภายใน <b>1 ปี</b> | ผลสัมฤทธิ์ใน <b>5 ปี</b> — เลขสามชุดนี้มักถูกสลับกัน</li>
+      </ol>
+    </div></div>
+  </div>
+
+</div>
+<!-- END TAB 1 (Constitution 2560 complete) -->
+
+<!-- ============ TAB 2: ยุทธศาสตร์ชาติ 20 ปี ============ -->
+<div class="page" id="page2">
+  <div class="hero" data-c="2">
+    <h1>🎯 ยุทธศาสตร์ชาติ (พ.ศ. 2561 - 2580)</h1>
+    <p>ยุทธศาสตร์ชาติฉบับแรกของไทยตามรัฐธรรมนูญ — กรอบใหญ่ 20 ปี ที่ทุกแผนต้องสอดคล้อง</p>
+    <div class="badges">
+      <span class="badge">6 ยุทธศาสตร์</span>
+      <span class="badge">ประกาศ 13 ต.ค. 2561</span>
+      <span class="badge">วิสัยทัศน์ "มั่นคง มั่งคั่ง ยั่งยืน"</span>
+      <span class="badge">~2-3 ชม.</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="lg num">เลข/จำนวน</span>
+    <span class="lg who">ใคร/หน่วยงาน</span>
+    <span class="lg key">หลักการ/คำสำคัญ</span>
+    <span class="lg link">เชื่อมเอกสารอื่น</span>
+    <span class="lg trapw">กับดักข้อสอบ</span>
+  </div>
+
+  <div class="note"><b>สถานะทางกฎหมาย:</b> ยุทธศาสตร์ชาติเกิดจาก<span class="link">รัฐธรรมนูญ ม.65</span> + <span class="link">พ.ร.บ.การจัดทำยุทธศาสตร์ชาติ พ.ศ.2560</span> — คณะกรรมการยุทธศาสตร์ชาติจัดทำร่าง → ครม.เห็นชอบ (5 มิ.ย.2561) → สนช.ลงมติเห็นชอบ (6 ก.ค.2561) → นายกฯ นำขึ้นทูลเกล้าฯ → ประกาศใช้ <span class="key">13 ต.ค. 2561</span> โดย<span class="who">พลเอกประยุทธ์ จันทร์โอชา</span> เป็นผู้รับสนองพระราชโองการ — นี่คือ "<span class="key">แผนระดับที่ 1</span>" ของประเทศ</div>
+
+  <div class="card" id="r2_vision">
+    <div class="head" onclick="toggle('r2_vision')">
+      <span class="tag" style="background:#FEF3C7;color:#92400E">วิสัยทัศน์</span>
+      <span class="title">วิสัยทัศน์ "มั่นคง มั่งคั่ง ยั่งยืน" + เป้าหมาย 6 ด้านในการประเมินผล</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="trap" style="border-left-color:#92400E;background:#FFFBEB;"><b style="color:#92400E">วิสัยทัศน์เต็ม:</b> "<span class="key">ประเทศไทยมีความมั่นคง มั่งคั่ง ยั่งยืน เป็นประเทศพัฒนาแล้ว ด้วยการพัฒนาตามหลักปรัชญาของเศรษฐกิจพอเพียง</span>" — คติพจน์ประจำชาติย่อว่า "<b>มั่นคง มั่งคั่ง ยั่งยืน</b>"</div>
+      <p><b>คำนิยาม 3 คำหลัก (ข้อสอบชอบให้จับคู่นิยามผิด):</b></p>
+      <table class="cmp small">
+        <tr><th>คำ</th><th>นิยามหลัก</th></tr>
+        <tr><td><span class="key">มั่นคง</span></td><td>ปลอดภัยจากภัย/การเปลี่ยนแปลงทุกระดับ ทุกมิติ (ทหาร เศรษฐกิจ สังคม สิ่งแวดล้อม การเมือง) — เอกราช อธิปไตย สถาบันหลักเข้มแข็ง</td></tr>
+        <tr><td><span class="key">มั่งคั่ง</span></td><td>เศรษฐกิจขยายตัวต่อเนื่องยั่งยืน เข้าสู่กลุ่มประเทศรายได้สูง ความเหลื่อมล้ำลดลง มีความสมบูรณ์ของทุน 5 ประเภท: <span class="trapw">มนุษย์/ปัญญา/การเงิน/เครื่องมือเครื่องจักร/สังคม+ทรัพยากรธรรมชาติ</span></td></tr>
+        <tr><td><span class="key">ยั่งยืน</span></td><td>เจริญเติบโตบนหลักรักษา/ฟื้นฟูทรัพยากรธรรมชาติอย่างยั่งยืน ไม่ใช้เกินพอดี ไม่สร้างมลภาวะเกินขีดรองรับของระบบนิเวศ สอดคล้อง SDGs</td></tr>
+      </table>
+      <p><b>เป้าหมายการพัฒนาประเทศ:</b> "ประเทศชาติมั่นคง ประชาชนมีความสุข เศรษฐกิจพัฒนาอย่างต่อเนื่อง สังคมเป็นธรรม ฐานทรัพยากรธรรมชาติยั่งยืน" — ประเมินผล 6 ด้าน:</p>
+      <ol>
+        <li>ความอยู่ดีมีสุขของคนไทยและสังคมไทย</li>
+        <li>ขีดความสามารถในการแข่งขัน การพัฒนาเศรษฐกิจ และการกระจายรายได้</li>
+        <li>การพัฒนาทรัพยากรมนุษย์ของประเทศ</li>
+        <li>ความเท่าเทียมและความเสมอภาคของสังคม</li>
+        <li>ความหลากหลายทางชีวภาพ คุณภาพสิ่งแวดล้อม และความยั่งยืนของทรัพยากรธรรมชาติ</li>
+        <li>ประสิทธิภาพการบริหารจัดการและการเข้าถึงการให้บริการของภาครัฐ</li>
+      </ol>
+      <div class="trap2"><b>กับดักนับจำนวนทุน:</b> "ความมั่งคั่ง" มีทุน <span class="trapw">5 ประเภท</span> (มนุษย์/ปัญญา/การเงิน/เครื่องมือเครื่องจักร/สังคม) — แต่บางคนจำสลับไปนับรวมกับ "ทุนทรัพยากรธรรมชาติและสิ่งแวดล้อม" เป็นข้อที่ 6 จริง ๆ เอกสารต้นฉบับระบุว่า "<i>ทุนมนุษย์ ทุนทางปัญญา ทุนทางการเงิน ทุนที่เป็นเครื่องมือเครื่องจักร ทุนทางสังคม และทุนทรัพยากรธรรมชาติและสิ่งแวดล้อม</i>" รวมเป็น <b>6 ทุน</b> — ตัวเลขนี้มักออกสอบแบบขอให้นับให้ถูก</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r2_overview">
+    <div class="head" onclick="toggle('r2_overview')">
+      <span class="tag" style="background:#FEF3C7;color:#92400E">ภาพรวม</span>
+      <span class="title">ตารางสรุป 6 ยุทธศาสตร์ — จำคู่ "ลำดับ ↔ ชื่อ ↔ เป้าหมายหลัก"</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="scrollwrap">
+        <table class="cmp">
+          <tr><th>#</th><th>ยุทธศาสตร์</th><th>เป้าหมายหลักภาพรวม 20 ปี</th></tr>
+          <tr><td>1</td><td><span class="who">ความมั่นคง</span></td><td><span class="key">"ประเทศชาติมั่นคง ประชาชนมีความสุข"</span> — บริหารสภาวะแวดล้อมประเทศให้มั่นคงปลอดภัยทุกระดับ</td></tr>
+          <tr><td>2</td><td><span class="who">การสร้างความสามารถในการแข่งขัน</span></td><td>ยกระดับศักยภาพประเทศบนแนวคิด 3 ข้อ: <span class="trapw">ต่อยอดอดีต / ปรับปัจจุบัน / สร้างคุณค่าใหม่ในอนาคต</span></td></tr>
+          <tr><td>3</td><td><span class="who">การพัฒนาและเสริมสร้างศักยภาพทรัพยากรมนุษย์</span></td><td>คนไทยทุกช่วงวัยเป็น <span class="trapw">"คนดี เก่ง มีคุณภาพ"</span> พร้อมศตวรรษที่ 21</td></tr>
+          <tr><td>4</td><td><span class="who">การสร้างโอกาสและความเสมอภาคทางสังคม</span></td><td>ลดความเหลื่อมล้ำ กระจายศูนย์กลางความเจริญ เสริมพลังชุมชนท้องถิ่น</td></tr>
+          <tr><td>5</td><td><span class="who">การสร้างการเติบโตบนคุณภาพชีวิตที่เป็นมิตรกับสิ่งแวดล้อม</span></td><td>สมดุล 3 ด้าน: เศรษฐกิจ-สิ่งแวดล้อม-คุณภาพชีวิต ("เติบโต สมดุล ยั่งยืน")</td></tr>
+          <tr><td>6</td><td><span class="who">การปรับสมดุลและพัฒนาระบบบริหารจัดการภาครัฐ</span></td><td><span class="key">"ภาครัฐของประชาชน เพื่อประชาชนและประโยชน์ส่วนรวม"</span></td></tr>
+        </table>
+      </div>
+      <div class="trap"><b>กับดักจำลำดับ:</b> ข้อสอบบางครั้งสลับชื่อยุทธศาสตร์ 2 กับ 3 — <span class="trapw">ยุทธศาสตร์ที่ 2 = ความสามารถในการแข่งขัน (เศรษฐกิจ)</span> ส่วน <span class="trapw">ยุทธศาสตร์ที่ 3 = ทรัพยากรมนุษย์ (คน)</span> และมักจะถามต่อว่ายุทธศาสตร์ใด "ไม่มี" คำว่า "การสร้าง" ในชื่อ — <b>คำตอบคือยุทธศาสตร์ที่ 1 (ความมั่นคง) และที่ 6 (การปรับสมดุลฯ)</b> ไม่ได้ขึ้นต้นด้วย "การสร้าง" ต่างจากยุทธศาสตร์ 2,3,4,5 ที่ขึ้นต้นด้วย "การสร้าง..."</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักเล่นคำ:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"ยุทธศาสตร์ชาติข้อใดต่อไปนี้ที่ชื่อเต็มไม่มีคำว่า 'การสร้าง' นำหน้า?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">การสร้างความสามารถในการแข่งขัน</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">การปรับสมดุลและพัฒนาระบบการบริหารจัดการภาครัฐ</div>
+        <div class="qexp">✅ ถูกต้อง! ยุทธศาสตร์ 2,3,4,5 ใช้คำว่า "การสร้าง..." นำหน้า แต่ยุทธศาสตร์ที่ 1 (ความมั่นคง) และที่ 6 (การปรับสมดุลฯ) ไม่ได้ใช้คำนี้นำหน้า เป็นจุดสังเกตชื่อที่ข้อสอบชอบเอามาถาม</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#B45309;color:#B45309;">🛡️ ยุทธศาสตร์ที่ 1 ด้านความมั่นคง</div>
+
+  <div class="card" id="r2_s1">
+    <div class="head" onclick="toggle('r2_s1')">
+      <span class="tag" style="background:#FEF3C7;color:#92400E">เป้า/ตัวชี้วัด</span>
+      <span class="title">เป้าหมาย 5 + ตัวชี้วัด 5 + ประเด็นยุทธศาสตร์ 5 ข้อ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><span class="key">"ความมั่นคงแบบองค์รวม"</span> ครอบคลุมระดับชาติ-สังคม-ชุมชน-มนุษย์ ทุกมิติ (ทหาร/เศรษฐกิจ/สังคม/สิ่งแวดล้อม/การเมือง)</p>
+      <p><b>เป้าหมาย 5 ข้อ:</b></p>
+      <ol>
+        <li>ประชาชนอยู่ดีกินดีและมีความสุข</li>
+        <li>บ้านเมืองมีความมั่นคงในทุกมิติและทุกระดับ</li>
+        <li>กองทัพ หน่วยงานความมั่นคง ภาครัฐ ภาคเอกชน ภาคประชาชน มีความพร้อมป้องกัน/แก้ไขปัญหา</li>
+        <li>ไทยมีบทบาทด้านความมั่นคงเป็นที่ชื่นชม/ยอมรับโดยประชาคมระหว่างประเทศ</li>
+        <li>การบริหารจัดการความมั่นคงมีผลสำเร็จที่เป็นรูปธรรมอย่างมีประสิทธิภาพ</li>
+      </ol>
+      <p><b>ประเด็นยุทธศาสตร์ 5 ข้อ (ฉบับดั้งเดิม 2561):</b></p>
+      <ol>
+        <li><span class="who">การรักษาความสงบภายในประเทศ</span> — 4 หัวข้อย่อย: พัฒนาคนทุกภาคส่วน / เสริมสร้างความจงรักภักดีต่อสถาบันหลัก / พัฒนาการเมืองในระบอบประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข / กลไกป้องกันขจัดสาเหตุปัญหาความมั่นคง</li>
+        <li><span class="who">การป้องกันและแก้ไขปัญหาที่มีผลกระทบต่อความมั่นคง</span> — แก้ไขปัจจุบัน / เฝ้าระวังปัญหาใหม่ / จังหวัดชายแดนภาคใต้ / ทรัพยากรธรรมชาติบกและทะเล</li>
+        <li><span class="who">การพัฒนาศักยภาพของประเทศให้พร้อมเผชิญภัยคุกคาม</span> — ข่าวกรองแห่งชาติ / ผนึกพลังอำนาจแห่งชาติ / ระบบเตรียมพร้อมแห่งชาติ</li>
+        <li><span class="who">การบูรณาการความร่วมมือด้านความมั่นคงกับอาเซียนและนานาชาติ</span></li>
+        <li><span class="who">การพัฒนากลไกการบริหารจัดการความมั่นคงแบบองค์รวม</span> — เช่น กอ.รมน., ศรชล., สมช.</li>
+      </ol>
+      <div class="note"><b>คำสำคัญที่ออกสอบ:</b> ยุทธศาสตร์ศักดิ์พระราชทาน "<span class="trapw">เข้าใจ เข้าถึง พัฒนา</span>" ใช้ในการแก้ปัญหาจังหวัดชายแดนภาคใต้</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#B45309;color:#B45309;">🚀 ยุทธศาสตร์ที่ 2 การสร้างความสามารถในการแข่งขัน</div>
+
+  <div class="card" id="r2_s2">
+    <div class="head" onclick="toggle('r2_s2')">
+      <span class="tag" style="background:#FEF3C7;color:#92400E">3 แนวคิด + 5 ประเด็น</span>
+      <span class="title">ต่อยอดอดีต/ปรับปัจจุบัน/สร้างคุณค่าใหม่ + 5 ประเด็นยุทธศาสตร์</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>พื้นฐานแนวคิด 3 ประการ (ออกสอบบ่อยมาก เพราะใช้ซ้ำในแผนแม่บทด้วย):</b></p>
+      <table class="cmp">
+        <tr><th>แนวคิด</th><th>ความหมาย</th></tr>
+        <tr><td><span class="trapw">(1) ต่อยอดอดีต</span></td><td>มองรากเหง้าเศรษฐกิจ อัตลักษณ์วัฒนธรรม ทรัพยากรธรรมชาติ ผสมเทคโนโลยี/นวัตกรรม</td></tr>
+        <tr><td><span class="trapw">(2) ปรับปัจจุบัน</span></td><td>พัฒนาโครงสร้างพื้นฐาน(คมนาคม วิทยาศาสตร์ เทคโนโลยี ดิจิทัล) ปูทางสู่อนาคต</td></tr>
+        <tr><td><span class="trapw">(3) สร้างคุณค่าใหม่ในอนาคต</span></td><td>เพิ่มศักยภาพผู้ประกอบการ พัฒนาคนรุ่นใหม่ ปรับโมเดลธุรกิจ</td></tr>
+      </table>
+      <p><b>เป้าหมาย 2 ข้อ:</b> (1) ไทยเป็นประเทศพัฒนาแล้ว เศรษฐกิจเติบโตมีเสถียรภาพและยั่งยืน (2) ไทยมีขีดความสามารถในการแข่งขันสูงขึ้น</p>
+      <p><b>5 ประเด็นยุทธศาสตร์:</b></p>
+      <ol>
+        <li><span class="who">การเกษตรสร้างมูลค่า</span> — 5 ประเภท: เกษตรอัตลักษณ์พื้นถิ่น / เกษตรปลอดภัย / เกษตรชีวภาพ / เกษตรแปรรูป / เกษตรอัจฉริยะ</li>
+        <li><span class="who">อุตสาหกรรมและบริการแห่งอนาคต</span> — 5 ด้าน: ชีวภาพ / การแพทย์ครบวงจร / ดิจิทัล-ข้อมูล-AI / ขนส่งและโลจิสติกส์ / ความมั่นคงของประเทศ</li>
+        <li><span class="who">สร้างความหลากหลายด้านการท่องเที่ยว</span> — สร้างสรรค์วัฒนธรรม / เชิงธุรกิจ / สุขภาพ-ความงาม-แพทย์แผนไทย / สำราญทางน้ำ / เชื่อมโยงภูมิภาค</li>
+        <li><span class="who">โครงสร้างพื้นฐาน เชื่อมไทย เชื่อมโลก</span> — คมนาคมไร้รอยต่อ / เขตเศรษฐกิจพิเศษ / เพิ่มพื้นที่เมืองเศรษฐกิจ / เทคโนโลยีสมัยใหม่ / เสถียรภาพเศรษฐกิจมหภาค</li>
+        <li><span class="who">พัฒนาเศรษฐกิจบนพื้นฐานผู้ประกอบการยุคใหม่</span> — ผู้ประกอบการอัจฉริยะ / เข้าถึงการเงิน / เข้าถึงตลาด / เข้าถึงข้อมูล / ปรับบทบาทภาครัฐ</li>
+      </ol>
+      <div class="trap"><b>กับดักเล่นคำที่สุด:</b> 3 แนวคิดนี้ ("ต่อยอดอดีต / ปรับปัจจุบัน / สร้างคุณค่าใหม่") <span class="trapw">ปรากฏซ้ำคำต่อคำในแผนแม่บทประเด็น (04) อุตสาหกรรมและบริการแห่งอนาคต</span> ด้วย — ข้อสอบอาจถามว่า "แนวคิด 3 ข้อนี้อยู่ในยุทธศาสตร์ชาติด้านใด" บางทีก็ถูกทั้งคู่เพราะเป็นแนวคิดร่วม แต่<b>แหล่งกำเนิดดั้งเดิมคือยุทธศาสตร์ชาติด้านการสร้างความสามารถในการแข่งขัน</b></div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#B45309;color:#B45309;">👨‍👩‍👧 ยุทธศาสตร์ที่ 3 การพัฒนาและเสริมสร้างศักยภาพทรัพยากรมนุษย์</div>
+
+  <div class="card" id="r2_s3">
+    <div class="head" onclick="toggle('r2_s3')">
+      <span class="tag" style="background:#FEF3C7;color:#92400E">7 ประเด็น</span>
+      <span class="title">เป้าหมาย 2 + ตัวชี้วัด 3 + 7 ประเด็นยุทธศาสตร์</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>เป้าหมาย:</b> (1) คนไทยเป็นคนดีคนเก่ง มีคุณภาพ พร้อมศตวรรษที่ 21 (2) สังคมไทยมีสภาพแวดล้อมเอื้อต่อการพัฒนาคนตลอดช่วงชีวิต</p>
+      <p><b>7 ประเด็นยุทธศาสตร์:</b></p>
+      <ol>
+        <li><span class="who">การปรับเปลี่ยนค่านิยมและวัฒนธรรม</span> — ผ่าน "ครอบครัว ชุมชน ศาสนา การศึกษา สื่อ" (7 หัวข้อย่อย)</li>
+        <li><span class="who">การพัฒนาศักยภาพคนตลอดช่วงชีวิต</span> — ปฐมวัย/วัยเรียน-วัยรุ่น/วัยแรงงาน/วัยผู้สูงอายุ (4 ช่วงวัย)</li>
+        <li><span class="who">ปฏิรูปกระบวนการเรียนรู้ที่ตอบสนองศตวรรษที่ 21</span> — 7 หัวข้อย่อย รวมการเปลี่ยนบทบาทครู "จากครูสอน เป็นโค้ช"</li>
+        <li><span class="who">การตระหนักถึงพหุปัญญาของมนุษย์ที่หลากหลาย</span></li>
+        <li><span class="who">การเสริมสร้างให้คนไทยมีสุขภาวะที่ดี</span> ครอบคลุมกาย ใจ สติปัญญา สังคม</li>
+        <li><span class="who">การสร้างสภาพแวดล้อมที่เอื้อต่อการพัฒนาและเสริมสร้างศักยภาพทรัพยากรมนุษย์</span></li>
+        <li><span class="who">การเสริมสร้างศักยภาพการกีฬาในการสร้างคุณค่าทางสังคมและพัฒนาประเทศ</span></li>
+      </ol>
+      <div class="trap"><b>กับดักนับช่วงวัย:</b> ยุทธศาสตร์ชาติแบ่งช่วงวัยเป็น <span class="trapw">4 ช่วง</span> (ปฐมวัย/วัยเรียน-วัยรุ่น/วัยแรงงาน/วัยผู้สูงอายุ) — แต่<span class="key">แผนแม่บทประเด็น (11) ศักยภาพคนตลอดช่วงชีวิต</span> แบ่งละเอียดกว่าเป็น <span class="trapw">5 ช่วงวัย</span> (เพิ่มช่วงตั้งครรภ์/ปฐมวัยแยกจากกัน) — ข้อสอบอาจถามจำนวนช่วงวัยแล้วไม่บอกว่าอ้างอิงจากเอกสารไหน ต้องดูบริบทคำถามให้ดี</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#B45309;color:#B45309;">⚖️ ยุทธศาสตร์ที่ 4 การสร้างโอกาสและความเสมอภาคทางสังคม</div>
+
+  <div class="card" id="r2_s4">
+    <div class="head" onclick="toggle('r2_s4')">
+      <span class="tag" style="background:#FEF3C7;color:#92400E">4 ประเด็น</span>
+      <span class="title">เป้าหมาย 3 + 4 ประเด็นยุทธศาสตร์</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>เป้าหมาย 3 ข้อ:</b> (1) สร้างความเป็นธรรม ลดความเหลื่อมล้ำในทุกมิติ (2) กระจายศูนย์กลางความเจริญ เพิ่มโอกาสทุกภาคส่วน (3) เพิ่มขีดความสามารถชุมชนท้องถิ่นในการพัฒนา/พึ่งตนเอง/จัดการตนเอง</p>
+      <p><b>4 ประเด็นยุทธศาสตร์:</b></p>
+      <ol>
+        <li><span class="who">การลดความเหลื่อมล้ำ สร้างความเป็นธรรมในทุกมิติ</span> — 8 หัวข้อย่อย รวมปรับโครงสร้างเศรษฐกิจฐานราก, ปฏิรูประบบภาษี, กระจายถือครองที่ดิน, หลักประกันทางสังคม, เข้าถึงสาธารณสุข/การศึกษา/กระบวนการยุติธรรม</li>
+        <li><span class="who">การกระจายศูนย์กลางความเจริญทางเศรษฐกิจ สังคม และเทคโนโลยี</span></li>
+        <li><span class="who">การเสริมสร้างพลังทางสังคม</span> — รวมการรองรับสังคมสูงวัยอย่างมีคุณภาพ, ความเสมอภาคทางเพศ</li>
+        <li><span class="who">การเพิ่มขีดความสามารถของชุมชนท้องถิ่นในการพัฒนา การพึ่งตนเอง และการจัดการตนเอง</span></li>
+      </ol>
+      <div class="note"><b>คำสำคัญ:</b> "<span class="key">ประชารัฐ</span>" คือรูปแบบการมีส่วนร่วมที่เน้นในยุทธศาสตร์นี้ — ดึงพลังภาคเอกชน ประชาสังคม ชุมชนท้องถิ่นมาร่วมขับเคลื่อน</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#B45309;color:#B45309;">🌱 ยุทธศาสตร์ที่ 5 การสร้างการเติบโตบนคุณภาพชีวิตที่เป็นมิตรต่อสิ่งแวดล้อม</div>
+
+  <div class="card" id="r2_s5">
+    <div class="head" onclick="toggle('r2_s5')">
+      <span class="tag" style="background:#FEF3C7;color:#92400E">6 ประเด็น</span>
+      <span class="title">หลัก 3P (พอประมาณ-เหตุผล-ภูมิคุ้มกัน) + SDGs 17 + 6 ประเด็น</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="trap2"><b>หลักการ 3 ข้อ ("3 ห่วง 2 เงื่อนไข" แบบย่อ):</b> <span class="trapw">"มีความพอประมาณ มีเหตุผล มีภูมิคุ้มกัน"</span> + เป้าหมายการพัฒนาที่ยั่งยืน (SDGs) ทั้ง <span class="num">17 เป้าหมาย</span> เป็นกรอบแนวคิด</div>
+      <p><b>วิสัยทัศน์เฉพาะยุทธศาสตร์นี้:</b> "ไทยเป็นประเทศพัฒนาแล้วที่มีคุณภาพชีวิตและสิ่งแวดล้อมที่ดีที่สุดในอาเซียนภายในปี พ.ศ. <span class="num">2580</span>"</p>
+      <p><b>แนวคิดหลัก:</b> <span class="key">"เติบโต สมดุล ยั่งยืน"</span></p>
+      <p><b>6 ประเด็นยุทธศาสตร์:</b></p>
+      <ol>
+        <li>สร้างการเติบโตอย่างยั่งยืนบนสังคมเศรษฐกิจสีเขียว</li>
+        <li>สร้างการเติบโตอย่างยั่งยืนบนสังคมเศรษฐกิจภาคทะเล</li>
+        <li>สร้างการเติบโตอย่างยั่งยืนบนสังคมที่เป็นมิตรต่อสภาพภูมิอากาศ</li>
+        <li>พัฒนาพื้นที่เมือง ชนบท เกษตรกรรมและอุตสาหกรรมเชิงนิเวศ — สโลแกน <span class="trapw">"เมืองน่าอยู่ ชนบทมั่นคง เกษตรยั่งยืน อุตสาหกรรมเชิงนิเวศ"</span></li>
+        <li>พัฒนาความมั่นคงน้ำ พลังงาน และเกษตรที่เป็นมิตรต่อสิ่งแวดล้อม</li>
+        <li>ยกระดับกระบวนทัศน์เพื่อกำหนดอนาคตประเทศ</li>
+      </ol>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#B45309;color:#B45309;">🏛️ ยุทธศาสตร์ที่ 6 การปรับสมดุลและพัฒนาระบบการบริหารจัดการภาครัฐ ⭐</div>
+
+  <div class="card" id="r2_s6">
+    <div class="head" onclick="toggle('r2_s6')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">8 ประเด็น ⭐</span>
+      <span class="title">สำคัญสุดสำหรับสายปลัดอำเภอ — 8 ประเด็นยุทธศาสตร์</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>หลักการ:</b> "<span class="key">ภาครัฐของประชาชน เพื่อประชาชนและประโยชน์ส่วนรวม</span>" — ภาครัฐต้องมีขนาดเหมาะสมกับภารกิจ แยกแยะบทบาทกำกับ vs ให้บริการ มีขีดสมรรถนะสูง ยึดหลักธรรมาภิบาล</p>
+      <p><b>เป้าหมาย 4 ข้อ:</b></p>
+      <ol>
+        <li>ภาครัฐมีวัฒนธรรมการทำงานที่มุ่งผลสัมฤทธิ์และผลประโยชน์ส่วนรวม ตอบสนองประชาชนสะดวก รวดเร็ว โปร่งใส</li>
+        <li>ภาครัฐมีขนาดที่เล็กลง พร้อมปรับตัวให้ทันต่อการเปลี่ยนแปลง</li>
+        <li>ภาครัฐมีความโปร่งใส ปลอดการทุจริตและประพฤติมิชอบ</li>
+        <li>กระบวนการยุติธรรมเป็นไปเพื่อประโยชน์ต่อส่วนรวมของประเทศ</li>
+      </ol>
+      <p><b>8 ประเด็นยุทธศาสตร์ (ครบทุกข้อ — ออกสอบบ่อยที่สุดในแอปนี้):</b></p>
+      <ol>
+        <li><span class="who">ภาครัฐที่ยึดประชาชนเป็นศูนย์กลาง</span> ตอบสนองความต้องการ ให้บริการสะดวกรวดเร็วโปร่งใส</li>
+        <li><span class="who">ภาครัฐบริหารงานแบบบูรณาการ</span>โดยมียุทธศาสตร์ชาติเป็นเป้าหมาย เชื่อมโยงทุกระดับ ทุกประเด็น ทุกภารกิจ ทุกพื้นที่</li>
+        <li><span class="who">ภาครัฐมีขนาดเล็กลง เหมาะสมกับภารกิจ</span> ส่งเสริมการมีส่วนร่วม — รวมการกระจายอำนาจสู่ อปท.</li>
+        <li><span class="who">ภาครัฐมีความทันสมัย ทันการเปลี่ยนแปลง มีขีดสมรรถนะสูง</span></li>
+        <li><span class="who">บุคลากรภาครัฐเป็นคนดีและเก่ง</span> ยึดหลักคุณธรรม จริยธรรม มีจิตสำนึก มุ่งมั่น มืออาชีพ</li>
+        <li><span class="who">ภาครัฐมีความโปร่งใส ปลอดการทุจริตและประพฤติมิชอบ</span></li>
+        <li><span class="who">กฎหมายมีความสอดคล้องเหมาะสมกับบริบทต่าง ๆ และมีเท่าที่จำเป็น</span></li>
+        <li><span class="who">กระบวนการยุติธรรมเคารพสิทธิมนุษยชนและปฏิบัติต่อประชาชนโดยเสมอภาค</span></li>
+      </ol>
+      <div class="trap"><b>กับดักจำเลขประเด็น:</b> ยุทธศาสตร์ที่ 6 มี <span class="trapw">8 ประเด็นยุทธศาสตร์</span> — มากที่สุดในบรรดา 6 ยุทธศาสตร์ (เทียบกับ ยศ.1=5, ยศ.2=5, ยศ.3=7, ยศ.4=4, ยศ.5=6) ข้อสอบมักถามว่า "ยุทธศาสตร์ใดมีประเด็นยุทธศาสตร์มากที่สุด" — <b>คำตอบคือยุทธศาสตร์ที่ 6 (8 ประเด็น)</b></div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบความจำเลข:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"ยุทธศาสตร์ชาติด้านใดมีจำนวนประเด็นยุทธศาสตร์ย่อยมากที่สุด?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">ยุทธศาสตร์ที่ 3 ด้านทรัพยากรมนุษย์ (7 ประเด็น)</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">ยุทธศาสตร์ที่ 6 ด้านการปรับสมดุลและพัฒนาระบบบริหารภาครัฐ (8 ประเด็น)</div>
+        <div class="qexp">✅ ถูกต้อง! ยุทธศาสตร์ที่ 6 มี 8 ประเด็นยุทธศาสตร์ มากกว่ายุทธศาสตร์ที่ 3 (7 ประเด็น) ซึ่งเป็นอันดับสอง — เป็นจุดที่ข้อสอบฮิตเอามาถามนับจำนวน</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#B45309;color:#B45309;">✅ สรุปกับดักรวมแท็บ 2</div>
+  <div class="card" id="r2_summary">
+    <div class="head" onclick="toggle('r2_summary')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">รวมกับดัก</span>
+      <span class="title">8 กับดักเล่นคำที่ออกสอบบ่อยในยุทธศาสตร์ชาติ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ol>
+        <li>วิสัยทัศน์เต็มต้องมีคำว่า <b>"...ด้วยการพัฒนาตามหลักปรัชญาของเศรษฐกิจพอเพียง"</b> ต่อท้ายเสมอ — ข้อสอบชอบตัดท้อนนี้ออกเพื่อให้ดูสั้นกว่าความจริง</li>
+        <li>จำนวนประเด็นยุทธศาสตร์ย่อยแต่ละด้าน: <b>1=5, 2=5, 3=7, 4=4, 5=6, 6=8</b> — รวม 35 ประเด็น</li>
+        <li>ยุทธศาสตร์ 2,3,4,5 ขึ้นต้นด้วย <b>"การสร้าง..."</b> แต่ 1,6 ไม่ขึ้นต้นแบบนั้น</li>
+        <li>แนวคิด "ต่อยอดอดีต/ปรับปัจจุบัน/สร้างคุณค่าใหม่" เป็นของ<b>ยุทธศาสตร์ที่ 2</b> (ความสามารถแข่งขัน) แต่ถูกใช้ซ้ำในแผนแม่บทด้วย</li>
+        <li>หลัก "พอประมาณ-เหตุผล-ภูมิคุ้มกัน" เป็นของ<b>ยุทธศาสตร์ที่ 5</b> (สิ่งแวดล้อม) ไม่ใช่ยุทธศาสตร์ทรัพยากรมนุษย์</li>
+        <li>ยุทธศาสตร์พระราชทาน "เข้าใจ เข้าถึง พัฒนา" ใช้ในการแก้ปัญหาจังหวัดชายแดนภาคใต้ (ยุทธศาสตร์ที่ 1)</li>
+        <li>คำขวัญ "ภาครัฐของประชาชน เพื่อประชาชนและประโยชน์ส่วนรวม" เป็นของ<b>ยุทธศาสตร์ที่ 6</b> — ตรงกับเป้าหมายของยุทธศาสตร์ชาติโดยรวมด้วย ระมัดระวังว่าอาจเข้าใจผิดว่าเป็นวิสัยทัศน์รวมประเทศ</li>
+        <li>ยุทธศาสตร์ชาติประกาศใช้ <b>13 ตุลาคม 2561</b> — ไม่ใช่วันที่ ครม.เห็นชอบ (5 มิ.ย.) หรือวันที่ สนช.ลงมติ (6 ก.ค.) ซึ่งเป็นขั้นตอนก่อนหน้า</li>
+      </ol>
+    </div></div>
+  </div>
+
+</div>
+<!-- END TAB 2 -->
+
+<!-- ============ TAB 3: แผนแม่บทภายใต้ยุทธศาสตร์ชาติ ============ -->
+<div class="page" id="page3">
+  <div class="hero" data-c="3">
+    <h1>🗂️ แผนแม่บทภายใต้ยุทธศาสตร์ชาติ (พ.ศ. 2566-2580)</h1>
+    <p>ฉบับแก้ไขเพิ่มเติม — แผนระดับที่ 2 ที่ถ่ายทอดยุทธศาสตร์ชาติ 6 ด้านมาเป็น 23 ประเด็นปฏิบัติ</p>
+    <div class="badges">
+      <span class="badge">23 ประเด็น</span>
+      <span class="badge">ประกาศ 6 ก.พ. 2566</span>
+      <span class="badge">แผนระดับที่ 2</span>
+      <span class="badge">~2-3 ชม.</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="lg num">เลข/จำนวน</span>
+    <span class="lg who">ใคร/หน่วยงาน</span>
+    <span class="lg key">หลักการ/คำสำคัญ</span>
+    <span class="lg link">เชื่อมเอกสารอื่น</span>
+    <span class="lg trapw">กับดักข้อสอบ</span>
+  </div>
+
+  <div class="note"><b>สถานะทางกฎหมาย:</b> เป็นแผนแม่บทฉบับ<span class="key">แก้ไขเพิ่มเติม</span> — ฉบับเดิมประกาศใช้ 18 เม.ย. 2562 ส่วนฉบับแก้ไขเพิ่มเติมนี้ ครม.เห็นชอบ 17 ม.ค. 2566 ประกาศในราชกิจจานุเบกษา <span class="key">6 ก.พ. 2566 (7 มี.ค. 2566 ในไฟล์)</span> — <span class="trapw">ยังคงมี 23 ประเด็นเดิม ไม่เปลี่ยน</span> เป็น "<span class="link">แผนระดับที่ 2</span>" ที่<span class="key">ผลผูกพันให้ทุกหน่วยงานรัฐต้องแปลงไปสู่การปฏิบัติ</span> รวมถึงการจัดทำงบประมาณรายจ่ายประจำปีต้องสอดคล้องกับแผนแม่บทฯ</div>
+
+  <div class="card" id="r3_struct">
+    <div class="head" onclick="toggle('r3_struct')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">โครงสร้างเลข ⭐</span>
+      <span class="title">โครงสร้าง 3 ระดับ + ตัวเลขสำคัญที่ออกสอบบ่อยที่สุด</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>แผนแม่บทฯ มีองค์ประกอบหลัก <span class="num">2 ส่วน</span>:</p>
+      <ol>
+        <li><b>ระดับประเด็นของแผนแม่บทฯ</b> (เรียกรหัส <span class="key">Y2</span>): เป้าหมายระดับประเด็น</li>
+        <li><b>ระดับแผนย่อยของแผนแม่บทฯ</b> (เรียกรหัส <span class="key">Y1</span>): เป้าหมายแผนแม่บทย่อย</li>
+      </ol>
+      <div class="trap" style="border-left-color:#BE123C;"><b style="color:#BE123C">⭐ ตารางตัวเลขที่ต้องจำให้แม่นที่สุด (จุดออกสอบหมายเลข 1):</b>
+        <table class="cmp small" style="margin-top:8px;">
+          <tr><th>รายการ</th><th>ระดับ Y2 (ประเด็น)</th><th>ระดับ Y1 (แผนย่อย)</th></tr>
+          <tr><td>จำนวนเป้าหมาย</td><td><span class="trapw">37</span> เป้าหมาย</td><td><span class="trapw">140</span> เป้าหมาย</td></tr>
+          <tr><td>จำนวนตัวชี้วัด</td><td><span class="trapw">41</span> ตัว</td><td><span class="trapw">167</span> ตัว</td></tr>
+          <tr><td>จำนวนค่าเป้าหมาย</td><td><span class="trapw">41</span> ค่า</td><td><span class="trapw">172</span> ค่า</td></tr>
+        </table>
+      </div>
+      <p><b>หน่วยงานเจ้าภาพ 3 ระดับ:</b></p>
+      <ul>
+        <li><span class="who">จ.1</span> = หน่วยงานเจ้าภาพขับเคลื่อน<b>ประเด็น</b>แผนแม่บทฯ (สำหรับ 23 ประเด็น)</li>
+        <li><span class="who">จ.2</span> = หน่วยงานเจ้าภาพขับเคลื่อนเป้าหมาย<b>ระดับประเด็น</b> (สำหรับ 37 เป้าหมาย)</li>
+        <li><span class="who">จ.3</span> = หน่วยงานเจ้าภาพขับเคลื่อนเป้าหมาย<b>ระดับแผนย่อย</b> (สำหรับ 140 เป้าหมาย)</li>
+      </ul>
+      <p><b>ช่วงเวลาเป้าหมาย 3 ช่วง (ใช้ทุกประเด็น):</b> <span class="num">2566-2570</span> | <span class="num">2571-2575</span> | <span class="num">2576-2580</span></p>
+      <div class="trap2"><b>กับดักนับเลขซ้อนกัน:</b> ตัวเลข 37/41/41 (ระดับประเด็น) กับ 140/167/172 (ระดับแผนย่อย) มีรูปแบบคล้ายกันมาก — ระดับประเด็นมี<b>ตัวชี้วัดเท่ากับค่าเป้าหมาย (41=41)</b> เพราะ 1 ตัวชี้วัดมักมี 1 ค่าเป้าหมาย แต่ระดับแผนย่อย<b>ตัวชี้วัด (167) ≠ ค่าเป้าหมาย (172)</b> เพราะบางตัวชี้วัดมีมากกว่า 1 ค่าเป้าหมาย (เช่น แยกตามกลุ่มย่อย) ข้อสอบชอบเอาเลข 41 กับ 41 มาให้สลับ หรือเอา 167 ไปแทน 172</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบความจำเลข:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"แผนแม่บทภายใต้ยุทธศาสตร์ชาติ (ฉบับแก้ไขเพิ่มเติม) มีเป้าหมายระดับแผนแม่บทย่อย (Y1) จำนวนกี่เป้าหมาย?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">37 เป้าหมาย</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">140 เป้าหมาย</div>
+        <div class="qexp">✅ ถูกต้อง! 37 คือเป้าหมายระดับ<b>ประเด็น (Y2)</b> ส่วน 140 คือเป้าหมายระดับ<b>แผนย่อย (Y1)</b> — ตัวเลข 37 มักถูกใส่เป็นตัวลวงในคำถามเกี่ยวกับ Y1</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r3_3levels">
+    <div class="head" onclick="toggle('r3_3levels')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">3 แผนระดับชาติ</span>
+      <span class="title">ลำดับชั้นแผนระดับที่ 1-2-3 (แผนแม่บทฯ คือใครในห่วงโซ่นี้)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <table class="cmp">
+        <tr><th>ระดับ</th><th>ชื่อแผน</th><th>บทบาท</th></tr>
+        <tr><td><span class="num">ระดับ 1</span></td><td>ยุทธศาสตร์ชาติ</td><td>เป้าหมายใหญ่ 20 ปี</td></tr>
+        <tr><td rowspan="3"><span class="num">ระดับ 2</span></td><td><span class="trapw">แผนแม่บทภายใต้ยุทธศาสตร์ชาติ</span></td><td>ถ่ายเป้าหมาย/ประเด็นยุทธศาสตร์ 6 ด้าน → 23 ประเด็นปฏิบัติ</td></tr>
+        <tr><td>แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ (ฉบับที่ 13)</td><td>แผน 5 ปี กำหนดหมุดหมายเร่งด่วน</td></tr>
+        <tr><td>นโยบายและแผนระดับชาติว่าด้วยความมั่นคงแห่งชาติ</td><td>แผนด้านความมั่นคงเฉพาะทาง</td></tr>
+        <tr><td><span class="num">ระดับ 3</span></td><td>แผนปฏิบัติราชการ/แผนปฏิบัติการของหน่วยงาน</td><td>แผนปฎิบัติจริงระดับกรม/กระทรวง</td></tr>
+      </table>
+      <div class="trap"><b>กับดักจัดลำดับ:</b> แผนแม่บทภายใต้ยุทธศาสตร์ชาติ<span class="trapw">ไม่ได้อยู่คนเดียวในระดับ 2</span> — มีเพื่อนร่วมระดับอีก <span class="trapw">2 แผน</span> คือ แผนพัฒนาเศรษฐกิจฯ(ฉบับ13) และนโยบาย/แผนความมั่นคงแห่งชาติ ทั้ง 3 แผนนี้<b>มีศักดิ์เท่ากัน</b> เป็นแผนระดับ 2 ทั้งหมด ข้อสอบชอบถามว่า "แผนพัฒนาเศรษฐกิจฯฉบับ13 อยู่ระดับเดียวกับแผนแม่บทหรือไม่" — <b>คำตอบคือใช่ อยู่ระดับเดียวกัน (ระดับ 2) ไม่ใช่ระดับ 3</b></div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r3_list">
+    <div class="head" onclick="toggle('r3_list')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">รายชื่อครบ 23</span>
+      <span class="title">รายชื่อ 23 ประเด็นแผนแม่บทฯ ครบทุกข้อ (ต้องจำเลขคู่ชื่อ)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="scrollwrap">
+      <table class="cmp small">
+        <tr><th>#</th><th>ชื่อประเด็น</th><th>จุดเด่น</th></tr>
+        <tr><td>01</td><td>ความมั่นคง</td><td>5 แผนย่อย</td></tr>
+        <tr><td>02</td><td>การต่างประเทศ</td><td>5 แผนย่อย</td></tr>
+        <tr><td>03</td><td>การเกษตร</td><td>6 แผนย่อย (รวมระบบนิเวศเกษตร)</td></tr>
+        <tr><td>04</td><td>อุตสาหกรรมและบริการแห่งอนาคต</td><td>6 แผนย่อย</td></tr>
+        <tr><td>05</td><td>การท่องเที่ยว</td><td>5 แผนย่อย</td></tr>
+        <tr><td>06</td><td>พื้นที่และเมืองน่าอยู่อัจฉริยะ</td><td>2 แผนย่อย</td></tr>
+        <tr><td>07</td><td>โครงสร้างพื้นฐาน ระบบโลจิสติกส์ และดิจิทัล</td><td>3 แผนย่อย</td></tr>
+        <tr><td>08</td><td>ผู้ประกอบการและ SME ยุคใหม่</td><td>4 แผนย่อย</td></tr>
+        <tr><td>09</td><td>เขตเศรษฐกิจพิเศษ</td><td>3 แผนย่อย (EEC/ระเบียงเศรษฐกิจ/ชายแดน)</td></tr>
+        <tr><td>10</td><td>การปรับเปลี่ยนค่านิยมและวัฒนธรรม</td><td>3 แผนย่อย</td></tr>
+        <tr><td>11</td><td>การพัฒนาศักยภาพคนตลอดช่วงชีวิต</td><td>5 แผนย่อย (5 ช่วงวัย)</td></tr>
+        <tr><td>12</td><td>การพัฒนาการเรียนรู้</td><td>1 แผนย่อย</td></tr>
+        <tr><td>13</td><td>การเสริมสร้างให้คนไทยมีสุขภาวะที่ดี</td><td>4 แผนย่อย</td></tr>
+        <tr><td>14</td><td>ศักยภาพการกีฬา</td><td>3 แผนย่อย</td></tr>
+        <tr><td>15</td><td>พลังทางสังคม</td><td>2 แผนย่อย</td></tr>
+        <tr><td><span class="trapw">16</span></td><td><span class="trapw">เศรษฐกิจฐานราก</span></td><td><span class="trapw">มีเพียง 2 แผนย่อย — น้อยสุด</span></td></tr>
+        <tr><td>17</td><td>ความเสมอภาคและหลักประกันทางสังคม</td><td>2 แผนย่อย</td></tr>
+        <tr><td>18</td><td>การเติบโตอย่างยั่งยืน</td><td>4 แผนย่อย</td></tr>
+        <tr><td>19</td><td>การบริหารจัดการน้ำทั้งระบบ</td><td>3 แผนย่อย</td></tr>
+        <tr><td><span class="trapw">20</span></td><td><span class="trapw">การบริการประชาชนและประสิทธิภาพภาครัฐ</span></td><td><span class="trapw">⭐ สำคัญสุด — 5 แผนย่อย</span></td></tr>
+        <tr><td>21</td><td>การต่อต้านการทุจริตและประพฤติมิชอบ</td><td>2 แผนย่อย</td></tr>
+        <tr><td>22</td><td>กฎหมายและกระบวนการยุติธรรม</td><td>2 แผนย่อย</td></tr>
+        <tr><td>23</td><td>การวิจัยและพัฒนานวัตกรรม</td><td>3 แผนย่อย (เศรษฐกิจ/สังคม/สิ่งแวดล้อม)</td></tr>
+      </table>
+      </div>
+      <div class="trap"><b>กับดักจับคู่เลข-ชื่อผิด:</b> ประเด็นที่ตัวเลขใกล้เคียงกันแล้วชื่อคล้ายกันจนสับสนบ่อย: <span class="trapw">(11) ศักยภาพคนตลอดช่วงชีวิต</span> vs <span class="trapw">(13) สุขภาวะที่ดี</span> vs <span class="trapw">(14) ศักยภาพการกีฬา</span> — ทั้งสามพูดเรื่อง "คน" แต่คนละมุม ต้องแยกให้ออก: 11=พัฒนาตามช่วงวัย, 13=สุขภาพกาย-ใจ-สังคม, 14=กีฬาเพื่อสังคม/อาชีพ</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#166534;color:#166534;">ตัวอย่างเจาะลึก: ประเด็น (01) ความมั่นคง</div>
+
+  <div class="card" id="r3_p01">
+    <div class="head" onclick="toggle('r3_p01')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">5 แผนย่อย</span>
+      <span class="title">ประเด็น (01) ความมั่นคง — เป้าหมาย 2 + 5 แผนย่อย</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>เป้าหมายระดับประเด็น 2 ข้อ:</b> (1) ประเทศชาติมีความมั่นคงในทุกมิติและทุกระดับเพิ่มขึ้น (ตัวชี้วัด: ดัชนีสันติภาพโลก) (2) ประชาชนอยู่ดีกินดีมีความสุขดีขึ้น (ตัวชี้วัด: ดัชนีความสุขโลก)</p>
+      <p><b>5 แผนย่อย:</b></p>
+      <ol>
+        <li>การรักษาความสงบภายในประเทศ</li>
+        <li>การป้องกันและแก้ไขปัญหาที่มีผลกระทบต่อความมั่นคง — มี 16 แนวทางย่อย (มากสุดในประเด็นนี้) รวมยาเสพติด/ไซเบอร์/ค้ามนุษย์/ผู้หลบหนีเข้าเมือง/ชายแดนภาคใต้</li>
+        <li>การพัฒนาศักยภาพของประเทศให้พร้อมเผชิญภัยคุกคามที่กระทบต่อความมั่นคงของชาติ</li>
+        <li>การบูรณาการความร่วมมือด้านความมั่นคงกับอาเซียนและนานาชาติ</li>
+        <li>การพัฒนากลไกการบริหารจัดการความมั่นคงแบบองค์รวม — เกี่ยวข้องกับ สมช./กอ.รมน./ศรชล.</li>
+      </ol>
+      <div class="trap"><b>กับดักช่วงเวลาเป้าหมาย:</b> ประเด็นความมั่นคงกำหนดธีมเป้าหมายตามช่วงเวลาแบบมีสโลแกนต่างกัน: ช่วง <span class="num">2566-2570</span> = "<span class="trapw">ปัญหาเก่าหมดไป ปัญหาใหม่ไม่เกิด</span>" → ช่วง <span class="num">2571-2575</span> = "<span class="trapw">ประเทศชาติพัฒนา ปวงประชาร่วมผลักดัน</span>" → ช่วง <span class="num">2576-2580</span> = "<span class="trapw">ประเทศชาติมั่นคง ประชาชนมีความสุข</span>" — ข้อสอบอาจสลับลำดับ 3 สโลแกนนี้กัน ต้องจำว่าอันสุดท้ายตรงกับวิสัยทัศน์ยุทธศาสตร์ชาติด้านความมั่นคงพอดี</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#166534;color:#166534;">ตัวอย่างเจาะลึก: ประเด็น (16) เศรษฐกิจฐานราก</div>
+
+  <div class="card" id="r3_p16">
+    <div class="head" onclick="toggle('r3_p16')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">2 แผนย่อย</span>
+      <span class="title">ประเด็น (16) เศรษฐกิจฐานราก — แผนย่อยน้อยสุดในระบบ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>เป้าหมาย:</b> รายได้ของประชากรกลุ่มรายได้น้อยเพิ่มขึ้นอย่างกระจายและต่อเนื่อง (ตัวชี้วัด: ดัชนีความยากจนหลายมิติ ด้านความมั่นคงทางเศรษฐกิจ)</p>
+      <p><b>2 แผนย่อย (เป็นหนึ่งในประเด็นที่มีแผนย่อยน้อยที่สุด):</b></p>
+      <ol>
+        <li><span class="who">การยกระดับศักยภาพการเป็นผู้ประกอบการธุรกิจ</span> — เพิ่มความรู้/ทักษะให้เกษตรกร แรงงาน กลุ่มรายได้น้อย ให้เป็นผู้ประกอบการ + บริหารจัดการหนี้สิน</li>
+        <li><span class="who">การสร้างสภาพแวดล้อมและกลไกที่ส่งเสริมการพัฒนาเศรษฐกิจฐานราก</span> — ส่งเสริมการรวมกลุ่ม (วิสาหกิจชุมชน/สหกรณ์/วิสาหกิจเพื่อสังคม) + ช่องทางตลาด + เข้าถึงแหล่งทุน</li>
+      </ol>
+      <div class="note"><b>สถิติอ้างอิงจากเอกสาร:</b> ดัชนีความยากจนหลายมิติด้านความมั่นคงทางเศรษฐกิจ ปี 2564 อยู่ที่ <span class="num">0.0166</span> เพิ่มขึ้นจากปี 2562 ที่ <span class="num">0.0110</span> (เพิ่มขึ้น <span class="num">50.6%</span>)</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#166534;color:#166534;">ตัวอย่างเจาะลึก: ประเด็น (20) การบริการประชาชนและประสิทธิภาพภาครัฐ ⭐</div>
+
+  <div class="card" id="r3_p20">
+    <div class="head" onclick="toggle('r3_p20')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">5 แผนย่อย ⭐</span>
+      <span class="title">ประเด็น (20) — สำคัญสุดสำหรับสายปลัดอำเภอ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>เป้าหมายระดับประเด็น 2 ข้อ + ตัวชี้วัด:</b></p>
+      <table class="cmp small">
+        <tr><th>เป้าหมาย</th><th>ตัวชี้วัด</th><th>ค่าเป้าหมาย (2570/2575/2580)</th></tr>
+        <tr><td>บริการของรัฐมีประสิทธิภาพและคุณภาพเป็นที่ยอมรับ</td><td>ความพึงพอใจในคุณภาพบริการภาครัฐ (%)</td><td>≥90 / ≥95 / ≥95</td></tr>
+        <tr><td>ภาครัฐมีการดำเนินที่มีประสิทธิภาพด้วยนวัตกรรม</td><td>ดัชนีรัฐบาลอิเล็กทรอนิกส์ (อันดับโลก)</td><td>≤50 / ≤40 / ≤30</td></tr>
+      </table>
+      <p><b>5 แผนย่อย (ครบทุกข้อ):</b></p>
+      <ol>
+        <li><span class="who">การพัฒนาบริการประชาชน</span> — งานบริการภาครัฐปรับเป็นดิจิทัลเพิ่มขึ้น ตัวชี้วัด: สัดส่วนกระบวนงานดิจิทัล (เป้า ≥60%/≥80%/100%)</li>
+        <li><span class="who">การบริหารจัดการการเงินการคลัง</span> — ใช้งบประมาณมีประสิทธิภาพ ตามห่วงโซ่คุณค่าของประเทศไทย</li>
+        <li><span class="who">การปรับสมดุลภาครัฐ</span> — เปิดให้ภาคส่วนอื่น(ประชารัฐ/เอกชน/ประชาชน)แบ่งเบาภาระบริการสาธารณะ</li>
+        <li><span class="who">การพัฒนาระบบบริหารงานภาครัฐ</span> — ฐานข้อมูลภาครัฐ + เทคโนโลยีดิจิทัล + เปิดเผยข้อมูลข่าวสาร</li>
+        <li><span class="who">การสร้างและพัฒนาบุคลากรภาครัฐ</span> — เป็นคนดีมีคุณธรรม จริยธรรม จิตสำนึก เป็นคนเก่ง</li>
+      </ol>
+      <div class="trap"><b>กับดักจำสถิติฐาน:</b> ความพึงพอใจคุณภาพบริการภาครัฐปี 2564 อยู่ที่ <span class="trapw">84.75%</span> (เพิ่มจาก 84.00% ปี 2561) ส่วนดัชนีรัฐบาลอิเล็กทรอนิกส์ปี 2563 ไทยอยู่อันดับที่ <span class="trapw">57 จาก 193 ประเทศ</span> (ดีขึ้น 16 อันดับจากปี 2561) — ตัวเลข 57 นี้มักถูกเอาไปสลับกับตัวเลขอันดับในแผนฯ13 หมุดหมาย 13 ซึ่งใช้ข้อมูลปีเดียวกันแต่บางจุดต่างกันเล็กน้อย ต้องดูปีอ้างอิงให้ตรง</div>
+      <div class="trap2"><b>กับดักเชื่อมโยงยุทธศาสตร์:</b> ประเด็น (20) เชื่อมโยงกับยุทธศาสตร์ชาติ<span class="trapw">ถึง 4 ด้าน</span> ไม่ใช่แค่ด้านที่ 6 (ภาครัฐ) เท่านั้น — เชื่อมกับยุทธศาสตร์ที่ 1 (ความมั่นคง), 2 (แข่งขัน), 4 (โอกาส/เสมอภาค), และ 6 (ภาครัฐ) ข้อสอบอาจหลอกว่า "ประเด็น 20 เชื่อมเฉพาะยุทธศาสตร์ด้านภาครัฐเท่านั้น" — ผิด ต้องดูว่าทุกประเด็นแผนแม่บทมักเชื่อมยุทธศาสตร์มากกว่า 1 ด้านเสมอ เพราะเป็นแผนบูรณาการ</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#166534;color:#166534;">✅ สรุปกับดักรวมแท็บ 3</div>
+  <div class="card" id="r3_summary">
+    <div class="head" onclick="toggle('r3_summary')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">รวมกับดัก</span>
+      <span class="title">8 กับดักเล่นคำที่ออกสอบบ่อยในแผนแม่บทฯ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ol>
+        <li>ยังคง <b>23 ประเด็น</b> เดิม แม้เป็นฉบับแก้ไขเพิ่มเติม 2566 — ไม่ได้เพิ่ม/ลดจำนวนประเด็น</li>
+        <li>Y2 (ประเด็น) = 37 เป้าหมาย/41 ตัวชี้วัด/41 ค่าเป้าหมาย | Y1 (แผนย่อย) = 140 เป้าหมาย/167 ตัวชี้วัด/172 ค่าเป้าหมาย</li>
+        <li>แผนแม่บทฯ ไม่ได้อยู่ตัวเดียวในแผนระดับ 2 — มีแผนพัฒนาเศรษฐกิจฯ(13) และแผนความมั่นคงแห่งชาติร่วมระดับด้วย</li>
+        <li>หน่วยงานเจ้าภาพมี 3 ระดับ: จ.1(ประเด็น) / จ.2(เป้าหมายประเด็น) / จ.3(เป้าหมายแผนย่อย)</li>
+        <li>จำนวนแผนย่อยต่อประเด็นไม่เท่ากัน — น้อยสุด 1 แผนย่อย (ประเด็น 12) ถึงมากสุด 6 แผนย่อย (ประเด็น 03, 04)</li>
+        <li>ทุกประเด็นใช้กรอบเวลาเดียวกัน 3 ช่วง: 2566-2570 / 2571-2575 / 2576-2580</li>
+        <li>ประเด็น (20) การบริการประชาชนฯ เป็นจุดเชื่อมยุทธศาสตร์ชาติมากที่สุด (4 ด้าน) — สำคัญสุดสำหรับข้อสอบสายปกครอง</li>
+        <li>ชื่อเอกสารคือ "แผนแม่บท<b>ภายใต้</b>ยุทธศาสตร์ชาติ" ไม่ใช่ "แผนแม่บท<b>ของ</b>ยุทธศาสตร์ชาติ" หรือ "แผนแม่บทแห่งชาติ" — คำเล็ก ๆ นี้ข้อสอบชอบเปลี่ยนเพื่อทดสอบความช่างสังเกต</li>
+      </ol>
+    </div></div>
+  </div>
+
+</div>
+<!-- END TAB 3 -->
+
+<!-- ============ TAB 4: แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ ฉบับที่ 13 ============ -->
+<div class="page" id="page4">
+  <div class="hero" data-c="4">
+    <h1>📈 แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ ฉบับที่ 13</h1>
+    <p>(พ.ศ. 2566-2570) — แผนระดับ 2 ระยะ 5 ปี ที่ 2 ของยุทธศาสตร์ชาติ มุ่ง "พลิกโฉมประเทศไทย"</p>
+    <div class="badges">
+      <span class="badge">13 หมุดหมาย</span>
+      <span class="badge">4 มิติ</span>
+      <span class="badge">เริ่ม 1 ต.ค. 2565</span>
+      <span class="badge">~2-3 ชม.</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="lg num">เลข/จำนวน</span>
+    <span class="lg who">ใคร/หน่วยงาน</span>
+    <span class="lg key">หลักการ/คำสำคัญ</span>
+    <span class="lg link">เชื่อมเอกสารอื่น</span>
+    <span class="lg trapw">กับดักข้อสอบ</span>
+  </div>
+
+  <div class="note"><b>สถานะ:</b> ประกาศใช้โดยพระบรมราชโองการ ใช้บังคับตั้งแต่ <span class="key">1 ตุลาคม 2565 ถึง 30 กันยายน 2570</span> เป็น<span class="link">แผนระดับที่ 2</span> เช่นเดียวกับแผนแม่บทฯ — เป็นช่วง <span class="num">5 ปีที่สอง</span>ของยุทธศาสตร์ชาติ 20 ปี (ปีที่สองในจำนวน 4 ช่วง 5 ปี)</div>
+
+  <div class="card" id="r4_4principles">
+    <div class="head" onclick="toggle('r4_4principles')">
+      <span class="tag" style="background:#F3E8FF;color:#7E22CE">4 หลักการ</span>
+      <span class="title">หลักการและแนวคิด 4 ประการในการกำหนดทิศทางแผนฯ13</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ol>
+        <li><span class="key">หลักปรัชญาของเศรษฐกิจพอเพียง</span> — เหตุผล ความพอประมาณ ภูมิคุ้มกัน บนฐานความรู้ คุณธรรม ความเพียร</li>
+        <li><span class="key">การสร้างความสามารถในการ "ล้มแล้ว ลุกไว" (Resilience)</span> — แบ่ง 3 ระดับ: <span class="trapw">(1) พร้อมรับ = "อยู่รอด"</span> / <span class="trapw">(2) ปรับตัว = "พอเพียง"</span> / <span class="trapw">(3) เปลี่ยนแปลงเพื่อพร้อมเติบโต = "ยั่งยืน"</span></li>
+        <li><span class="key">เป้าหมายการพัฒนาที่ยั่งยืนของสหประชาชาติ (SDGs)</span> — แนวคิด "ไม่ทิ้งใครไว้ข้างหลัง"</li>
+        <li><span class="key">เศรษฐกิจชีวภาพ เศรษฐกิจหมุนเวียน เศรษฐกิจสีเขียว (BCG)</span> — ใช้วิทยาศาสตร์/เทคโนโลยี/ความคิดสร้างสรรค์ สมดุลกับอนุรักษ์ทรัพยากร</li>
+      </ol>
+      <div class="trap"><b>กับดักจับคู่ระดับ-ชื่อ:</b> หลักการที่ 2 "ล้มแล้วลุกไว" มี 3 ระดับที่ชื่อคล้ายกับศัพท์เศรษฐกิจพอเพียงจนสับสนได้ — <span class="trapw">ระดับ "อยู่รอด" (พร้อมรับ)</span> ≠ <span class="trapw">ระดับ "พอเพียง" (ปรับตัว)</span> ≠ <span class="trapw">ระดับ "ยั่งยืน" (เปลี่ยนแปลงเพื่อเติบโต)</span> — ข้อสอบอาจถามว่า "ระดับพอเพียงในหลักการล้มแล้วลุกไว ตรงกับการพร้อมรับหรือปรับตัว" คำตอบคือ<b>การปรับตัว (ระดับที่ 2)</b> ไม่ใช่การพร้อมรับ (ระดับที่ 1)</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักจับคู่:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"หลักการ 'ล้มแล้ว ลุกไว' ระดับที่เรียกว่า 'อยู่รอด' หมายถึงขั้นตอนใด?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">การเปลี่ยนแปลงเชิงโครงสร้างเพื่อเติบโตอย่างยั่งยืน</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">การพร้อมรับ แก้ไขข้อจำกัด/จุดอ่อนที่มีอยู่ และฟื้นคืนสู่ภาวะปกติได้รวดเร็ว</div>
+        <div class="qexp">✅ ถูกต้อง! "อยู่รอด" = การพร้อมรับ (ระดับ 1) ส่วน "พอเพียง" = การปรับตัว (ระดับ 2) และ "ยั่งยืน" = การเปลี่ยนแปลงเพื่อเติบโต (ระดับ 3) — ลำดับ 3 ระดับนี้จากเบาไปหนัก เป็นจุดจำสับสนบ่อย</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r4_goals">
+    <div class="head" onclick="toggle('r4_goals')">
+      <span class="tag" style="background:#F3E8FF;color:#7E22CE">5 เป้าหมายหลัก ⭐</span>
+      <span class="title">วัตถุประสงค์ "พลิกโฉมประเทศไทย" + 5 เป้าหมายหลัก</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="trap" style="border-left-color:#7E22CE;background:#F3E8FF;"><b style="color:#7E22CE">วัตถุประสงค์หลัก:</b> พลิกโฉมประเทศไทยสู่ "<span class="key">สังคมก้าวหน้า เศรษฐกิจสร้างมูลค่าอย่างยั่งยืน</span>"</div>
+      <p><b>5 เป้าหมายหลัก (ครบทุกข้อ — ออกสอบบ่อยมาก):</b></p>
+      <ol>
+        <li><span class="who">การปรับโครงสร้างภาคการผลิตและบริการสู่เศรษฐกิจฐานนวัตกรรม</span> — ตัวชี้วัด: รายได้ประชาชาติต่อหัว (เป้า <span class="num">9,300 USD/ปี</span> หรือ <span class="num">300,000 บาท</span> ภายในปี 2570 จากฐาน 7,097 USD ปี 2564)</li>
+        <li><span class="who">การพัฒนาคนสำหรับโลกยุคใหม่</span> — ตัวชี้วัด: ดัชนีความก้าวหน้าของคน (8 ด้าน: สุขภาพ/การศึกษา/ชีวิตการงาน/รายได้/ที่อยู่อาศัย/ชีวิตครอบครัว/คมนาคม/การมีส่วนร่วม) เป้า <span class="num">0.7209</span> จากฐาน 0.6501</li>
+        <li><span class="who">การมุ่งสู่สังคมแห่งโอกาสและความเป็นธรรม</span> — ตัวชี้วัด: ความแตกต่างรายจ่ายกลุ่มรวยสุด 10% กับจนสุด 40% เป้า <span class="num">ต่ำกว่า 5 เท่า</span> จากฐาน 5.68 เท่า</li>
+        <li><span class="who">การเปลี่ยนผ่านการผลิตและบริโภคไปสู่ความยั่งยืน</span> — ลดก๊าซเรือนกระจก (พลังงาน+คมนาคม ลด <span class="num">17%</span>) มุ่งสู่<span class="key">ความเป็นกลางทางคาร์บอนปี 2593</span> และ<span class="key">ปล่อยก๊าซเรือนกระจกสุทธิเป็นศูนย์ปี 2608</span></li>
+        <li><span class="who">การเสริมสร้างความสามารถของประเทศในการรับมือกับการเปลี่ยนแปลงและความเสี่ยงภายใต้บริบทโลกใหม่</span> — ดัชนีรวม 4 ตัวชี้วัดย่อย (กฎอนามัยระหว่างประเทศ/ความเสี่ยงภูมิอากาศ/ดิจิทัล/ประสิทธิภาพรัฐบาล)</li>
+      </ol>
+      <div class="trap2"><b>กับดักตัวเลขเป้าหมายคาร์บอน:</b> <span class="trapw">ความเป็นกลางทางคาร์บอน (Carbon Neutrality) = ปี 2593</span> ส่วน <span class="trapw">การปล่อยก๊าซเรือนกระจกสุทธิเป็นศูนย์ (Net Zero) = ปี 2608</span> — สองปีนี้ต่างกัน 15 ปี และมักถูกข้อสอบเอามาสลับกัน ต้องจำว่า <b>Carbon Neutrality มาก่อน (2593) แล้ว Net Zero ตามมาทีหลัง (2608)</b></div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r4_4dims">
+    <div class="head" onclick="toggle('r4_4dims')">
+      <span class="tag" style="background:#F3E8FF;color:#7E22CE">4 มิติ × 13 หมุดหมาย ⭐</span>
+      <span class="title">โครงสร้าง 4 มิติ ครอบคลุม 13 หมุดหมายครบทุกข้อ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="scrollwrap">
+      <table class="cmp">
+        <tr><th>มิติ</th><th>หมุดหมาย</th><th>ชื่อเต็ม</th></tr>
+        <tr><td rowspan="6"><span class="who">1. ภาคการผลิตและบริการเป้าหมาย</span></td><td>1</td><td>ไทยเป็นประเทศชั้นนำด้านสินค้าเกษตรและเกษตรแปรรูปมูลค่าสูง</td></tr>
+        <tr><td>2</td><td>ไทยเป็นจุดหมายของการท่องเที่ยวที่เน้นคุณภาพและความยั่งยืน</td></tr>
+        <tr><td>3</td><td>ไทยเป็นฐานการผลิตยานยนต์ไฟฟ้าที่สำคัญของโลก</td></tr>
+        <tr><td>4</td><td>ไทยเป็นศูนย์กลางทางการแพทย์และสุขภาพมูลค่าสูง</td></tr>
+        <tr><td>5</td><td>ไทยเป็นประตูการค้าการลงทุนและยุทธศาสตร์ทางโลจิสติกส์ที่สำคัญของภูมิภาค</td></tr>
+        <tr><td>6</td><td>ไทยเป็นศูนย์กลางอุตสาหกรรมอิเล็กทรอนิกส์อัจฉริยะและดิจิทัลของอาเซียน</td></tr>
+        <tr><td rowspan="3"><span class="who">2. โอกาสและความเสมอภาคทางเศรษฐกิจและสังคม</span></td><td>7</td><td>ไทยมี SME ที่เข้มแข็ง มีศักยภาพสูง และสามารถแข่งขันได้</td></tr>
+        <tr><td>8</td><td>ไทยมีพื้นที่และเมืองอัจฉริยะที่น่าอยู่ ปลอดภัย เติบโตได้อย่างยั่งยืน</td></tr>
+        <tr><td>9</td><td>ไทยมีความยากจนข้ามรุ่นลดลง และมีความคุ้มครองทางสังคมที่เพียงพอเหมาะสม</td></tr>
+        <tr><td rowspan="2"><span class="who">3. ความยั่งยืนของทรัพยากรธรรมชาติและสิ่งแวดล้อม</span></td><td>10</td><td>ไทยมีเศรษฐกิจหมุนเวียนและสังคมคาร์บอนต่ำ</td></tr>
+        <tr><td>11</td><td>ไทยสามารถลดความเสี่ยงและผลกระทบจากภัยธรรมชาติและการเปลี่ยนแปลงสภาพภูมิอากาศ</td></tr>
+        <tr><td rowspan="2"><span class="trapw">4. ปัจจัยผลักดันการพลิกโฉมประเทศ</span></td><td>12</td><td>ไทยมีกำลังคนสมรรถนะสูง มุ่งเรียนรู้อย่างต่อเนื่อง ตอบโจทย์การพัฒนาแห่งอนาคต</td></tr>
+        <tr><td><span class="trapw">13</span></td><td><span class="trapw">ไทยมีภาครัฐที่ทันสมัย มีประสิทธิภาพ และตอบโจทย์ประชาชน ⭐</span></td></tr>
+      </table>
+      </div>
+      <div class="trap"><b>กับดักนับจำนวนหมุดหมายต่อมิติ:</b> มิติที่ 1 มี <span class="trapw">6 หมุดหมาย</span> (มากสุด) | มิติที่ 2 มี <span class="trapw">3 หมุดหมาย</span> | มิติที่ 3 มี <span class="trapw">2 หมุดหมาย</span> (น้อยสุด) | มิติที่ 4 มี <span class="trapw">2 หมุดหมาย</span> — รวม 6+3+2+2 = 13 ✓ ข้อสอบอาจถามว่า "มิติใดมีหมุดหมายน้อยที่สุด" — คำตอบคือ<b>มิติที่ 3 และมิติที่ 4 เท่ากันที่ 2 หมุดหมาย</b> (ไม่ใช่แค่มิติเดียว)</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักนับจำนวน:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"หมุดหมายที่ 13 (ภาครัฐทันสมัย) อยู่ในมิติใดของแผนฯ13?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">มิติโอกาสและความเสมอภาคทางเศรษฐกิจและสังคม</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">มิติปัจจัยผลักดันการพลิกโฉมประเทศ (คู่กับหมุดหมาย 12 เรื่องกำลังคน)</div>
+        <div class="qexp">✅ ถูกต้อง! มิติที่ 4 "ปัจจัยผลักดันการพลิกโฉมประเทศ" มีเพียง 2 หมุดหมาย คือ 12 (กำลังคน) และ 13 (ภาครัฐ) — ทั้งสองเป็นปัจจัยพื้นฐานที่หนุนหมุดหมายอื่นทั้งหมด ไม่ได้จัดอยู่ในมิติเศรษฐกิจหรือสังคมโดยตรง</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#5B21B6;color:#5B21B6;">เจาะลึกหมุดหมายที่ 13: ภาครัฐทันสมัย ⭐</div>
+
+  <div class="card" id="r4_m13">
+    <div class="head" onclick="toggle('r4_m13')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">หมุดหมาย 13 ⭐</span>
+      <span class="title">ไทยมีภาครัฐที่ทันสมัย มีประสิทธิภาพ และตอบโจทย์ประชาชน</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p><b>เชื่อมโยงกับเป้าหมายหลักแผนฯ13:</b> เป้าหมายที่ <span class="num">3</span> (สังคมแห่งโอกาส/ความเป็นธรรม) + เป้าหมายที่ <span class="num">5</span> (รับมือความเสี่ยงโลกใหม่)</p>
+      <p><b>เชื่อมโยงกับยุทธศาสตร์ชาติ 4 ด้าน:</b> ความมั่นคง / ความสามารถแข่งขัน / โอกาสและความเสมอภาค / ปรับสมดุลภาครัฐ</p>
+      <p><b>เชื่อมโยงกับแผนแม่บทฯ 4 ประเด็น:</b> (17) ความเสมอภาคและหลักประกันทางสังคม / <span class="trapw">(20) การบริการประชาชนและประสิทธิภาพภาครัฐ</span> / (21) ต่อต้านทุจริต / (22) กฎหมายและกระบวนการยุติธรรม</p>
+      <p><b>2 เป้าหมายระดับหมุดหมาย:</b></p>
+      <ol>
+        <li><span class="who">การบริการภาครัฐ มีคุณภาพ เข้าถึงได้</span> — ตัวชี้วัด: ความพึงพอใจคุณภาพบริการภาครัฐ ไม่น้อยกว่า <span class="num">90%</span></li>
+        <li><span class="who">ภาครัฐที่มีขีดสมรรถนะสูง คล่องตัว</span> — ตัวชี้วัด: ผลสำรวจรัฐบาลอิเล็กทรอนิกส์ (e-Government/e-Participation/Human Capital/Online Service Index) ไม่เกินอันดับ <span class="num">40</span> ของโลก คะแนนไม่ต่ำกว่า <span class="num">0.82</span></li>
+      </ol>
+      <p><b>4 กลยุทธ์การพัฒนา (ครบทุกข้อ):</b></p>
+      <ol>
+        <li><span class="key">การพัฒนาคุณภาพการให้บริการภาครัฐที่ตอบโจทย์ สะดวก และประหยัด</span> — ยกเลิกภารกิจที่เปิดให้ภาคอื่นทำแทนได้ + บริการดิจิทัลเบ็ดเสร็จ</li>
+        <li><span class="key">การปรับเปลี่ยนการบริหารจัดการและโครงสร้างของภาครัฐให้ยืดหยุ่น เชื่อมโยง เปิดกว้าง</span> — ทบทวนบทบาท กระจายอำนาจ + สร้างความโปร่งใส/ธรรมาภิบาล</li>
+        <li><span class="key">การปรับเปลี่ยนภาครัฐเป็นรัฐบาลดิจิทัลที่ใช้ข้อมูลในการบริหารจัดการ</span> — ข้อมูลภาครัฐเป็นดิจิทัลทั้งหมด + กระบวนการทำงานดิจิทัล</li>
+        <li><span class="key">การสร้างระบบบริหารภาครัฐที่ส่งเสริมการปรับเปลี่ยนและพัฒนาบุคลากร</span> — ดึงดูด/รักษาผู้มีศักยภาพ + ยกเลิกกฎหมายล้าสมัย</li>
+      </ol>
+      <div class="trap"><b>กับดักสถิติพื้นฐาน (Baseline) ที่ชอบเอามาถาม:</b>
+        <ul>
+          <li>ดัชนีธรรมาภิบาลโลก มิติประสิทธิผลภาครัฐ ปี 2562 = <span class="trapw">65.87 คะแนน</span> (ลดลงจาก 66.83 ปี 2561)</li>
+          <li>สัดส่วนเป้าหมายแผนแม่บทย่อยที่บรรลุต่ำกว่าเป้า ปี 2563 = <span class="trapw">80.71%</span> (สูงมาก = ปัญหา)</li>
+          <li>สัดส่วนลงทุนเอกชนต่อลงทุนรวมในบริการสาธารณะ ปี 2563 = <span class="trapw">10.7%</span> (ต่ำกว่าเป้าแผนแม่บทที่ 20% ปี 2565)</li>
+          <li>ดัชนีนิติธรรม (Rule of Law) มิติบังคับใช้กฎหมาย ปี 2563 = <span class="trapw">0.47 คะแนน</span> อันดับ 83 จาก 128 ประเทศ (มีแนวโน้มลดลงต่อเนื่องจาก 0.50→0.48→0.47)</li>
+        </ul>
+      </div>
+      <div class="trap2"><b>กับดักเลขอันดับที่ดูคล้ายกันระหว่างเอกสาร:</b> ดัชนีรัฐบาลอิเล็กทรอนิกส์ปี 2563 — แผนแม่บทฯ ประเด็น(20) อ้างอันดับ <span class="trapw">57 จาก 193 ประเทศ</span> ส่วนแผนฯ13 หมุดหมาย 13 พูดถึงตัวเลขเดียวกัน (อันดับ 57 คะแนน 0.7565) แต่ใช้ในบริบทการเทียบกับสิงคโปร์ (อันดับ 11 คะแนน 0.9150) — เป็นข้อมูลปีเดียวกันที่ปรากฏในสองเอกสาร ต้องระวังว่าโจทย์ถามจากแหล่งไหน</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r4_milestones_brief">
+    <div class="head" onclick="toggle('r4_milestones_brief')">
+      <span class="tag" style="background:#F3E8FF;color:#7E22CE">หมุดหมาย 1-12</span>
+      <span class="title">สรุปย่อเป้าหมายหลักของหมุดหมายที่ 1-12 (ที่เหลือ)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <table class="cmp small">
+        <tr><th>#</th><th>หมุดหมาย</th><th>เป้าหมายที่ 1 (ตัวอย่าง)</th></tr>
+        <tr><td>1</td><td>เกษตร/เกษตรแปรรูปมูลค่าสูง</td><td>มูลค่าเพิ่มของสินค้าเกษตร/เกษตรแปรรูปสูงขึ้น</td></tr>
+        <tr><td>2</td><td>ท่องเที่ยวคุณภาพ/ยั่งยืน</td><td>เปลี่ยนการท่องเที่ยวไทยเป็นท่องเที่ยวคุณภาพสูง เชื่อมโยงอุตสาหกรรมอื่น</td></tr>
+        <tr><td>3</td><td>ฐานผลิตยานยนต์ไฟฟ้า</td><td>สร้างอุปสงค์รถยนต์ไฟฟ้าเพื่อใช้ในประเทศและส่งออก</td></tr>
+        <tr><td>4</td><td>ศูนย์กลางการแพทย์/สุขภาพ</td><td>ไทยมีศักยภาพสร้างมูลค่าทางเศรษฐกิจจากสินค้า/บริการสุขภาพ</td></tr>
+        <tr><td>5</td><td>ประตูการค้า/โลจิสติกส์</td><td>ไทยเป็นประตูการค้าการลงทุนในภูมิภาค</td></tr>
+        <tr><td>6</td><td>อิเล็กทรอนิกส์อัจฉริยะ</td><td>เศรษฐกิจดิจิทัลภายในประเทศขยายตัวเพิ่มขึ้น</td></tr>
+        <tr><td>7</td><td>SME เข้มแข็ง</td><td>SME มีสภาพแวดล้อมเอื้อต่อการเติบโตและแข่งขันได้</td></tr>
+        <tr><td>8</td><td>พื้นที่/เมืองอัจฉริยะ</td><td>เศรษฐกิจของภาคและการลงทุนในเขตเศรษฐกิจพิเศษขยายตัว</td></tr>
+        <tr><td>9</td><td>ความยากจนข้ามรุ่น</td><td>ครัวเรือนยากจนข้ามรุ่นมีโอกาสเลื่อนสถานะ</td></tr>
+        <tr><td>10</td><td>เศรษฐกิจหมุนเวียน/คาร์บอนต่ำ</td><td>เพิ่มมูลค่าจากเศรษฐกิจหมุนเวียน ใช้ทรัพยากรมีประสิทธิภาพ</td></tr>
+        <tr><td>11</td><td>ลดความเสี่ยงภัยธรรมชาติ</td><td>ความเสียหาย/ผลกระทบจากภัยธรรมชาติและภูมิอากาศลดลง</td></tr>
+        <tr><td>12</td><td>กำลังคนสมรรถนะสูง</td><td>คนไทยได้รับการพัฒนาเต็มศักยภาพทุกช่วงวัย มีสมรรถนะที่จำเป็น</td></tr>
+      </table>
+      <div class="trap"><b>กับดักจำคำว่า "ความยากจนข้ามรุ่น":</b> หมุดหมายที่ <span class="trapw">9</span> ใช้คำเฉพาะว่า "<span class="key">ความยากจนข้ามรุ่น (Intergenerational Poverty)</span>" หมายถึงความยากจนที่ส่งต่อจากรุ่นพ่อแม่สู่รุ่นลูก — แตกต่างจาก "เศรษฐกิจฐานราก" ในแผนแม่บทประเด็น (16) ที่เน้นยกระดับรายได้ผู้มีรายได้น้อยทั่วไป ไม่ได้เจาะจงเรื่องการส่งต่อข้ามรุ่นเหมือนหมุดหมายที่ 9</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#5B21B6;color:#5B21B6;">✅ สรุปกับดักรวมแท็บ 4</div>
+  <div class="card" id="r4_summary">
+    <div class="head" onclick="toggle('r4_summary')">
+      <span class="tag" style="background:#FEE2E2;color:#BE123C">รวมกับดัก</span>
+      <span class="title">8 กับดักเล่นคำที่ออกสอบบ่อยในแผนฯ13</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ol>
+        <li>แผนฯ13 มี <b>13 หมุดหมาย</b> แบ่งเป็น <b>4 มิติ</b> (6+3+2+2) — ไม่ใช่แบ่งเท่า ๆ กัน</li>
+        <li>หลักการ "ล้มแล้วลุกไว" 3 ระดับ: อยู่รอด(พร้อมรับ)→พอเพียง(ปรับตัว)→ยั่งยืน(เปลี่ยนแปลงเพื่อเติบโต)</li>
+        <li>ความเป็นกลางทางคาร์บอน = ปี <b>2593</b> | Net Zero (ก๊าซเรือนกระจกสุทธิเป็นศูนย์) = ปี <b>2608</b></li>
+        <li>หมุดหมาย 12 (กำลังคน) และ 13 (ภาครัฐ) อยู่ในมิติเดียวกัน คือ "ปัจจัยผลักดันการพลิกโฉมประเทศ"</li>
+        <li>แผนฯ13 ใช้บังคับ <b>1 ต.ค. 2565 - 30 ก.ย. 2570</b> เป็นช่วง 5 ปีที่ <b>สอง</b> ของยุทธศาสตร์ชาติ (ไม่ใช่ช่วงแรก)</li>
+        <li>หมุดหมายที่ 13 เชื่อมยุทธศาสตร์ชาติ 4 ด้าน และแผนแม่บทฯ 4 ประเด็น (17/20/21/22)</li>
+        <li>เป้าหมายหลักข้อที่ 3 ใช้ตัวชี้วัด "ความแตกต่างรายจ่ายรวยสุด 10% : จนสุด 40%" เป้าต่ำกว่า 5 เท่า — เป็นตัวชี้วัดความเหลื่อมล้ำเฉพาะ ไม่ใช่ Gini Coefficient ทั่วไป</li>
+        <li>4 หลักการพื้นฐานของแผนฯ13 (เศรษฐกิจพอเพียง/ล้มแล้วลุกไว/SDGs/BCG) เป็นคนละชุดกับ 5 เป้าหมายหลัก — ห้ามสับสนว่าเป็นอันเดียวกัน</li>
+      </ol>
+    </div></div>
+  </div>
+
+</div>
+<!-- END TAB 4 -->
+
+<!-- ============ TAB 5: กับดักรวม / ตารางเทียบเอกสาร ============ -->
+<div class="page" id="page5">
+  <div class="hero" data-c="5">
+    <h1>⚔️ กับดักรวม + ตารางเทียบ 4 เอกสาร</h1>
+    <p>สำหรับข้อสอบเชิงซ้อนที่ถามข้ามเอกสาร — จุดที่คนทำข้อสอบพลาดบ่อยที่สุด</p>
+    <div class="badges">
+      <span class="badge">เทียบคำศัพท์</span>
+      <span class="badge">เทียบโครงสร้าง</span>
+      <span class="badge">เทียบตัวเลข</span>
+      <span class="badge">~45-60 นาที</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="lg num">เลข/จำนวน</span>
+    <span class="lg who">ใคร/หน่วยงาน</span>
+    <span class="lg key">หลักการ/คำสำคัญ</span>
+    <span class="lg link">เชื่อมโยงเอกสาร</span>
+    <span class="lg trapw">กับดักข้อสอบ</span>
+  </div>
+
+  <div class="note"><b>ทำไมต้องมีแท็บนี้:</b> ข้อสอบระดับซับซ้อนของสายปลัดอำเภอมักไม่ถามแยกเอกสารเดี่ยว ๆ แต่จะ<span class="key">ผสมข้ามเอกสาร</span> เช่น "ม.65 ของรัฐธรรมนูญเชื่อมกับยุทธศาสตร์ใด แล้วยุทธศาสตร์นั้นถูกถ่ายไปเป็นประเด็นแผนแม่บทข้อใด และมีหมุดหมายแผนฯ13 ข้อใดสนับสนุน" — แท็บนี้รวบรวมกับดักลักษณะนี้ทั้งหมด</div>
+
+  <div class="card" id="r5_hierarchy">
+    <div class="head" onclick="toggle('r5_hierarchy')">
+      <span class="tag" style="background:#FFE4E6;color:#BE123C">ลำดับชั้นรวม ⭐</span>
+      <span class="title">ห่วงโซ่การวางแผนชาติแบบเต็ม — ตั้งแต่รัฐธรรมนูญถึงแผนปฏิบัติการ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <table class="cmp">
+        <tr><th>ลำดับ</th><th>เอกสาร</th><th>สถานะ</th><th>อายุ</th></tr>
+        <tr><td>0</td><td>รัฐธรรมนูญแห่งราชอาณาจักรไทย 2560 (ม.65)</td><td>กฎหมายสูงสุด — จุดกำเนิด</td><td>ไม่มีกำหนด</td></tr>
+        <tr><td><span class="trapw">1</span></td><td>ยุทธศาสตร์ชาติ (พ.ศ.2561-2580)</td><td><span class="trapw">แผนระดับที่ 1</span></td><td>20 ปี</td></tr>
+        <tr><td rowspan="3"><span class="trapw">2</span></td><td>แผนแม่บทภายใต้ยุทธศาสตร์ชาติ</td><td rowspan="3"><span class="trapw">แผนระดับที่ 2 (3 แผนคู่กัน)</span></td><td>20 ปี (ทบได้)</td></tr>
+        <tr><td>แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ ฉบับที่ 13</td><td>5 ปี (2566-2570)</td></tr>
+        <tr><td>นโยบายและแผนระดับชาติว่าด้วยความมั่นคงแห่งชาติ</td><td>5 ปี</td></tr>
+        <tr><td>3</td><td>แผนปฏิบัติราชการ/แผนปฏิบัติการของหน่วยงาน</td><td>แผนระดับที่ 3</td><td>1-5 ปี</td></tr>
+      </table>
+      <div class="trap"><b>กับดักจัดอันดับที่ออกสอบบ่อยที่สุดในแอปทั้งหมด:</b> หลายคนเข้าใจผิดว่า<span class="trapw">แผนแม่บทภายใต้ยุทธศาสตร์ชาติ "อยู่เหนือ" แผนพัฒนาเศรษฐกิจฯ ฉบับ13</span> — ความจริงคือ<b>ทั้งสองอยู่ระดับ 2 เท่ากัน</b> เพียงแต่แผนแม่บทฯมีกรอบเวลายาวกว่า (20 ปี vs 5 ปี) และมีบทบาทกว้างกว่า (ครอบคลุมทุกประเด็น) ส่วนแผนพัฒนาเศรษฐกิจฯทำหน้าที่ "เร่งความสำคัญ" บางหมุดหมายในช่วง 5 ปีนั้นเป็นพิเศษ ไม่ใช่ลำดับชั้นบังคับบัญชา</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักจัดลำดับชั้นที่ใหญ่ที่สุด:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ ฉบับที่ 13 มีสถานะเป็นแผนระดับใด เมื่อเทียบกับแผนแม่บทภายใต้ยุทธศาสตร์ชาติ?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">แผนระดับที่ 3 อยู่ภายใต้แผนแม่บทฯซึ่งเป็นระดับที่ 2</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">แผนระดับที่ 2 เท่ากัน เพียงแต่มีกรอบเวลาสั้นกว่า (5 ปี vs 20 ปี)</div>
+        <div class="qexp">✅ ถูกต้อง! ทั้งแผนแม่บทฯ และแผนพัฒนาเศรษฐกิจฯ(13) เป็น "แผนระดับที่ 2" คู่ขนานกัน (พร้อมแผนความมั่นคงแห่งชาติ) ไม่มีใครอยู่เหนือใคร — เป็นกับดักจัดอันดับที่ออกสอบบ่อยที่สุด</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r5_terms">
+    <div class="head" onclick="toggle('r5_terms')">
+      <span class="tag" style="background:#FFE4E6;color:#BE123C">คำศัพท์เทียบเอกสาร ⭐</span>
+      <span class="title">เทียบคำว่า "หมวด vs ยุทธศาสตร์ vs ประเด็น vs แผนย่อย vs หมุดหมาย vs มิติ"</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>นี่คือกับดักเล่นคำที่พบบ่อยที่สุด — ข้อสอบมักเอาคำเหล่านี้มาสลับใช้แทนกันเพื่อทดสอบว่าผู้สอบรู้จริงหรือจำผิวเผิน:</p>
+      <table class="cmp">
+        <tr><th>คำศัพท์</th><th>ใช้ในเอกสารใด</th><th>หน่วยเล็กกว่าคืออะไร</th></tr>
+        <tr><td><span class="who">หมวด (Chapter)</span></td><td>รัฐธรรมนูญ 2560 — 16 หมวด</td><td>มาตรา (Article)</td></tr>
+        <tr><td><span class="who">ยุทธศาสตร์ (Strategy)</span></td><td>ยุทธศาสตร์ชาติ — 6 ด้าน</td><td>ประเด็นยุทธศาสตร์ (35 รวม)</td></tr>
+        <tr><td><span class="who">ประเด็น (Issue)</span></td><td>แผนแม่บทฯ — 23 ประเด็น</td><td>แผนย่อย (Sub-plan)</td></tr>
+        <tr><td><span class="who">แผนย่อย (Sub-plan)</span></td><td>แผนแม่บทฯ — ใต้ 23 ประเด็น</td><td>แนวทางการพัฒนา</td></tr>
+        <tr><td><span class="trapw">หมุดหมาย (Milestone)</span></td><td>แผนฯ13 เท่านั้น — 13 หมุดหมาย</td><td>กลยุทธ์ (Strategy) → กลยุทธ์ย่อย</td></tr>
+        <tr><td><span class="trapw">มิติ (Dimension)</span></td><td>แผนฯ13 — 4 มิติ (จัดกลุ่มหมุดหมาย)</td><td>หมุดหมาย</td></tr>
+      </table>
+      <div class="trap"><b>กับดักคำที่ใช้ผิดเอกสาร:</b> ข้อสอบอาจถามว่า "ยุทธศาสตร์ชาติแบ่งออกเป็นกี่หมุดหมาย" — <b>คำนี้ผิดตั้งแต่ต้น</b> เพราะคำว่า "หมุดหมาย" เป็นศัพท์เฉพาะของ<span class="trapw">แผนฯ13 เท่านั้น</span> ยุทธศาสตร์ชาติแบ่งเป็น "ยุทธศาสตร์" (6 ด้าน) ไม่ใช่หมุดหมาย — ต้องระมัดระวังคำศัพท์เฉพาะเอกสารที่ถูกสลับไปใช้ผิดที่</div>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบกับดักคำศัพท์ผิดเอกสาร:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"แผนแม่บทภายใต้ยุทธศาสตร์ชาติ แบ่งออกเป็นกี่ 'หมุดหมาย'?"</p>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">คำถามนี้ผิดหลักศัพท์ — แผนแม่บทฯ แบ่งเป็น "ประเด็น" (23 ประเด็น) ไม่ใช่ "หมุดหมาย"</div>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">13 หมุดหมาย</div>
+        <div class="qexp">✅ ถูกต้อง! คำว่า "หมุดหมาย" ใช้เฉพาะแผนฯ13 เท่านั้น แผนแม่บทฯใช้คำว่า "ประเด็น" (23 ประเด็น) — นี่คือกับดักเล่นคำแบบเอาศัพท์ข้ามเอกสารมาถาม ซึ่งพบมากในข้อสอบระดับสูง</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r5_chain">
+    <div class="head" onclick="toggle('r5_chain')">
+      <span class="tag" style="background:#FFE4E6;color:#BE123C">โซ่เชื่อมโยงเต็ม ⭐</span>
+      <span class="title">ตัวอย่างโซ่เชื่อมโยงข้ามเอกสาร — กรณีศึกษา "ภาครัฐ"</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>ลองไล่ตามโซ่นี้ทีละขั้น (ข้อสอบเชิงซ้อนชอบถามแบบนี้):</p>
+      <div class="minicard"><span class="num">ขั้น 0</span> — รัฐธรรมนูญ ม.76: บริหารราชการแผ่นดินตามหลักการบริหารกิจการบ้านเมืองที่ดี</div>
+      <div class="minicard"><span class="num">ขั้น 1</span> — ยุทธศาสตร์ชาติด้านที่ <span class="trapw">6</span>: การปรับสมดุลและพัฒนาระบบการบริหารจัดการภาครัฐ (8 ประเด็นย่อย)</div>
+      <div class="minicard"><span class="num">ขั้น 2</span> — แผนแม่บทฯ ประเด็นที่ <span class="trapw">20</span>: การบริการประชาชนและประสิทธิภาพภาครัฐ (5 แผนย่อย)</div>
+      <div class="minicard"><span class="num">ขั้น 3</span> — แผนฯ13 หมุดหมายที่ <span class="trapw">13</span>: ไทยมีภาครัฐที่ทันสมัย มีประสิทธิภาพ และตอบโจทย์ประชาชน (4 กลยุทธ์)</div>
+      <div class="trap"><b>กับดักจำเลขโซ่:</b> ตัวเลข <span class="trapw">6 → 20 → 13</span> ดูเหมือนไม่มีรูปแบบ แต่เป็นเลขที่ออกสอบบ่อยที่สุดเพราะเป็นหัวข้อเด่นสุดของสายปกครอง — บางข้อสอบจะถามแค่ "ยุทธศาสตร์ชาติด้านภาครัฐ ตรงกับแผนแม่บทฯ ประเด็นใด" (คำตอบ: 20) หรือ "แผนฯ13 หมุดหมายใดสนับสนุนยุทธศาสตร์ชาติด้านการปรับสมดุลภาครัฐ" (คำตอบ: หมุดหมาย 13)</div>
+
+      <p style="margin-top:14px;"><b>โซ่เชื่อมโยงที่ 2 — กรณีศึกษา "ความมั่นคง":</b></p>
+      <div class="minicard"><span class="num">ขั้น 0</span> — รัฐธรรมนูญ หมวด <span class="trapw">1, 2</span> (รูปแบบรัฐ/พระมหากษัตริย์) + หมวด <span class="trapw">5</span> ม.52 (หน้าที่รัฐพิทักษ์เอกราช)</div>
+      <div class="minicard"><span class="num">ขั้น 1</span> — ยุทธศาสตร์ชาติด้านที่ <span class="trapw">1</span>: ความมั่นคง (5 ประเด็นย่อย)</div>
+      <div class="minicard"><span class="num">ขั้น 2</span> — แผนแม่บทฯ ประเด็นที่ <span class="trapw">01</span>: ความมั่นคง (5 แผนย่อย — ตรงเลขกับยุทธศาสตร์โดยบังเอิญ)</div>
+      <div class="minicard"><span class="num">ขั้น 3</span> — แผนฯ13: <span class="trapw">ไม่มีหมุดหมายชื่อ "ความมั่นคง" โดยตรง</span> — ความมั่นคงถูกกระจายอยู่ในหลายหมุดหมาย เช่น หมุดหมาย 9 (ความยากจนข้ามรุ่น), 11 (ภัยธรรมชาติ) แทน</div>
+      <div class="trap2"><b>กับดักคิดว่าทุกเอกสารมีหัวข้อตรงกันหมด:</b> "ความมั่นคง" เป็นยุทธศาสตร์ที่ 1 และเป็นประเด็นแผนแม่บทที่ 01 พอดี (บังเอิญเลขตรงกัน) แต่<span class="trapw">ไม่มีหมุดหมายในแผนฯ13 ที่ชื่อ "ความมั่นคง" ตรง ๆ</span> เพราะแผนฯ13 เป็นแผนเร่งรัด 5 ปี เลือกเฉพาะบางประเด็นมาทำเป็นหมุดหมาย ไม่ได้ครอบคลุมทุกยุทธศาสตร์/ประเด็นแบบ 1:1 — ข้อสอบอาจถามหา "หมุดหมายความมั่นคง" แล้วไม่มีตัวเลือกที่ถูกเพราะ<b>ไม่มีอยู่จริง</b></div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r5_numbers">
+    <div class="head" onclick="toggle('r5_numbers')">
+      <span class="tag" style="background:#FFE4E6;color:#BE123C">ตัวเลขรวมทั้งหมด ⭐</span>
+      <span class="title">รวมตัวเลขสำคัญทุกเอกสาร — เอาไว้ทวนก่อนเข้าห้องสอบ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <table class="cmp">
+        <tr><th>เอกสาร</th><th>ตัวเลขโครงสร้างหลัก</th></tr>
+        <tr><td><b>รัฐธรรมนูญ 2560</b></td><td>16 หมวด, 279 มาตรา, บทเฉพาะกาล ม.262-279</td></tr>
+        <tr><td><b>ยุทธศาสตร์ชาติ</b></td><td>6 ยุทธศาสตร์, 35 ประเด็นยุทธศาสตร์ย่อย (5+5+7+4+6+8), 20 ปี (2561-2580)</td></tr>
+        <tr><td><b>แผนแม่บทฯ</b></td><td>23 ประเด็น, 37 เป้าหมาย Y2 / 41 ตัวชี้วัด Y2 / 41 ค่าเป้าหมาย Y2, 140 เป้าหมาย Y1 / 167 ตัวชี้วัด Y1 / 172 ค่าเป้าหมาย Y1</td></tr>
+        <tr><td><b>แผนฯ13</b></td><td>13 หมุดหมาย, 4 มิติ (6+3+2+2), 5 เป้าหมายหลัก, 4 หลักการพื้นฐาน, 5 ปี (2566-2570)</td></tr>
+      </table>
+      <div class="trap"><b>กับดักตัวเลขที่คล้ายกันข้ามเอกสารจนสลับกันได้:</b>
+        <ul>
+          <li><span class="trapw">23</span> (ประเด็นแผนแม่บท) ≠ <span class="trapw">35</span> (ประเด็นยุทธศาสตร์ย่อยรวม) ≠ <span class="trapw">13</span> (หมุดหมายแผนฯ13)</li>
+          <li><span class="trapw">37</span> (เป้าหมาย Y2) ≠ <span class="trapw">41</span> (ตัวชี้วัด/ค่าเป้าหมาย Y2) ≠ <span class="trapw">140</span> (เป้าหมาย Y1) ≠ <span class="trapw">167</span> (ตัวชี้วัด Y1) ≠ <span class="trapw">172</span> (ค่าเป้าหมาย Y1)</li>
+          <li><span class="trapw">5</span> ปรากฏหลายที่: เป้าหมายหลักแผนฯ13 = 5 ข้อ, ผลสัมฤทธิ์ปฏิรูปประเทศ = 5 ปี, แผนฯ13 มีระยะ 5 ปี — <b>คนละบริบทกันทั้งหมด</b></li>
+        </ul>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card" id="r5_who">
+    <div class="head" onclick="toggle('r5_who')">
+      <span class="tag" style="background:#FFE4E6;color:#BE123C">ใครรับผิดชอบ</span>
+      <span class="title">หน่วยงานหลักที่รับผิดชอบแต่ละเอกสาร</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <table class="cmp">
+        <tr><th>เอกสาร</th><th>ผู้จัดทำ/รับผิดชอบหลัก</th></tr>
+        <tr><td>รัฐธรรมนูญ 2560</td><td>คณะกรรมการร่างรัฐธรรมนูญ → สนช.เห็นชอบ → ประกาศโดยพระมหากษัตริย์</td></tr>
+        <tr><td>ยุทธศาสตร์ชาติ</td><td><span class="who">คณะกรรมการยุทธศาสตร์ชาติ</span> (ตาม พ.ร.บ.การจัดทำยุทธศาสตร์ชาติ 2560) → ครม. → สนช. → ประกาศโดยพระมหากษัตริย์</td></tr>
+        <tr><td>แผนแม่บทฯ</td><td><span class="who">สำนักงานสภาพัฒนาการเศรษฐกิจและสังคมแห่งชาติ (สศช.)</span> + คณะกรรมการยุทธศาสตร์ชาติ → ครม.เห็นชอบ → ประกาศในราชกิจจานุเบกษา (ไม่ต้องพระบรมราชโองการ)</td></tr>
+        <tr><td>แผนฯ13</td><td><span class="who">สศช.</span> (สำนักนายกรัฐมนตรี) → ครม.เห็นชอบ → ประกาศโดยพระบรมราชโองการ</td></tr>
+      </table>
+      <div class="trap"><b>กับดักผู้ประกาศใช้:</b> <span class="trapw">ยุทธศาสตร์ชาติและแผนฯ13 ประกาศโดยพระบรมราชโองการ</span> (ผ่านการทูลเกล้าฯ) แต่ <span class="trapw">แผนแม่บทภายใต้ยุทธศาสตร์ชาติ ประกาศโดยสำนักนายกรัฐมนตรีเท่านั้น ไม่ต้องทูลเกล้าฯ</span> — เพราะแผนแม่บทฯเป็นเครื่องมือถ่ายทอดเชิงเทคนิคจากยุทธศาสตร์ชาติ ไม่ใช่กฎหมายระดับเดียวกัน ข้อสอบอาจถามว่า "เอกสารใดในชุดนี้ที่ไม่ต้องประกาศโดยพระบรมราชโองการ" — <b>คำตอบคือแผนแม่บทภายใต้ยุทธศาสตร์ชาติ</b></div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#881337;color:#881337;">🎓 เทคนิคทำข้อสอบเชิงซ้อน/ลวง/เล่นคำ</div>
+
+  <div class="card" id="r5_technique">
+    <div class="head" onclick="toggle('r5_technique')">
+      <span class="tag" style="background:#FFE4E6;color:#BE123C">เทคนิค</span>
+      <span class="title">5 เทคนิคจับกับดักข้อสอบเชิงซ้อนของชุดเอกสารนี้</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ol>
+        <li><b>เช็คคำศัพท์ก่อนเช็คตัวเลข</b> — ถ้าคำถามใช้คำว่า "หมุดหมาย" ให้ตัดตัวเลือกที่เกี่ยวกับรัฐธรรมนูญ/ยุทธศาสตร์ชาติ/แผนแม่บทออกทันที เพราะคำนี้เฉพาะแผนฯ13 เท่านั้น</li>
+        <li><b>แยก "ใคร" ทำหน้าที่อะไร</b> — หน้าที่ของ "ปวงชน" (ม.50) ≠ หน้าที่ของ "รัฐ" (ม.51-63) ≠ บทบาทของ "อปท." (ม.249-254) — อ่านประธานของประโยคให้ชัดก่อนตอบ</li>
+        <li><b>ระวังคำว่า "เฉพาะ" "เท่านั้น" "ทั้งหมด"</b> — ตัวเลือกที่ใช้คำเด็ดขาดแบบนี้มักผิด เพราะกฎหมาย/แผนส่วนใหญ่เปิดช่องยกเว้นไว้เสมอ (เช่น ผู้บริหารท้องถิ่นมี "วิธีอื่น" ได้ ไม่ใช่เลือกตั้งเท่านั้น)</li>
+        <li><b>ตัวเลขที่ใกล้เคียงกันมักเป็นกับดักคู่</b> — เช่น 37 vs 41 vs 140 vs 167 vs 172 หรือ 200 vs 250 — เขียนตัวเลขลงกระดาษทดก่อนเลือกคำตอบ อย่าเดาจากความรู้สึก</li>
+        <li><b>เมื่อโจทย์ผสมข้ามเอกสาร ให้ไล่ตามโซ่ลำดับชั้น</b> — รัฐธรรมนูญ → ยุทธศาสตร์ชาติ → แผนแม่บทฯ/แผนฯ13 → แผนปฏิบัติการ เสมอ ไล่จากบนลงล่างจะช่วยให้ไม่งงว่าเอกสารไหนคุมเอกสารไหน</li>
+      </ol>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบรวบทุกเทคนิค (โจทย์เชิงซ้อนจำลอง):</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"ข้อใดต่อไปนี้ถูกต้องที่สุดเกี่ยวกับการปกครองส่วนท้องถิ่นตามรัฐธรรมนูญ 2560 และความเชื่อมโยงกับแผนระดับชาติ?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">ผู้บริหารและสมาชิกสภาท้องถิ่นทุกประเภทต้องมาจากการเลือกตั้งเท่านั้น ตามมาตรา 252 และเชื่อมโยงกับหมุดหมายที่ 9 ของแผนฯ13 โดยตรง</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">สมาชิกสภาท้องถิ่นต้องมาจากเลือกตั้งเท่านั้น แต่ผู้บริหารท้องถิ่นรูปแบบพิเศษมีทางเลือกอื่นได้ตามมาตรา 252 วรรค 2 และเรื่องนี้เชื่อมโยงกับยุทธศาสตร์ชาติด้านการสร้างโอกาสและความเสมอภาคทางสังคม รวมถึงแผนแม่บทฯ ประเด็น (20)</div>
+        <div class="qexp">✅ ถูกต้อง! ตัวเลือกแรกผิดเพราะใช้คำเด็ดขาด "เท่านั้น" กับผู้บริหารท้องถิ่นซึ่งผิด (มีวิธีอื่นได้) และอ้างหมุดหมาย 9 ผิด (หมุดหมาย 9 พูดถึงความยากจนข้ามรุ่น ไม่ใช่ท้องถิ่นโดยตรง) ตัวเลือกที่ถูกแยกแยะหน้าที่ชัดเจนและเชื่อมโยงเอกสารถูกทาง — นี่คือตัวอย่างการรวมกับดักทั้ง 5 เทคนิคในข้อเดียว</div>
+      </div>
+    </div></div>
+  </div>
+
+</div>
+<!-- END TAB 5 -->
+
+<!-- ============ TAB 6: คำแถลงนโยบายของคณะรัฐมนตรี (นายอนุทิน ชาญวีรกูล) ============ -->
+<div class="page" id="page6">
+  <div class="hero" data-c="6">
+    <h1>🏛️ คำแถลงนโยบายของคณะรัฐมนตรี<br>นายอนุทิน ชาญวีรกูล นายกรัฐมนตรี</h1>
+    <p>แถลงต่อรัฐสภา วันพฤหัสบดีที่ 9 เมษายน 2569 — เน้นเชื่อมโยงกับ รธน.หมวด 5/6 และยุทธศาสตร์ชาติตามภาคผนวกจริงของเอกสาร</p>
+    <div class="badges">
+      <span class="badge">23 นโยบายหลัก</span>
+      <span class="badge">5 ด้าน + 5 Cluster</span>
+      <span class="badge">~70-90 นาที</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="lg num">เลข/วันที่/กรอบเวลา</span>
+    <span class="lg who">ใคร/หน่วยงาน/รัฐมนตรี</span>
+    <span class="lg key">หลักการ/คำสำคัญ</span>
+    <span class="lg link">เชื่อมโยงเอกสาร</span>
+    <span class="lg trapw">กับดักข้อสอบ</span>
+  </div>
+
+  <div class="note"><b>บริบทสำคัญ:</b> นายอนุทิน ชาญวีรกูล ได้รับแต่งตั้งเป็นนายกรัฐมนตรีเมื่อ <span class="num">19 มี.ค. 2569</span> (มติสภาผู้แทนราษฎรเห็นชอบวันเดียวกัน ตามมาตรา <span class="num">158</span> ของรัฐธรรมนูญ) คณะรัฐมนตรีแต่งตั้งเมื่อ <span class="num">30 มี.ค. 2569</span> และแถลงนโยบายต่อรัฐสภาวันที่ <span class="num">9 เม.ย. 2569</span> — <span class="trapw">นายอนุทินดำรงตำแหน่งรัฐมนตรีว่าการกระทรวงมหาดไทยควบคู่ไปด้วย</span> (สำคัญสำหรับสายปลัดอำเภอ เพราะนายกฯ เป็น รมว.มหาดไทยเอง)</div>
+
+  <div class="card" id="t6-1">
+    <div class="head" onclick="toggle('t6-1')">
+      <span class="tag" style="background:#FFEDD5;color:#9A3412">หลักการ ⭐</span>
+      <span class="title">หลักการสำคัญ 3 ประการของรัฐบาล</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>รัฐบาลภายใต้การนำของนายอนุทินยึดหลักการสำคัญ <span class="num">3 ประการ</span>:</p>
+      <ol>
+        <li><span class="key">พิทักษ์รักษาไว้ซึ่งสถาบันชาติ ศาสนา และพระมหากษัตริย์</span></li>
+        <li><span class="key">ยึดมั่นการปกครองในระบอบประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข</span></li>
+        <li><span class="key">ยึดมั่นในหลักนิติธรรม</span> การบังคับใช้กฎหมายอย่างเป็นธรรม และการบริหารราชการแผ่นดินบนพื้นฐานของ<span class="key">ธรรมาภิบาล</span></li>
+      </ol>
+      <div class="crosslink" style="background:#FFF7ED;border-color:#FDBA74;color:#7C2D12"><b>เชื่อมโยง:</b> นโยบายทั้งหมดสอดคล้องกับ<span class="link">หมวด 5 หน้าที่ของรัฐ</span> และ<span class="link">หมวด 6 แนวนโยบายแห่งรัฐ</span> ของรัฐธรรมนูญ 2560 ตลอดจน<span class="link">ยุทธศาสตร์ชาติ พ.ศ.2561-2580</span> ตามที่ระบุไว้ในคำแถลงและภาคผนวกของเอกสาร</div>
+      <div class="trap"><b>กับดัก:</b> หลักการ 3 ข้อนี้ <span class="trapw">ไม่ใช่</span> "นโยบายเร่งด่วน Quick Big Win" และไม่ใช่ "5 Cluster" — เป็นคนละชุดกัน ข้อสอบมักเอามาสับสนกัน</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-2">
+    <div class="head" onclick="toggle('t6-2')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ผลงานเดิม</span>
+      <span class="title">นโยบายเร่งด่วน "Quick Big Win" ที่ดำเนินการแล้ว</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>ก่อนแถลงนโยบายฉบับนี้ รัฐบาล (ช่วงรักษาการ) ได้ขับเคลื่อนนโยบายเร่งด่วนสำคัญไปแล้วหลายเรื่อง ภายใต้เป้าหมาย <span class="key">"กระตุ้นสั้น ได้ผลยาว กระจายตัว"</span>:</p>
+      <ul>
+        <li>กระตุ้นเศรษฐกิจผ่านโครงการ <span class="key">คนละครึ่ง พลัส</span></li>
+        <li>มาตรการลดภาระค่าใช้จ่ายของประชาชน</li>
+        <li>แก้ไขข้อพิพาท<span class="trapw">ไทย-กัมพูชา</span>และปกป้องอธิปไตยของประเทศ</li>
+        <li>ปราบปรามสแกมเมอร์และยาเสพติดอย่างเข้มข้น</li>
+        <li>สร้างความเชื่อมั่นให้นักท่องเที่ยว / แก้คอขวดลงทุนภาคเอกชน</li>
+        <li>เร่งเจรจาการค้า บุกตลาดใหม่ สร้างมูลค่าเพิ่มสินค้าเกษตร</li>
+        <li>ยกเลิกมูลค่าขั้นต่ำและเก็บอากรสินค้านำเข้า เพื่อความเป็นธรรมกับสินค้าในประเทศ</li>
+        <li>ผลักดันไทยเข้าเป็นสมาชิก <span class="who">OECD</span></li>
+        <li>ประกาศเป้าหมาย <span class="num">Net Zero ภายในปี 2593 (ค.ศ.2050)</span></li>
+        <li>จัดทำประชามตินำไปสู่การร่างรัฐธรรมนูญตามขั้นตอนที่ถูกต้อง</li>
+      </ul>
+      <p>ผลลัพธ์: เศรษฐกิจไทยที่ติดหล่มกลับมาขยายตัวสูงขึ้นกว่าที่คาดการณ์ในไตรมาส <span class="num">4 ปี 2568</span></p>
+      <div class="trap"><b>กับดัก:</b> เป้าหมาย Net Zero คือปี <span class="trapw">2593 (ค.ศ.2050)</span> — ตัวเลขนี้ตรงกับที่ระบุในยุทธศาสตร์ชาติ/แผนฯ13 ด้านสิ่งแวดล้อม ห้ามสับสนกับปีอื่น (เช่น 2608 ซึ่งเป็นปีคนละบริบท)</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-3">
+    <div class="head" onclick="toggle('t6-3')">
+      <span class="tag" style="background:#FEE2E2;color:#B91C1C">วิกฤตปัจจุบัน</span>
+      <span class="title">สถานการณ์ความขัดแย้งตะวันออกกลางและผลกระทบ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>ความขัดแย้งรุนแรงในภูมิภาค<span class="trapw">ตะวันออกกลาง</span>ทำให้การผลิต/ขนส่งน้ำมันดิบและก๊าซธรรมชาติของโลกชะงักงัน ราคาพลังงานมีแนวโน้มเพิ่มสูงและรวดเร็ว ส่งผลกระทบต่อเศรษฐกิจ การค้าระหว่างประเทศ และการจัดหาพลังงานทั่วโลกรวมถึงไทย</p>
+      <p>มาตรการบรรเทาผลกระทบที่รัฐบาล (รักษาการ) ดำเนินการ:</p>
+      <ul>
+        <li>ยกระดับบริการกงสุลคุ้มครองคนไทยในต่างประเทศ</li>
+        <li>จัดหาน้ำมันเชื้อเพลิงให้เพียงพอกับความต้องการของประเทศ</li>
+        <li>บริหารปัจจัยการผลิตที่ผูกพันราคาพลังงาน เช่น <span class="key">ปุ๋ยเคมี สารเคมีอุตสาหกรรม วัตถุดิบปิโตรเคมี</span></li>
+        <li>เพิ่มสัดส่วนเชื้อเพลิงชีวภาพ ลดการนำเข้าน้ำมัน และเพิ่มรายได้เกษตรกรจากวัสดุเหลือใช้ทางการเกษตร</li>
+        <li>มาตรการประหยัดพลังงานในหน่วยงานภาครัฐ</li>
+      </ul>
+      <div class="note"><b>แผนต่อไป:</b> เร่งเพิ่มประสิทธิภาพการเบิกจ่ายงบประมาณ จัดทำ<span class="key">พ.ร.บ.โอนงบประมาณรายจ่ายประจำปี 2569</span> ให้แล้วเสร็จโดยเร็ว และเร่งจัดทำ<span class="key">พ.ร.บ.งบประมาณรายจ่ายประจำปี 2570</span> ให้ทันปฏิทินงบประมาณปกติ</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#9A3412;color:#9A3412">💰 ด้านเศรษฐกิจ (นโยบายข้อ 1-5)</div>
+
+  <div class="card" id="t6-4">
+    <div class="head" onclick="toggle('t6-4')">
+      <span class="tag" style="background:#FFEDD5;color:#9A3412">ข้อ 1</span>
+      <span class="title">สร้างโอกาสการเริ่มต้นและเติบโตอย่างทั่วถึง</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>มุ่งสร้างงาน สร้างอาชีพให้ <span class="key">"กลุ่มคนตัวเล็กในระบบเศรษฐกิจ"</span> — นักเรียน นักศึกษา ผู้สูงวัย วิสาหกิจชุมชน และ <span class="who">SMEs</span> ผ่าน 4 แนวทาง:</p>
+      <ul>
+        <li><b>1.1</b> แก้หนี้แบบเบ็ดเสร็จ ยึด<span class="key">ลูกหนี้เป็นศูนย์กลาง</span> มีฐานข้อมูลครอบคลุมทุกประเภทสถาบันการเงิน + เชื่อมโยงข้อมูลรายบุคคล<span class="trapw">ตั้งแต่เกิดจนเสียชีวิต</span>เพื่อจัดสวัสดิการแบบรวมศูนย์</li>
+        <li><b>1.2</b> สนับสนุนความรู้/แหล่งทุน/เทคโนโลยี — <span class="key">คนละครึ่ง พลัส</span>, Digital Literacy, AI Literacy, Financial Literacy</li>
+        <li><b>1.3</b> ส่งเสริม SMEs เข้าสู่ธุรกิจ/แหล่งทุนในระบบ — แต้มต่อ<span class="who">Made in Thailand</span>ในการจัดซื้อจัดจ้างรัฐ, e-Tax Invoice, e-Receipt, <span class="key">PromptBiz</span></li>
+        <li><b>1.4</b> ส่งเสริมบทบาทท้องถิ่น — กระจายอำนาจการคลังให้ท้องถิ่น, ผลักดัน<span class="key">กฎหมายภาษีบ้านเกิดเมืองนอน</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> "คนละครึ่ง พลัส" อยู่ใน <span class="trapw">ข้อ 1.2</span> (สนับสนุนความรู้/ทุน) ไม่ใช่ข้อ 1.1 (แก้หนี้) — ข้อสอบมักสลับตำแหน่งย่อย</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-5">
+    <div class="head" onclick="toggle('t6-5')">
+      <span class="tag" style="background:#FFEDD5;color:#9A3412">ข้อ 2</span>
+      <span class="title">ปรับโครงสร้างเศรษฐกิจไทยให้เติบโต แข่งขันได้อย่างยั่งยืน</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>เป้าหมาย: พ้นจาก<span class="trapw">กับดักประเทศรายได้ปานกลาง</span> ด้วยเครื่องยนต์เศรษฐกิจใหม่ — <span class="key">ดิจิทัล, AI, หุ่นยนต์ (Robotic), เซมิคอนดักเตอร์, อาหารแปรรูปมูลค่าสูง, พลังงานสะอาด, เทคโนโลยีชีวภาพ, ยานยนต์สมัยใหม่, การแพทย์และสุขภาพ</span></p>
+      <ul>
+        <li><b>2.1</b> ยกระดับเศรษฐกิจดิจิทัล — มียุทธศาสตร์ด้าน <span class="who">AI</span> เพื่อเศรษฐกิจที่ชัดเจน</li>
+        <li><b>2.2</b> ปรับระบบส่งเสริมการลงทุน — ดึงดูดทุนต่างชาติที่ร่วมทุนกับบริษัทไทย</li>
+        <li><b>2.3</b> ยกระดับวิทย์-เทคโนโลยี-นวัตกรรม — พลิกโฉม<span class="who">มหาวิทยาลัย</span>เป็นศูนย์กลางความรู้, พัฒนา<span class="key">Deep Tech</span>, จัดตั้ง<span class="key">กองทุนร่วมลงทุน (Matching Fund)</span></li>
+        <li><b>2.4</b> เพิ่มบทบาทเอกชนระดมทุนโครงสร้างพื้นฐาน — <span class="who">กองทุนรวมโครงสร้างพื้นฐาน, กองทุนรวมวายุภักษ์</span></li>
+        <li><b>2.5</b> ยกระดับตลาดเงินตลาดทุนให้ทันสมัย โปร่งใส แข่งขันได้ในระดับสากล</li>
+      </ul>
+      <div class="crosslink"><b>เชื่อมโยง:</b> ข้อ 2.3 (Deep Tech, มหาวิทยาลัย) เชื่อมตรงกับ <span class="link">รธน. มาตรา 69</span> (รัฐพึงส่งเสริมวิจัย วิทยาศาสตร์ เทคโนโลยี) ในหมวด 6</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-6">
+    <div class="head" onclick="toggle('t6-6')">
+      <span class="tag" style="background:#FFEDD5;color:#9A3412">ข้อ 3</span>
+      <span class="title">ด้านการค้า "เชื่อมไทยสู่เศรษฐกิจโลก สร้างพันธมิตรการค้า"</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>3.1</b> สร้างความสามารถแข่งขัน — คุมเข้มการสวมสิทธิแหล่งกำเนิดสินค้า, จัดการ<span class="trapw">ปัญหานอมินี</span>, คุ้มครองทรัพย์สินทางปัญญา</li>
+        <li><b>3.2</b> ผลักดันสินค้า/บริการไทยสู่สากล — แต้มต่อ <span class="who">Made in Thailand First</span> ในจัดซื้อจัดจ้างรัฐและธุรกิจขนาดใหญ่</li>
+        <li><b>3.3</b> บริหารความเสี่ยง — เปลี่ยน<span class="key">คู่ค้าเป็นพันธมิตรทางการค้า</span> กระจายตลาด ลดพึ่งพาตลาดเดียว</li>
+        <li><b>3.4</b> ส่งเสริมการค้าภาคบริการ — การศึกษา สุขภาพ ดิจิทัล เศรษฐกิจสร้างสรรค์</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-7">
+    <div class="head" onclick="toggle('t6-7')">
+      <span class="tag" style="background:#FFEDD5;color:#9A3412">ข้อ 4</span>
+      <span class="title">ด้านการเกษตร — เกษตรแม่นยำ เกษตรมั่นคง เกษตรยั่งยืน</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>เปลี่ยนผ่านจาก<span class="trapw">เกษตรกรรมแบบดั้งเดิม</span>ไปสู่ <span class="key">"เกษตรแม่นยำ เกษตรมั่นคง เกษตรยั่งยืน"</span></p>
+      <ul>
+        <li><b>4.1</b> ปรับวิถีเกษตรด้วย AI/เทคโนโลยีชีวภาพ — <span class="key">โครงการดอกเบี้ยคนละครึ่ง</span>สำหรับเกษตรกร (ของ ธ.ก.ส.)</li>
+        <li><b>4.2</b> Big Data + AI วางแผนผลิต-จำหน่ายต้นน้ำถึงปลายน้ำ, ปราบปราม<span class="trapw">สินค้าเกษตรเถื่อน</span></li>
+        <li><b>4.3</b> สร้างเสถียรภาพอุตสาหกรรมเกษตร-อาหาร สู่ <span class="who">"ศูนย์กลางความมั่นคงทางอาหารของโลก"</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> วลี <span class="trapw">"ศูนย์กลางความมั่นคงทางอาหารของโลก"</span> ปรากฏ<span class="trapw">2 ครั้ง</span>ในเอกสาร — ทั้งในนโยบายเร่งด่วนต้นเรื่อง และในข้อ 4.3 ด้านเกษตร อย่าคิดว่าเป็นนโยบายเดียวที่พูดครั้งเดียว</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-8">
+    <div class="head" onclick="toggle('t6-8')">
+      <span class="tag" style="background:#FFEDD5;color:#9A3412">ข้อ 5</span>
+      <span class="title">ด้านการท่องเที่ยว — จากปริมาณสู่มูลค่าสูง</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>5.1</b> ปรับโครงสร้างบริหาร — ออกกฎหมายให้<span class="trapw">ภารกิจท่องเที่ยวเป็นภารกิจของกระทรวงวัฒนธรรม</span> + Cultural Diplomacy</li>
+        <li><b>5.2</b> พัฒนาไทยเป็น <span class="key">Destination Thailand 365 วัน</span></li>
+        <li><b>5.3</b> ส่งเสริมแหล่งท่องเที่ยวโดยชุมชน + รองรับ <span class="key">Work from Anywhere</span></li>
+        <li><b>5.4</b> สนับสนุนคนไทยเที่ยวในประเทศ — เชื่อมกับสินค้า <span class="who">GI (สิ่งบ่งชี้ทางภูมิศาสตร์)</span></li>
+        <li><b>5.5</b> ยกระดับความปลอดภัยนักท่องเที่ยว — ประกันภัย/ชีวิต/สุขภาพ/อุบัติเหตุภาคบังคับ</li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> ข้อ 5.1 คือการ<span class="trapw">โอนภารกิจท่องเที่ยวไปกระทรวงวัฒนธรรม</span> — ตรงข้ามกับโครงสร้างเดิมที่ท่องเที่ยวเคยเป็นกระทรวงท่องเที่ยวและกีฬา ข้อสอบอาจถามว่ากระทรวงใดดูแลท่องเที่ยวตามนโยบายนี้</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#1D4ED8;color:#1D4ED8">🌐 ด้านการต่างประเทศและความมั่นคง (นโยบายข้อ 6-12)</div>
+
+  <div class="card" id="t6-9">
+    <div class="head" onclick="toggle('t6-9')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ข้อ 6-8</span>
+      <span class="title">บทบาทไทยในเวทีโลก + การทูตเศรษฐกิจ + OECD</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>6.</b> นโยบาย <span class="key">Beyond Thailand</span> — บทบาทเชิงรุกยึดมั่นพหุภาคี กรอบ<span class="who">สหประชาชาติ</span>, ไทยเป็นประธานอาเซียนปี <span class="num">2571</span></li>
+        <li><b>7.</b> รักษาผลประโยชน์ไทยในบริบท<span class="key">โลกหลายขั้ว (multipolar)</span> กระชับสัมพันธ์มหาอำนาจขนาดกลาง+พันธมิตรใหม่</li>
+        <li><b>8.</b> การทูตเศรษฐกิจ "ทีมประเทศไทย" — เร่งผลักดันเข้าเป็นสมาชิก <span class="who">OECD ภายในปี 2571</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> ปีที่ไทยเป็น<span class="trapw">ประธานอาเซียน (2571)</span> กับปีที่ไทยจะเข้าเป็นสมาชิก<span class="trapw">OECD (2571)</span> เป็น<span class="trapw">ปีเดียวกัน</span>แต่คนละเรื่อง ข้อสอบมักเอามาผสมกัน</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-10">
+    <div class="head" onclick="toggle('t6-10')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ข้อ 9</span>
+      <span class="title">ความมั่นคงชายแดน + ไทย-กัมพูชา + ชายแดนใต้</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>9.1</b> ป้องกันภัยคุกคามชายแดน ยาเสพติด สแกมเมอร์ สิ่งแวดล้อม — สร้าง<span class="key">กำแพงชายแดน</span>จัดการภัยรุกรานแบบเบ็ดเสร็จ</li>
+        <li><b>9.2</b> แก้สถานการณ์<span class="trapw">ไทย-กัมพูชา</span>ด้วยสันติวิธีและกลไกทวิภาคี + เร่งศึกษายกเลิก <span class="who">MoU 2544</span> (ไหล่ทวีปทับซ้อน)</li>
+        <li><b>9.3</b> แก้ปัญหาสามจังหวัดชายแดนภาคใต้ น้อมนำแนวพระราชดำริ <span class="key">"เข้าใจ เข้าถึง พัฒนา"</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> MoU 2544 คือเรื่อง<span class="trapw">"ไหล่ทวีปทับซ้อน"</span> ไม่ใช่เรื่องชายแดนทางบก — รัฐบาลมีนโยบาย<span class="trapw">ศึกษาแนวทางยกเลิก</span> ไม่ใช่ "ยกเลิกแล้ว"</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-11">
+    <div class="head" onclick="toggle('t6-11')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ข้อ 10</span>
+      <span class="title">ความปลอดภัยในชีวิต/ทรัพย์สิน — พนัน ยาเสพติด สแกมเมอร์</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>10.1</b> บูรณาการบังคับใช้กฎหมายกับผู้มีอิทธิพล — <span class="trapw">ไม่สนับสนุนให้การพนันทุกชนิดเป็นธุรกิจที่ถูกกฎหมาย</span></li>
+        <li><b>10.2</b> ปราบยาเสพติดจริงจัง — <span class="key">เจ้าหน้าที่รัฐที่ละเว้น/ปล่อยปละละเลย ต้องรับโทษทั้งทางวินัยร้ายแรงและอาญา โดยให้ออกจากราชการไว้ก่อน</span></li>
+        <li><b>10.3</b> ทบทวนนโยบาย <span class="who">Free Visa</span> เพื่อตัดช่องทางการเงินเครือข่ายสแกมเมอร์/ฟอกเงิน</li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> ข้อ 10.1 ไม่ได้ห้ามการพนันทั้งหมดทันที แต่คือ<span class="trapw">"ไม่สนับสนุนให้เป็นธุรกิจถูกกฎหมาย"</span> + แก้กฎหมายเพื่อ<span class="trapw">ลดการอนุญาต</span>ให้ได้มากที่สุด — เป็นนโยบายทยอยคุม ไม่ใช่สั่งห้ามทันที</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-12">
+    <div class="head" onclick="toggle('t6-12')">
+      <span class="tag" style="background:#DBEAFE;color:#1D4ED8">ข้อ 11-12</span>
+      <span class="title">พัฒนากองทัพ + ทหารอาสา 100,000 อัตรา</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>11.</b> พัฒนาระบบป้องกันประเทศ — จัดหาอาวุธยุทโธปกรณ์อย่าง<span class="key">คุ้มค่า โปร่งใส ตรวจสอบได้</span> ส่งเสริมอุตสาหกรรมป้องกันประเทศของคนไทย</li>
+        <li><b>12.</b> โครงการ<span class="who">ทหารอาสา 100,000 อัตรา</span> — สัญญาจ้าง <span class="num">4 ปี</span> มีค่าตอบแทน ผู้ผ่านประเมินมีโอกาสศึกษาต่อ<span class="key">โรงเรียนนายสิบ</span> เพื่อเป็นฐานปรับระบบเกณฑ์ทหารสู่<span class="trapw">ระบบสมัครใจในระยะยาว</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> โครงการทหารอาสา <span class="trapw">ไม่ใช่</span>การยกเลิกระบบเกณฑ์ทหารทันที แต่เป็น<span class="trapw">"ฐานรองรับ"</span>การปรับระบบไปสู่ความสมัครใจในระยะยาว</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#15803D;color:#15803D">👥 ด้านสังคม (นโยบายข้อ 13-15)</div>
+
+  <div class="card" id="t6-13">
+    <div class="head" onclick="toggle('t6-13')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">ข้อ 13</span>
+      <span class="title">เรียนฟรีมีจริง เรียนฟรีมีงานทำ เรียนรู้ได้ทุกที่ทุกเวลา</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>13.1</b> แพลตฟอร์มเรียนรู้ออนไลน์ฟรี + ลดภาระงานครูที่ไม่เกี่ยวกับการสอน + ใช้<span class="key">ผลประเมินประสิทธิภาพการสอน</span>ปรับวิทยฐานะ</li>
+        <li><b>13.2</b> <span class="who">Skill Bridge</span> เข้าสู่ตลาดแรงงานทันทีหลังจบการศึกษา + <span class="key">ระบบธนาคารหน่วยกิต</span></li>
+        <li><b>13.3</b> พัฒนาทักษะกีฬา — วิทยาศาสตร์การกีฬา + ยกระดับนักกีฬาอาชีพ</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-14">
+    <div class="head" onclick="toggle('t6-14')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">ข้อ 14</span>
+      <span class="title">ระบบประกันสุขภาพ "รักษาทุกที่ได้ทันที"</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>14.1</b> เชื่อมโยงฐานข้อมูลสุขภาพส่วนบุคคล + สิทธิรักษาพยาบาล</li>
+        <li><b>14.2</b> ปรับกฎหมายประกันสังคมรองรับเศรษฐกิจสมัยใหม่ จูงใจแรงงานนอกระบบเข้าระบบ</li>
+        <li><b>14.3</b> การแพทย์มุ่งเป้า + AI ทางการแพทย์ (การแพทย์ทางไกล) + ส่งเสริมการแพทย์แผนไทย</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-15">
+    <div class="head" onclick="toggle('t6-15')">
+      <span class="tag" style="background:#DCFCE7;color:#15803D">ข้อ 15</span>
+      <span class="title">เสริมสร้างสถาบันครอบครัวและชุมชนเข้มแข็ง</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>15.1</b> พัฒนาคนในชาติให้มีเหตุมีผล รับผิดชอบต่อตนเอง/ครอบครัว/สังคม</li>
+        <li><b>15.2</b> รองรับ<span class="trapw">สังคมสูงวัยโดยสมบูรณ์</span> + ส่งเสริม<span class="key">เศรษฐกิจสูงวัย (Silver Economy)</span> + ลดภาษีเงินได้บุคคลธรรมดาผู้สูงอายุที่มีรายได้</li>
+        <li><b>15.3</b> สถานพักพิงผู้สูงอายุ/กลุ่มเปราะบาง + <span class="key">พยาบาลอาสาประจำหมู่บ้าน</span> + ศูนย์บำบัดยาเสพติด<span class="trapw">ทุกอำเภอ</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> "ศูนย์บำบัดยาเสพติดทุกอำเภอ" อยู่ในข้อ <span class="trapw">15.3 (ด้านสังคม)</span> ไม่ใช่ข้อ 10 (ความมั่นคง/ปราบปราม) — เพราะเน้นมุม<span class="trapw">บำบัดฟื้นฟู</span> ต่างจากข้อ 10.2 ที่เน้น<span class="trapw">ปราบปราม</span></div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#16A34A;color:#14532D">🌱 ด้านภัยพิบัติและสิ่งแวดล้อม (นโยบายข้อ 16-19)</div>
+
+  <div class="card" id="t6-16">
+    <div class="head" onclick="toggle('t6-16')">
+      <span class="tag" style="background:#F0FDF4;color:#14532D">ข้อ 16-17</span>
+      <span class="title">บริหารจัดการน้ำ + ประกันภัยพิบัติแห่งชาติ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>16.</b> Big Data + AI พยากรณ์น้ำ/อากาศแม่นยำระดับ<span class="who">ตำบล</span> + ระบบแจ้งเตือนภัยเอกภาพบนฐานข้อมูลดิจิทัล</li>
+        <li><b>17.</b> พัฒนา<span class="key">ระบบประกันภัยพิบัติแห่งชาติ</span>ครอบคลุมทุกครัวเรือน — ยั่งยืนทางการคลัง เยียวยารวดเร็วเป็นธรรม</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-17">
+    <div class="head" onclick="toggle('t6-17')">
+      <span class="tag" style="background:#F0FDF4;color:#14532D">ข้อ 18</span>
+      <span class="title">Net Zero ภายในปี 2593 — 5 แนวทางย่อย</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>18.1</b> เกษตรกรรุ่นใหม่เป็นมิตรสิ่งแวดล้อม — ลด<span class="trapw">PM2.5</span> จากการเผา, พัฒนา<span class="key">Biochar (ถ่านชีวภาพ)</span></li>
+        <li><b>18.2</b> พลังงานสะอาด — เปิด<span class="key">ตลาดไฟฟ้าเสรี, Direct PPA, Prosumer, Smart Grid, โซลาร์ฟาร์มชุมชน</span></li>
+        <li><b>18.3</b> ขนส่ง/โลจิสติกส์เป็นมิตรสิ่งแวดล้อม — จักรยานยนต์ไฟฟ้าในประเทศ, ระบบขนส่งทางราง/น้ำ</li>
+        <li><b>18.4</b> ตั้ง<span class="who">ตลาดซื้อขายคาร์บอนเครดิต</span>มาตรฐานสากล + ร่าง<span class="key">พ.ร.บ.การเปลี่ยนแปลงสภาพภูมิอากาศ</span></li>
+        <li><b>18.5</b> เพิ่มพื้นที่ดูดซับก๊าซเรือนกระจก — ฟื้นฟูป่าต้นน้ำ/ป่าชายเลน/พื้นที่สีเขียวเมือง</li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> Net Zero <span class="trapw">ปี 2593 (ค.ศ.2050)</span> เป็นตัวเลขเดียวที่ใช้ตลอดทั้งเอกสาร (ย้ำซ้ำในข้อ 18 และใน Cluster ที่ 3) — ไม่มีตัวเลขอื่นมาแทนที่ในคำแถลงฉบับนี้</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-18">
+    <div class="head" onclick="toggle('t6-18')">
+      <span class="tag" style="background:#F0FDF4;color:#14532D">ข้อ 19</span>
+      <span class="title">อนุรักษ์และใช้ประโยชน์ทรัพยากรธรรมชาติอย่างสมดุล</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>เร่งจัดสรรที่ดินทำกินคู่กับสร้างงาน/อาชีพชุมชน เพื่อลดการบุกรุกป่า + จัดทำผังเมืองสนับสนุนการใช้ที่ดินตามศักยภาพพื้นที่ + บังคับใช้กฎหมายรักษาทรัพยากรธรรมชาติอย่างยั่งยืน</p>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#475569;color:#1E293B">⚙️ ด้านการบริหารภาครัฐ การปฏิรูปกฎหมาย (นโยบายข้อ 20-23)</div>
+
+  <div class="card" id="t6-19">
+    <div class="head" onclick="toggle('t6-19')">
+      <span class="tag" style="background:#F1F5F9;color:#1E293B">ข้อ 20</span>
+      <span class="title">ราชการทันใจ — ระบบดิจิทัลอัจฉริยะ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li>ผลักดันร่างกฎหมาย<span class="who">Super License</span> (อำนวยความสะดวก/บริการสาธารณะ) ให้มีผลบังคับใช้ภายใน <span class="num">180 วัน</span></li>
+        <li>เร่งเสนอ <span class="key">Omnibus Law</span> แก้ปัญหาเศรษฐกิจจากกฎหมายล้าสมัย ให้มีผลบังคับใช้ภายใน <span class="num">1 ปี</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> Super License = <span class="trapw">180 วัน</span> ส่วน Omnibus Law = <span class="trapw">1 ปี</span> — ตัวเลขกรอบเวลาคนละชุด ห้ามสลับกัน</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-20">
+    <div class="head" onclick="toggle('t6-20')">
+      <span class="tag" style="background:#F1F5F9;color:#1E293B">ข้อ 21</span>
+      <span class="title">ปฏิรูประบบราชการ — ภาครัฐเล็กลง</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li>มาตรการเกษียณอายุก่อนกำหนด เพื่อให้ภาครัฐมีขนาดเล็กลง</li>
+        <li>เปลี่ยนบทบาทภาครัฐจาก <span class="trapw">"ผู้ควบคุม"</span> เป็น <span class="key">"ผู้อำนวยความสะดวก"</span> เท่าที่จำเป็น</li>
+        <li>ส่งเสริมเจ้าหน้าที่รัฐ <span class="who">Work from Anywhere</span></li>
+        <li>ลดรายจ่ายไม่จำเป็น เช่น สิ่งปลูกสร้างไม่จำเป็น/ดูงานต่างประเทศ</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-21">
+    <div class="head" onclick="toggle('t6-21')">
+      <span class="tag" style="background:#F1F5F9;color:#1E293B">ข้อ 22</span>
+      <span class="title">พัฒนากฎหมายเพื่อให้ประชาชนมีชีวิตที่ดีขึ้น (22.1-22.6)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li><b>22.1</b> ทบทวนกฎหมายลำดับรองกว่า <span class="num">7,000 ฉบับ</span></li>
+        <li><b>22.2</b> ยกเลิกกฎหมายล้าสมัย — เช่น กฎหมายเลื่อยโซ่ยนต์, กฎหมายเครื่องขยายเสียง, ความผิดจากการใช้เช็ค</li>
+        <li><b>22.3</b> ปรับกฎหมายอุปสรรคการค้า-ลงทุนสมัยใหม่ — ธุรกรรมอิเล็กทรอนิกส์, กฎหมายโรงแรม</li>
+        <li><b>22.4</b> แก้กฎหมายจัดซื้อจัดจ้างรัฐ — <span class="trapw">ไม่คำนึงถึงราคาต่ำสุดอย่างเดียว</span></li>
+        <li><b>22.5</b> กฎหมายใหม่ต้องมีรายงานประเมินผลกระทบ + รับฟังความเห็นครอบคลุม</li>
+        <li><b>22.6</b> ร่างกฎหมายการเงินที่รับฟังความเห็นครบแล้ว เสนอผลพิจารณาต่อสภาฯภายใน <span class="num">60 วัน</span></li>
+      </ul>
+      <div class="trap"><b>กับดัก:</b> ตัวเลขกรอบเวลาที่ต้องแยกให้ชัด — Super License <span class="trapw">180 วัน</span> / Omnibus Law <span class="trapw">1 ปี</span> / ร่างกฎหมายการเงิน <span class="trapw">60 วัน</span> / กฎหมายลำดับรองที่ต้องทบทวน <span class="trapw">7,000+ ฉบับ</span></div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-22">
+    <div class="head" onclick="toggle('t6-22')">
+      <span class="tag" style="background:#F1F5F9;color:#1E293B">ข้อ 23</span>
+      <span class="title">แก้คอร์รัปชันเชิงโครงสร้าง</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>บูรณาการฐานข้อมูลภาครัฐ ใช้<span class="who">AI</span>เป็นเครื่องมือตรวจจับ/ประมวลผลเพื่อลดการทุจริต โดยมี<span class="key">ตัวชี้วัด</span>คือระดับ<span class="trapw">ดัชนีการรับรู้การทุจริตของประเทศไทย (CPI)</span> ต้องปรับตัวดีขึ้น สอดคล้องกับหลักปฏิบัติของ <span class="who">OECD</span></p>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#9A3412;color:#9A3412">🧩 ระบบบริหารแบบ Cluster 5 กลุ่ม</div>
+
+  <div class="card" id="t6-23">
+    <div class="head" onclick="toggle('t6-23')">
+      <span class="tag" style="background:#FFEDD5;color:#9A3412">โครงสร้างใหม่ ⭐</span>
+      <span class="title">ระบบบูรณาการแบบกลุ่มยุทธศาสตร์ (Cluster) — 5 กลุ่ม</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>รัฐบาลปรับรูปแบบบริหารภาครัฐเป็น <span class="key">"ระบบบูรณาการแบบกลุ่มยุทธศาสตร์ (Cluster)"</span> เพื่อทำงานบนเป้าหมาย/ตัวชี้วัดเดียวกัน แบ่งเป็น <span class="num">5 กลุ่ม</span>:</p>
+      <table class="cmp">
+        <tr><th>กลุ่ม</th><th>ขอบเขต</th></tr>
+        <tr><td><b>1</b></td><td>เศรษฐกิจมหภาค การลงทุน อุตสาหกรรมแห่งอนาคต — เศรษฐกิจดิจิทัล/AI</td></tr>
+        <tr><td><b>2</b></td><td>การผลิต การค้า บริการ — เกษตร เกษตรแปรรูป SMEs ท่องเที่ยว</td></tr>
+        <tr><td><b>3</b></td><td>โครงสร้างพื้นฐาน-ทรัพยากรธรรมชาติ-สิ่งแวดล้อม — มุ่ง <span class="trapw">Net Zero 2593</span></td></tr>
+        <tr><td><b>4</b></td><td>สังคมและสวัสดิการ — ทุนมนุษย์ ความมั่นคงทางการคลัง-สังคม</td></tr>
+        <tr><td><b>5</b></td><td>การต่างประเทศและความมั่นคง — สถานะไทยในเวทีโลก ชายแดน กองทัพ</td></tr>
+      </table>
+      <div class="trap"><b>กับดัก:</b> "5 Cluster" นี้<span class="trapw">ไม่เหมือนกับ "5 ด้านของนโยบาย"</span> ในคำแถลง (เศรษฐกิจ/ต่างประเทศ-ความมั่นคง/สังคม/ภัยพิบัติ-สิ่งแวดล้อม/บริหารภาครัฐ) — Cluster เป็นกลไกบริหารใหม่ที่<span class="trapw">รวม "ภัยพิบัติ-สิ่งแวดล้อม" เข้ากับ "โครงสร้างพื้นฐาน" เป็น Cluster เดียว (กลุ่ม 3)</span> ขณะที่ด้านนโยบาย 5 ด้านแยกภัยพิบัติ-สิ่งแวดล้อมเป็นด้านของตัวเอง ข้อสอบมักทดสอบว่าแยกสองระบบนี้ออกจากกันได้หรือไม่</div>
+    </div></div>
+  </div>
+
+  <div class="card" id="t6-24">
+    <div class="head" onclick="toggle('t6-24')">
+      <span class="tag" style="background:#FEF9C3;color:#854D0E">การคลัง</span>
+      <span class="title">แหล่งเงินในการขับเคลื่อนนโยบาย</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>ใช้จ่ายจาก<span class="key">เงินงบประมาณและเงินนอกงบประมาณ</span> เช่น เงินกู้ กองทุนหมุนเวียน การให้เอกชนร่วมลงทุน การระดมทุนผ่านกองทุนรวมโครงสร้างพื้นฐาน — ภายใต้กรอบ<span class="key">วินัยการเงินการคลัง</span>อย่างเคร่งครัด เพื่อ<span class="trapw">ไม่เป็นภาระงบประมาณหรือภาระภาษีแก่ประชาชน</span></p>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#7E22CE;color:#7E22CE">🔗 เชื่อมโยงกับรัฐธรรมนูญ/ยุทธศาสตร์ชาติ (ตามภาคผนวกจริงของเอกสาร)</div>
+
+  <div class="card" id="t6-25">
+    <div class="head" onclick="toggle('t6-25')">
+      <span class="tag" style="background:#F3E8FF;color:#7E22CE">ภาคผนวก ⭐</span>
+      <span class="title">ตารางความสอดคล้องสำคัญ — หมวด 5/6 และยุทธศาสตร์ชาติ</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <p>ภาคผนวกของคำแถลงนโยบายแสดงตารางจับคู่ทุกมาตราของหมวด 5/6 กับนโยบายรัฐบาลข้อที่เกี่ยวข้อง ตัวอย่างคู่ที่ออกสอบบ่อย:</p>
+      <table class="cmp small">
+        <tr><th>มาตรา/หมวด</th><th>เนื้อหาหลัก</th><th>นโยบายที่เชื่อม</th></tr>
+        <tr><td>ม.52 (หมวด 5)</td><td>พิทักษ์สถาบัน/เอกราช/อธิปไตย</td><td>ข้อ 1 (หลักการ), ข้อ 9 (ความมั่นคงชายแดน)</td></tr>
+        <tr><td>ม.54 (หมวด 5)</td><td>การศึกษา 12 ปีไม่เก็บค่าใช้จ่าย</td><td>ข้อ 13 เรียนฟรีมีจริง</td></tr>
+        <tr><td>ม.55 (หมวด 5)</td><td>บริการสาธารณสุขทั่วถึง</td><td>ข้อ 14 ประกันสุขภาพ</td></tr>
+        <tr><td>ม.62 (หมวด 5)</td><td>วินัยการเงินการคลัง</td><td>การบริหารงบประมาณท้ายคำแถลง</td></tr>
+        <tr><td>ม.69 (หมวด 6)</td><td>วิจัย วิทยาศาสตร์ เทคโนโลยี</td><td>ข้อ 2.3 Deep Tech</td></tr>
+        <tr><td>ม.72 (หมวด 6)</td><td>ที่ดิน น้ำ พลังงาน</td><td>ข้อ 16-18 น้ำ/พลังงานสะอาด</td></tr>
+        <tr><td>ม.75 (หมวด 6)</td><td>เศรษฐกิจทั่วถึง/SMEs/สหกรณ์</td><td>ข้อ 1, ข้อ 4.3 สหกรณ์การเกษตร</td></tr>
+        <tr><td>ม.77 (หมวด 6)</td><td>กฎหมายเท่าที่จำเป็น</td><td>ข้อ 22 ปฏิรูปกฎหมาย</td></tr>
+      </table>
+      <div class="crosslink"><b>เชื่อมโยงยุทธศาสตร์ชาติ:</b> เอกสารแบ่งตามยุทธศาสตร์ชาติ 6 ด้านครบทุกด้าน เช่น <span class="link">ด้านความมั่นคง</span>↔ข้อ 6-12, <span class="link">ด้านการสร้างความสามารถในการแข่งขัน</span>↔ข้อ 1-5, <span class="link">ด้านการพัฒนาทรัพยากรมนุษย์</span>↔ข้อ 13-14, <span class="link">ด้านการสร้างโอกาสและความเสมอภาคทางสังคม</span>↔ข้อ 1.1/15, <span class="link">ด้านการเติบโตที่เป็นมิตรกับสิ่งแวดล้อม</span>↔ข้อ 16-19, <span class="link">ด้านการปรับสมดุลภาครัฐ</span>↔ข้อ 20-23</div>
+    </div></div>
+  </div>
+
+  <div class="sec-title" style="border-color:#BE123C;color:#BE123C">⚔️ กับดักรวมเฉพาะคำแถลงนโยบายนี้</div>
+
+  <div class="card" id="t6-26">
+    <div class="head" onclick="toggle('t6-26')">
+      <span class="tag" style="background:#FFE4E6;color:#BE123C">รวมกับดัก ⭐</span>
+      <span class="title">เช็คลิสต์กับดักตัวเลข/วันที่/ชื่อบุคคลที่ออกสอบบ่อย</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="body"><div class="body-inner">
+      <ul>
+        <li>วันแต่งตั้งนายกฯ <span class="trapw">19 มี.ค. 2569</span> ≠ วันแต่งตั้ง ครม. <span class="trapw">30 มี.ค. 2569</span> ≠ วันแถลงนโยบาย <span class="trapw">9 เม.ย. 2569</span></li>
+        <li>นายอนุทินเป็นนายกฯ <span class="trapw">และ</span> รมว.มหาดไทย ควบคู่กัน (ไม่ใช่แยกคนละคน)</li>
+        <li>Net Zero = <span class="trapw">ปี 2593 (ค.ศ.2050)</span> เท่านั้น ไม่มีตัวเลขอื่น</li>
+        <li>OECD และประธานอาเซียน — ทั้งสองเป้าหมายอยู่ที่ปี <span class="trapw">2571</span> แต่เป็นคนละเรื่อง</li>
+        <li>กรอบเวลากฎหมาย: Super License <span class="trapw">180 วัน</span> / Omnibus Law <span class="trapw">1 ปี</span> / ร่างกฎหมายการเงิน <span class="trapw">60 วัน</span></li>
+        <li>ทหารอาสา <span class="trapw">100,000 อัตรา</span> สัญญาจ้าง <span class="trapw">4 ปี</span></li>
+        <li>ภารกิจท่องเที่ยวย้ายไปอยู่กับ<span class="trapw">กระทรวงวัฒนธรรม</span> (ไม่ใช่กระทรวงท่องเที่ยวและกีฬาเหมือนเดิม)</li>
+        <li>กฎหมายลำดับรองที่ต้องทบทวนมีกว่า <span class="trapw">7,000 ฉบับ</span></li>
+      </ul>
+      <div class="quiz">
+        <div class="qhead">🧪 ทดสอบความเข้าใจ:</div>
+        <p style="font-size:.82rem;margin-bottom:6px;">"ตามคำแถลงนโยบายของคณะรัฐมนตรีนายอนุทิน ข้อใดถูกต้องที่สุด?"</p>
+        <div class="qopt" onclick="this.nextElementSibling.classList.add('show'); this.classList.add('wrong')">รัฐบาลมีนโยบายยกเลิก MoU 2544 ระหว่างไทย-กัมพูชาทันที และยกเลิกระบบเกณฑ์ทหารทั้งหมดเพื่อแทนที่ด้วยทหารอาสา 100,000 อัตรา</div>
+        <div class="qopt correct" onclick="this.nextElementSibling.classList.add('show')">รัฐบาลมีนโยบายเร่งศึกษาแนวทางการยกเลิก MoU 2544 ให้แล้วเสร็จโดยเร็ว และโครงการทหารอาสา 100,000 อัตราเป็นฐานรองรับการปรับระบบเกณฑ์ทหารสู่ระบบสมัครใจในระยะยาว</div>
+        <div class="qexp">✅ ถูกต้อง! ตัวเลือกแรกใช้คำเด็ดขาดว่า "ยกเลิกทันที" ซึ่งผิด เพราะเอกสารใช้คำว่า "เร่งศึกษาแนวทาง" (ยังไม่ยกเลิก) และทหารอาสาเป็นเพียง "ฐานรองรับ" ไม่ใช่การยกเลิกเกณฑ์ทหารทั้งหมดในทันที</div>
+      </div>
+    </div></div>
+  </div>
+
+</div>
+<!-- END TAB 6 -->
+
+<script>
+function toggle(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+function showTab(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page' + n).classList.add('active');
+  document.querySelector('.tab-btn[data-tab="' + n + '"]').classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
